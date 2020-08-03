@@ -5,7 +5,7 @@
 
 $font-main: 'SF-Compact', sans-serif;
 
-.App-header {
+.App-Holder {
   // background-color: brown;
   background-image: url(./images/Background.png);
   position: relative;
@@ -29,6 +29,30 @@ $font-main: 'SF-Compact', sans-serif;
   /* #01 Colors/90% */
   color: white;
 
+  .tool-bar {
+
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px;
+
+    position: absolute;
+    width: 788px;
+    height: 76px;
+    left: calc(50% - 788px/2 - 66px);
+    bottom: 12px;
+
+    /* #02 Blur/Background 02 */
+    background: rgba(249, 249, 249, 0.3);
+    background-blend-mode: luminosity;
+    /* #02 Blur/Background 02 */
+
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(81.5485px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    
+  }
 
 }
 
