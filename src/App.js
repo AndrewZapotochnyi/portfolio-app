@@ -1,18 +1,19 @@
 import React from 'react';
-import logo from './styles/images/Apple_Logo.png';
 import './App.css';
 import './styles/_colors.scss';
+import './components/ToolBar'
+import ToolBar from './components/ToolBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello, that's where the file is: src/App.js.
-        </p>
+      <div className="App-Holder">
+    
+        <ToolBar 
+          text={"Hello"}
+        ></ToolBar>
         
-      </header>
+      </div>
     </div>
   );
 }
