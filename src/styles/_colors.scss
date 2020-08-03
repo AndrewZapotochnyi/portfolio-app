@@ -51,6 +51,19 @@ $font-main: 'SF-Compact', sans-serif;
     backdrop-filter: blur(81.5485px);
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 20px;
+
+    .tool-icon {
+      width: 70px;
+      height: 70px;
+
+    }
+
+    .tool-box-button{
+      width: 70px;
+      margin-left: 10px;
+      margin-right: 10px;
+    ;
+    }
     
   }
 
