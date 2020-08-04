@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import './styles/_colors.scss';
-import './components/ToolBar'
-import ToolBar from './components/ToolBar';
+import './components/ToolBar/ToolBar'
+import ToolBar from './components/ToolBar/ToolBar';
 
 function App() {
   return (
