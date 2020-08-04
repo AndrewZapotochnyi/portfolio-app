@@ -1,9 +1,10 @@
 import React from 'react';
-import SafariImage from '../../styles/icons/Safari.svg'
+import SafariImage from '../../styles/icons/Safari.svg';
+import IconWrap from './IconWrapper';
 
 let SafariIcon = () => {
   return (
-        <img src={SafariImage} alt="Mail Image"></img>);
+        <IconWrap src={SafariImage} alt="Mail Image"></IconWrap>);
 };
 
 export default SafariIcon;

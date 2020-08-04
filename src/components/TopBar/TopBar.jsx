@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../styles/images/Apple_Logo.png';
+import styled from 'styled-components'
 
 let TopBar = () => {
 

@@ -1,9 +1,10 @@
 import React from 'react';
-import MessagesImage from '../../styles/icons/Messages.svg'
+import MessagesImage from '../../styles/icons/Messages.svg';
+import IconWrap from './IconWrapper';
 
 let MessagesIcon = () => {
   return (
-        <img src={MessagesImage} alt="Mail Image"></img>);
+        <IconWrap src={MessagesImage} alt="Mail Image"></IconWrap>);
 };
 
 export default MessagesIcon;

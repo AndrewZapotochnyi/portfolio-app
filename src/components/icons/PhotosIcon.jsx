@@ -1,9 +1,10 @@
 import React from 'react';
 import PhotosImage from '../../styles/icons/Photos.svg'
+import IconWrap from './IconWrapper';
 
 let PhotosIcon = () => {
   return (
-        <img src={PhotosImage} alt="Mail Image"></img>);
+        <IconWrap src={PhotosImage} alt="Mail Image"></IconWrap>);
 };
 
 export default PhotosIcon;

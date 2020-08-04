@@ -1,9 +1,10 @@
 import React from 'react';
 import CalendarImage from '../../styles/icons/Contacts.svg'
+import IconWrap from './IconWrapper';
 
 let ContactsIcon = () => {
   return (
-        <img src={CalendarImage} alt="Calendar Image"></img>);
+        <IconWrap src={CalendarImage} alt="Calendar Image"></IconWrap>);
 };
 
 export default ContactsIcon;
