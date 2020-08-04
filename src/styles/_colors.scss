@@ -69,3 +69,39 @@ $font-main: 'SF-Compact', sans-serif;
 
 }
 
+.top-bar {
+
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+  
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: 15px;
+
+  position: absolute;
+  height: 24px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+
+  display: flex;
+  justify-content: flex-start;
+
+
+
+  .apple-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+  }
+
+  .top-menu-items{
+    margin-top: 6px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+

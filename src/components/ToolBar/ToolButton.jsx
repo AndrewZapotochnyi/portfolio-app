@@ -1,8 +1,7 @@
 import React from 'react';
 
-
-let ToolButton = ({icon, alt, title, modalName}) => (
-    <button onClick={console.log(modalName)}>{title}</button>
+let ToolButton = ({icon, alt, title, modalName}) => (  
+    (<div> {icon}</div>)
 );
 
 export default ToolButton;
