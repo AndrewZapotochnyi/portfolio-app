@@ -4,15 +4,33 @@ import styled from 'styled-components'
 const Dot = styled.div`
         position: absolute;
         color: black;
-        bottom: -15%;
-        border: 3px solid black;
-        border-radius: 50%;
+        bottom: -7px;
+        border: 3px solid #191919;
+        border-radius: 70%;
     `;
 
 const StyledButton = styled.button`
         cursor: pointer;
         position: relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        
     `;
+
+const StyledButtonActive = styled.button`
+        cursor: pointer;
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        
+    `;
+
 
 const Tooltip = styled.div`
         color: black;
@@ -24,7 +42,8 @@ const Tooltip = styled.div`
         padding: 7px 12px;
         border-radius: 10px;
         position: absolute;
-        top: -50%;
+        top: -80%;
+        box-shadow: 0 0 3px #999999;
     `;
 
 let ToolButton = ({Icon, title, modalName,}) => {
@@ -36,8 +55,22 @@ let ToolButton = ({Icon, title, modalName,}) => {
         console.log(modalName);
     };
 
+    if (isActive) {
+        return (
+            <StyledButtonActive
+                onMouseEnter={() => setIsHoovered(true)}
+                onMouseLeave={() => setIsHoovered(false)}
+                onClick={handleClick}
+            >
+                {isHoovered && <Tooltip>{title}</Tooltip>}
+                <Icon />
+                {isActive && <Dot/>}
+            </StyledButtonActive>
+        );
+    }
+
     return (
-        <StyledButton
+        <StyledButton className="tool-button"
             onMouseEnter={() => setIsHoovered(true)}
             onMouseLeave={() => setIsHoovered(false)}
             onClick={handleClick}
@@ -48,6 +81,5 @@ let ToolButton = ({Icon, title, modalName,}) => {
         </StyledButton>
     );
 }
-  
 
 export default ToolButton;
