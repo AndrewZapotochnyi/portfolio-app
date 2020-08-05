@@ -1,31 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
-import Tooltip from './Tooltip'
 
 const Dot = styled.div`
-        margin-top: -10px;
-        margin-left: -10px;
+        position: absolute;
         color: black;
-        font-size: 45px;
+        bottom: -15%;
+        border: 3px solid black;
+        border-radius: 50%;
     `;
 
-const ElementWrap = styled.div`
+const StyledButton = styled.button`
+        cursor: pointer;
+        position: relative;
+    `;
+
+const Tooltip = styled.div`
+        color: black;
+        font-size: 15px;
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        flex-flow: center; 
+        background: rgba(249, 249, 249, 0.7);
+        backdrop-filter: blur(30px);
+        padding: 7px 12px;
+        border-radius: 10px;
+        position: absolute;
+        top: -50%;
     `;
 
-let ToolButton = ({icon, alt, title, modalName,}) => 
+let ToolButton = ({Icon, title, modalName,}) => {
+    const [isHoovered, setIsHoovered] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
-    (
-        <ElementWrap>
-            <Tooltip>{title}</Tooltip>
-            {icon}
-            <Dot>.</Dot>
-        </ElementWrap>
+    const handleClick = () => {
+        setIsActive(!isActive);
+        console.log(modalName);
+    };
+
+    return (
+        <StyledButton
+            onMouseEnter={() => setIsHoovered(true)}
+            onMouseLeave={() => setIsHoovered(false)}
+            onClick={handleClick}
+        >
+            {isHoovered && <Tooltip>{title}</Tooltip>}
+            <Icon />
+            {isActive && <Dot/>}
+        </StyledButton>
     );
-
+}
   
 
 export default ToolButton;

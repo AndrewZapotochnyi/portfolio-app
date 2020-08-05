@@ -15,31 +15,31 @@ import PhotosIcon from '../icons/PhotosIcon';
 
 const tools = [
     {
-        icon: <CalendarIcon />,
+        Icon: CalendarIcon,
         title: 'Calendar',
         modalName: ModalNames.calendar,
     },{
-        icon: <ContactsIcon />,
+        Icon: ContactsIcon,
         title: 'Contacts',
         modalName: ModalNames.contacts,
     }, {
-      icon: <FinderIcon />,
+      Icon: FinderIcon,
       title: 'Finder',
       modalName: ModalNames.finder,
   }, {
-      icon: <MailIcon />,
+      Icon: MailIcon,
       title: 'Mail',
       modalName: ModalNames.mail,
   }, {
-      icon: <MessagesIcon />,
+      Icon: MessagesIcon,
       title: 'Messages',
       modalName: ModalNames.messages,
   }, {
-      icon: <SafariIcon />,
+      Icon: SafariIcon,
       title: 'Safari',
       modalName: ModalNames.safari,
   }, {
-      icon: <PhotosIcon />,
+      Icon: PhotosIcon,
       title: 'Photos',
       modalName: ModalNames.photos,
   },

@@ -6,20 +6,20 @@
 $font-main: 'SF-Compact', sans-serif;
 
 .App-Holder {
-  // background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //padding-bottom: 20px;
+  height: 100vh;
+  width: 100%;
+
   background-image: url(./images/Background.png);
-  position: relative;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
   /* Text: */
   font-family: $font-main;
 
-  height: 22px;
-  left: 0%;
-  right: 0%;
-  top: calc(50% - 12px/2 + 30px);
-  
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -35,12 +35,7 @@ $font-main: 'SF-Compact', sans-serif;
     display: flex;
     flex-direction: row;
     padding: 10px 15px;
-
-    position: absolute;
-    // width: 788px;
-    // height: 76px;
-    left: calc(50% - 788px/2 - 66px);
-    bottom: 12px;
+    margin-bottom: 20px;
 
     /* #02 Blur/Background 02 */
     background: rgba(249, 249, 249, 0.3);
@@ -80,11 +75,7 @@ $font-main: 'SF-Compact', sans-serif;
   padding-bottom: 5px;
   font-size: 15px;
 
-  position: absolute;
-  height: 24px;
-  left: 0px;
-  right: 0px;
-  top: 0px;
+  width: 100%;
 
   display: flex;
   justify-content: flex-start;
