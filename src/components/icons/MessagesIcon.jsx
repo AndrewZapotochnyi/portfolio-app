@@ -4,7 +4,7 @@ import IconWrap from './IconWrapper';
 
 let MessagesIcon = () => {
   return (
-        <IconWrap src={MessagesImage} alt="Mail Image"></IconWrap>);
+        <IconWrap src={MessagesImage} alt="Messages Image"></IconWrap>);
 };
 
 export default MessagesIcon;
