@@ -63,6 +63,22 @@ $font-main: 'SF-Compact', sans-serif;
     
   }
 
+  .modal-rnd {
+    color: black;
+    font-size: 15px;
+    display: flex;
+    color: black;
+    background: white;
+    backdrop-filter: blur(30px);
+    padding: 7px 12px;
+    border-radius: 10px;
+    width: 500px;
+  
+    top: -80%;
+    box-shadow: 0 0 3px #999999;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .top-bar {
