@@ -46,13 +46,14 @@ const Tooltip = styled.div`
         box-shadow: 0 0 3px #999999;
     `;
 
-let ToolButton = ({Icon, title, modalName,}) => {
+let ToolButton = ({Icon, title, modalName, windowToggle}) => {
     const [isHoovered, setIsHoovered] = useState(false);
     const [isActive, setIsActive] = useState(false);
 
     const handleClick = () => {
         setIsActive(!isActive);
         console.log(modalName);
+        windowToggle();
     };
 
     if (isActive) {
