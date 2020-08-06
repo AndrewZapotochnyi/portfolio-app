@@ -21,6 +21,7 @@ const ButtonActive = styled.div`
   // display: flex;
   // justify-content: center;
   // align-items: center;
+  margin-left: 20px;
   `;
 
 const ButtonInActive = styled.div`
@@ -30,6 +31,7 @@ const ButtonInActive = styled.div`
   // display: flex;
   // justify-content: center;
   // align-items: center;
+  margin-left: 20px;
 `;
 
 const DropdownList = styled.ul`
@@ -43,6 +45,11 @@ const ListItem = styled.li`
   
   margin-left: 5px;
   margin-top: 10px;
+`;
+
+const MenuItems = styled.div`
+  margin-bottom: 5px;
+
 `;
 
 let TopBar = () => {
@@ -74,9 +81,9 @@ let TopBar = () => {
       </Dropdown>}
       
 
-      <div className="top-menu-items">Finder</div>
-      <div className="top-menu-items">File</div>
-      <div className="top-menu-items">Edit</div>
+      <MenuItems className="top-menu-items">Finder</MenuItems>
+      <MenuItems className="top-menu-items">File</MenuItems>
+      <MenuItems className="top-menu-items">Edit</MenuItems>
       
       
     

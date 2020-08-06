@@ -10,7 +10,7 @@ $font-main: 'SF-Compact', sans-serif;
   flex-direction: column;
   justify-content: space-between;
   //padding-bottom: 20px;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 
   background-image: url(./images/Background.png);
@@ -73,10 +73,6 @@ $font-main: 'SF-Compact', sans-serif;
   background: rgba(0, 0, 0, 0.05);
   box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(1px);
-  
-  // padding-top: 5px;
-  padding-left: 50px;
-  // padding-bottom: 5px;
   font-size: 15px;
 
   width: 100%;
@@ -85,12 +81,10 @@ $font-main: 'SF-Compact', sans-serif;
   display: flex;
   justify-content: flex-start;
 
-
-
   .apple-logo {
-    width: 20px;
-    height: 20px;
-    margin-top: 1px;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
   }
 
   .top-menu-items{

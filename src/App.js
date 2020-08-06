@@ -8,7 +8,7 @@ import DraggableWindow from './components/Modal/DraggableModal';
 
 function App() {
 
-  const [windowIsOpen, setWindowIsOpen] = useState(true);
+  const [windowIsOpen, setWindowIsOpen] = useState(false);
 
   const windowToggle = () => {
     setWindowIsOpen(!windowIsOpen);
