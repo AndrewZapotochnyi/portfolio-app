@@ -17,7 +17,9 @@ class DraggableWindow extends React.Component {
           onStop={this.handleStop}
          >
          <div className="drag">
-           <ModalWindow></ModalWindow>
+           <ModalWindow>
+               {this.props.children}
+           </ModalWindow>
          </div>
          </ Draggable>
       )

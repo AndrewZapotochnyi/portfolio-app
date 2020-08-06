@@ -52,7 +52,7 @@ const BodyDiv = styled.div`
 `;
 
 
-let ModalWindow = () => {
+let ModalWindow = ({children}) => {
 
     return (
         <WindowStyle>
@@ -61,7 +61,9 @@ let ModalWindow = () => {
             <YellowButton />
             <GreenButton />
           </HeaderDiv>
-          <BodyDiv />
+            <BodyDiv>
+                {children}
+            </BodyDiv>
         </WindowStyle>
     );
 }
