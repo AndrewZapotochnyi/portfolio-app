@@ -45,9 +45,9 @@ const tools = [
   },
 ]
 
-const ToolBar = (props) => 
+const ToolBar = ({addModal, removeModal}) =>
     (<div className="tool-bar">
-        {tools.map((tool) => <ToolButton {...tool} windowToggle={props.windowToggle}/>)}
+        {tools.map((tool) => <ToolButton key={tool.modalName} {...tool} addModal={addModal} removeModal={removeModal}/>)}
     </div>);
 
 
