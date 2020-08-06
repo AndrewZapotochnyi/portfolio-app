@@ -45,9 +45,9 @@ const tools = [
   },
 ]
 
-const ToolBar = () => 
+const ToolBar = (props) => 
     (<div className="tool-bar">
-        {tools.map((tool) => <ToolButton {...tool} />)}
+        {tools.map((tool) => <ToolButton {...tool} windowToggle={props.windowToggle}/>)}
     </div>);
 
 
