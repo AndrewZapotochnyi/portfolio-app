@@ -6,7 +6,6 @@ import ToolBar from './components/ToolBar/ToolBar';
 import TopBar from './components/TopBar/TopBar';
 import DraggableResizable from './components/Modal/DraggableResizable';
 import {ModalNames} from "./components/constants";
-// import ModalRnd from './components/Modal/ModalRND';
 
 ///// CONTENT FOR MODAL WINDOWS /////
 
@@ -57,7 +56,15 @@ function App() {
         <TopBar></TopBar>
         
 
-        {modalNames.map( modalName => (!!modalsContent[modalName] && <DraggableResizable name={modalName}>{modalsContent[modalName]}</DraggableResizable>))}
+        {modalNames.map( modalName => (
+          !!modalsContent[modalName] && 
+            <DraggableResizable 
+            name={modalName}
+            addModal={(name) => dispatch(addModalActionCreator(name))}
+            removeModal={(name) => dispatch(removeModalNameActionCreator(name))}
+            >
+              {modalsContent[modalName]}
+            </DraggableResizable>))}
     
         <ToolBar
             addModal={(name) => dispatch(addModalActionCreator(name))}

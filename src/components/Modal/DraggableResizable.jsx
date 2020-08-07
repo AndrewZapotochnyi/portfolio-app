@@ -4,66 +4,86 @@ import { Rnd } from "react-rnd";
 import {ModalNames} from "../constants";
 import styled from 'styled-components'
 
-// STYLES 
-const WindowStyle = styled.div`
-    color: black;
-    font-size: 15px;
-    display: flex;
-    color: black;
-    background: white;
-    backdrop-filter: blur(30px);
-    padding: 7px 12px;
-    border-radius: 10px;
-    width: 500px;
-  
-    top: -80%;
-    box-shadow: 0 0 3px #999999;
-    flex-direction: column;
-`;
+import WindowButton from './WindowButton';
 
-const CloseButton = styled.div`
-  background: #FF5E57;
-  border: 5px solid rgba(153, 153, 153, 0.2);
-  border-radius: 50%;
-  box-sizing: border-box;
-  margin-right: 5px;
-`;
-
-const YellowButton = styled.div`
-  background: #FEBC2E;
-  border: 5px solid rgba(254, 188, 46, 0.2);
-  border-radius: 50%;
-  box-sizing: border-box;
-  margin-right: 5px;
-`;
-
-const GreenButton = styled.div`
-  background: #28C73E;
-  border: 5px solid rgba(40, 199, 62, 0.2);
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-right: 5px;
-`;
-
-const HeaderDiv = styled.div`
+const TransparentHeaderDiv = styled.div`
   display:flex;
   width: 100%;
-  height: 10px;
+  height: 52px;
   justify-content: space-between;
+  border-bottom: 1px solid grey;
+  
+  align-items: stretch;
+`;
+
+const WhiteHeaderDiv = styled.div`
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  height: 28px;
+  justify-content: space-between;
+  border-bottom: 1px solid #CCCCCC;
+ 
+  align-items: stretch;
 `;
 
 const ButtonsDiv = styled.div`
-  width: 100px;
+  width: 150px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+`;
+
+const HeaderEnd = styled.div`
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+`;
+
+const TitleHeader = styled.div`
+  
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  
+  font-size: 15px;
+  color: #191919;
+  opacity: 0.6;
+  
 `;
 
 const BodyDiv = styled.div`
   padding: 10px;
   display:flex;
-  height: 500px;
+  height: 100%;
+  background: #FBFBFB;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
+const TransparentWindowStyle = {
+  display: "flex",
+  border: "solid 1px #ddd",
+  background: "rgba(249, 249, 249, 0.7)",
+  padding: "0"
+};
+
+const WhiteWindowStyle = {
+  display: "flex",
+  border: "solid 1px #ddd",
+  background: "rgba(255, 255, 255)",
+  padding: "0"
+  
+}
 
 // MODAL CONTENT
 const modalsContent = {
@@ -77,43 +97,43 @@ const modalsContent = {
   [ModalNames.messages]: <div>Messages Content</div>
 };
 
-const style = {
-  display: "flex",
-  // alignItems: "center",
-  // justifyContent: "center",
-  border: "solid 1px #ddd",
-  background: "#f0f0f0",
-};
+const DraggableResizable = ({name, addModal, removeModal}) => {
 
-const DraggableResizable = ({name}) => {
-
-  let currentContent = modalsContent[name] ;
+  const currentContent = modalsContent[name] ;
+  const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
 
   return <Rnd
-    style={style}
+    style={WhiteWindowStyle}
     className="modal-rnd"
+    minWidth= "300"
+    minHeight= "200"
+    // enableResizing= "False"
     default={{
-      x: 0,
-      y: 0,
-      width: 320,
-      height: 200
+      x: 200,
+      y: 200,
+      width: 320, 
+      height: 200,
     }}
   >
-    
-  <HeaderDiv>
-    <ButtonsDiv>
-      <CloseButton />
-      <YellowButton />
-      <GreenButton />
-    </ButtonsDiv>
-    {name}
-    <div></div>
-  </HeaderDiv>
-  <BodyDiv>
-    {currentContent}
-  </BodyDiv>
-        
 
+    <WhiteHeaderDiv >
+      <ButtonsDiv>
+        
+        <WindowButton name="close"/>
+        <WindowButton name="minimize"/>
+        <WindowButton name="zoom"/>
+        {/* <WindowButton name="deselected"/> */}
+        <div></div>
+      </ButtonsDiv>
+        <TitleHeader> {title}</TitleHeader>
+      <HeaderEnd></HeaderEnd>
+      
+      </WhiteHeaderDiv >
+      
+    {/* </WhiteHeaderDiv> */}
+    <BodyDiv>
+      {currentContent}
+    </BodyDiv>
   </Rnd>
 };
 
