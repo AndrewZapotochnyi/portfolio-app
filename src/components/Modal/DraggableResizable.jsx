@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import { Rnd } from "react-rnd";
 import {ModalNames} from "../constants";
 import styled from 'styled-components'
@@ -97,12 +96,13 @@ const modalsContent = {
   [ModalNames.messages]: <div>Messages Content</div>
 };
 
-const DraggableResizable = ({name, addModal, removeModal}) => {
+const DraggableResizable = ({name, removeModal}) => {
 
   const currentContent = modalsContent[name] ;
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
 
   return <Rnd
+    disableDragging
     style={WhiteWindowStyle}
     className="modal-rnd"
     minWidth= "300"
@@ -118,8 +118,7 @@ const DraggableResizable = ({name, addModal, removeModal}) => {
 
     <WhiteHeaderDiv >
       <ButtonsDiv>
-        
-        <WindowButton name="close"/>
+        <button onClick={removeModal}><WindowButton name="close"/></button>
         <WindowButton name="minimize"/>
         <WindowButton name="zoom"/>
         {/* <WindowButton name="deselected"/> */}

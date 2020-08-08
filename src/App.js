@@ -8,7 +8,6 @@ import DraggableResizable from './components/Modal/DraggableResizable';
 import {ModalNames} from "./components/constants";
 
 ///// CONTENT FOR MODAL WINDOWS /////
-
 const modalsContent = {
   [ModalNames.calendar]: <div>Calendar Content</div>,
   [ModalNames.contacts]: <div>Contacts Content</div>,
@@ -26,15 +25,6 @@ const initialState = [];
 
 const ADD_MODAL_NAME = 'ADD_MODAL_NAME';
 const REMOVE_MODAL_NAME = 'REMOVE_MODAL_NAME';
-
-const addModalActionCreator = (modalName) => ({
-  type: ADD_MODAL_NAME,
-  modalName,
-});
-const removeModalNameActionCreator = (modalName) => ({
-  type: REMOVE_MODAL_NAME,
-  modalName,
-});
 
 function reducer(state, action) {
   switch (action.type) {
@@ -59,16 +49,23 @@ function App() {
         {modalNames.map( modalName => (
           !!modalsContent[modalName] && 
             <DraggableResizable 
-            name={modalName}
-            addModal={(name) => dispatch(addModalActionCreator(name))}
-            removeModal={(name) => dispatch(removeModalNameActionCreator(name))}
-            >
-              {modalsContent[modalName]}
-            </DraggableResizable>))}
+              name={modalName}
+              removeModal={(name) => dispatch({
+                  type: REMOVE_MODAL_NAME,
+                  modalName: name,
+                })}
+            />))}
     
         <ToolBar
-            addModal={(name) => dispatch(addModalActionCreator(name))}
-            removeModal={(name) => dispatch(removeModalNameActionCreator(name))}
+
+            addModal={(name) => dispatch({
+              type: ADD_MODAL_NAME,
+              modalName: name,
+            })}
+            removeModal={(name) => dispatch({
+              type: REMOVE_MODAL_NAME,
+              modalName: name,
+            })}
         />
 
       </div>

@@ -28,7 +28,7 @@ const StyledButtonActive = styled.button`
         align-items: center;
         background-color: transparent;
         border: none;
-        
+       
     `;
 
 

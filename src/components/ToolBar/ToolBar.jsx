@@ -43,11 +43,11 @@ const tools = [
       title: 'Photos',
       modalName: ModalNames.photos,
   },
-]
+];
 
-const ToolBar = ({addModal, removeModal}) =>
+const ToolBar = (props) =>
     (<div className="tool-bar">
-        {tools.map((tool) => <ToolButton key={tool.modalName} {...tool} addModal={addModal} removeModal={removeModal}/>)}
+        {tools.map((tool) => <ToolButton key={tool.modalName} {...tool} {...props}/>)}
     </div>);
 
 

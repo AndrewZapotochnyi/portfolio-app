@@ -1,7 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
-import { Rnd } from "react-rnd";
-import {ModalNames} from "../constants";
 import styled from 'styled-components';
 
 import CloseButton from '../../styles/buttons/Close.png';
@@ -27,7 +24,6 @@ const CloseButtonIcon = styled.img`
 `;
 
 const MidButton = styled.img`
-  
   width: 32px;
   height: 24px;
   margin-left: 14px;
@@ -36,13 +32,12 @@ const MidButton = styled.img`
 `;
 
 
-const WindowButton = ({name}) => {
+const WindowButton = ({ name }) =>
+  name === "deselected" ? (
+      <MidButton src={windowButtons[name]}/>
+  ): (
+      <CloseButtonIcon src={windowButtons[name]}/>
+  );
 
-  if (name === "deselected") {
-    return <MidButton src={windowButtons[name]}></MidButton>;
-  }
-
-  return <CloseButtonIcon src={windowButtons[name]}></CloseButtonIcon>;
-};
 
 export default WindowButton;
