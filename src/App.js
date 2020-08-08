@@ -4,38 +4,27 @@ import './styles/App.scss';
 import './components/ToolBar/ToolBar'
 import ToolBar from './components/ToolBar/ToolBar';
 import TopBar from './components/TopBar/TopBar';
-import DraggableWindow from './components/Modal/DraggableModal';
+import DraggableResizable from './components/Modal/DraggableResizable';
 import {ModalNames} from "./components/constants";
 
+///// CONTENT FOR MODAL WINDOWS /////
 const modalsContent = {
-  [ModalNames.calendar]: <div>Calendar</div>,
-  [ModalNames.contacts]: <div>Contacts</div>,
+  [ModalNames.calendar]: <div>Calendar Content</div>,
+  [ModalNames.contacts]: <div>Contacts Content</div>,
+  [ModalNames.bucket]: <div>Bucket Content</div>,
+  [ModalNames.finder]: <div>Finder Content</div>,
+  [ModalNames.mail]: <div>Mail Content</div>,
+  [ModalNames.safari]: <div>Safari Content</div>,
+  [ModalNames.photos]: <div>Photos Content</div>,
+  [ModalNames.messages]: <div>Messages Content</div>
 };
+
+///// STATE & REDUCER MANAGEMENT /////
 
 const initialState = [];
 
-// const state = {
-//   [ModalNames.calendar]: {
-//     x: 0,
-//     y: 0,
-//   },
-//   [ModalNames.contacts]: {
-//     x: 10,
-//     y: 10,
-//   },
-// };
-
 const ADD_MODAL_NAME = 'ADD_MODAL_NAME';
 const REMOVE_MODAL_NAME = 'REMOVE_MODAL_NAME';
-
-const addModalActionCreator = (modalName) => ({
-  type: ADD_MODAL_NAME,
-  modalName,
-});
-const removeModalNameActionCreator = (modalName) => ({
-  type: REMOVE_MODAL_NAME,
-  modalName,
-});
 
 function reducer(state, action) {
   switch (action.type) {
@@ -55,12 +44,28 @@ function App() {
     <div className="App">
       <div className="App-Holder">
         <TopBar></TopBar>
+        
 
-        {modalNames.map( modalName => (!!modalsContent[modalName] && <DraggableWindow>{modalsContent[modalName]}</DraggableWindow>))}
+        {modalNames.map( modalName => (
+          !!modalsContent[modalName] && 
+            <DraggableResizable 
+              name={modalName}
+              removeModal={(name) => dispatch({
+                  type: REMOVE_MODAL_NAME,
+                  modalName: name,
+                })}
+            />))}
     
         <ToolBar
-            addModal={(name) => dispatch(addModalActionCreator(name))}
-            removeModal={(name) => dispatch(removeModalNameActionCreator(name))}
+
+            addModal={(name) => dispatch({
+              type: ADD_MODAL_NAME,
+              modalName: name,
+            })}
+            removeModal={(name) => dispatch({
+              type: REMOVE_MODAL_NAME,
+              modalName: name,
+            })}
         />
 
       </div>

@@ -1,15 +1,20 @@
 @font-face {
   font-family: 'SF-Compact';
+  src: url("./fonts/SF-Compact.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
   src: url("./fonts/SF-Pro.ttf") format("truetype");
 }
 
-$font-main: 'SF-Compact', sans-serif;
+$font-main: 'SF Pro Text', sans-serif;
 
 .App-Holder {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  //padding-bottom: 20px;
+
   height: 100%;
   width: 100%;
 
@@ -17,16 +22,12 @@ $font-main: 'SF-Compact', sans-serif;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-  /* Text: */
-  font-family: $font-main;
 
+  font-family: $font-main;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
   line-height: 12px;
-
-
-  /* #01 Colors/90% */
   color: white;
 
   .tool-bar {
@@ -63,6 +64,24 @@ $font-main: 'SF-Compact', sans-serif;
     
   }
 
+  .modal-rnd {
+    background-color: rgba(249, 249, 249, 0.7);
+    color: black;
+    font-size: 15px;
+    display: flex;
+    color: black;
+   
+    backdrop-filter: blur(30px);
+    padding: 7px 12px;
+    border-radius: 10px;
+    width: 500px;
+    
+  
+    top: -80%;
+    box-shadow: 0 0 3px #999999;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .top-bar {
