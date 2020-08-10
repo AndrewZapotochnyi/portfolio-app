@@ -31,7 +31,6 @@ const StyledButtonActive = styled.button`
        
     `;
 
-
 const Tooltip = styled.div`
         color: black;
         font-size: 15px;
@@ -46,20 +45,25 @@ const Tooltip = styled.div`
         box-shadow: 0 0 3px #999999;
     `;
 
-let ToolButton = ({Icon, title, modalName, addModal, removeModal}) => {
+let ToolButton = ({Icon, title, modalName, addModal, removeModal, modalsOpenedState, setModalsOpenedState}) => {
     const [isHoovered, setIsHoovered] = useState(false);
     const [isActive, setIsActive] = useState(false);
 
+    let newState = modalsOpenedState;
+
     const handleClick = () => {
         if (!isActive) {
-            addModal(modalName);
+            addModal(modalName);       
+            newState[modalName] = true;       
         } else {
             removeModal(modalName);
+            newState[modalName] = false;
         }
+        setModalsOpenedState(newState);
         setIsActive(!isActive);
     };
 
-    if (isActive) {
+    if (modalsOpenedState[modalName]) {
         return (
             <StyledButtonActive
                 onMouseEnter={() => setIsHoovered(true)}
@@ -68,7 +72,7 @@ let ToolButton = ({Icon, title, modalName, addModal, removeModal}) => {
             >
                 {isHoovered && <Tooltip>{title}</Tooltip>}
                 <Icon />
-                {isActive && <Dot/>}
+                {modalsOpenedState[modalName] && <Dot/>}
             </StyledButtonActive>
         );
     }
@@ -81,7 +85,7 @@ let ToolButton = ({Icon, title, modalName, addModal, removeModal}) => {
         >
             {isHoovered && <Tooltip>{title}</Tooltip>}
             <Icon />
-            {isActive && <Dot/>}
+            {modalsOpenedState[modalName] && <Dot/>}
         </StyledButton>
     );
 }

@@ -96,12 +96,19 @@ const modalsContent = {
   [ModalNames.messages]: <div>Messages Content</div>
 };
 
-const DraggableResizable = ({name, removeModal}) => {
+const DraggableResizable = ({name, removeModal, modalsOpenedState, setModalsOpenedState }) => {
 
   const currentContent = modalsContent[name] ;
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
-
   const [draggingDisabled, setDraggingDisabled] = useState(false);
+
+  const removeModalHandle = () => {
+    removeModal(name);
+
+    let newState = modalsOpenedState;
+    newState[name] = false;
+    setModalsOpenedState(newState);
+  }
 
   return <Rnd
     disableDragging={draggingDisabled}
@@ -122,7 +129,7 @@ const DraggableResizable = ({name, removeModal}) => {
     <WhiteHeaderDiv >
       <ButtonsDiv>
         <button 
-          onClick={() => removeModal(name)}
+          onClick={() => removeModalHandle()}
           
         >
           <WindowButton 
