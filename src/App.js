@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, createContext, useContext} from 'react';
 import './App.css';
 import './styles/App.scss';
 import './components/ToolBar/ToolBar'
@@ -20,7 +20,6 @@ const modalsContent = {
 };
 
 ///// STATE & REDUCER MANAGEMENT /////
-
 const initialState = [];
 
 const ADD_MODAL_NAME = 'ADD_MODAL_NAME';
@@ -37,15 +36,27 @@ function reducer(state, action) {
   }
 }
 
+///// CONTEXT - OPENED WINDOWS
+const colors = {
+  blue: "#03619c",
+  yellow: "#8c8f03",
+  red: "#9c0312"
+};
+
+
+
 function App() {
   const [modalNames, dispatch] = useReducer(reducer, initialState);
+
+  
+  
+  
 
   return (
     <div className="App">
       <div className="App-Holder">
         <TopBar></TopBar>
-        
-
+    
         {modalNames.map( modalName => (
           !!modalsContent[modalName] && 
             <DraggableResizable 
@@ -54,10 +65,11 @@ function App() {
                   type: REMOVE_MODAL_NAME,
                   modalName: name,
                 })}
+              key={modalName}
             />))}
     
+    
         <ToolBar
-
             addModal={(name) => dispatch({
               type: ADD_MODAL_NAME,
               modalName: name,
@@ -67,6 +79,7 @@ function App() {
               modalName: name,
             })}
         />
+      
 
       </div>
     </div>

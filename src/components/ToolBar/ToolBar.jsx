@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useReducer, createContext, useContext} from 'react';
 import './ToolButton'
 import ToolButton from './ToolButton';
 import { ModalNames} from "../constants";
+
 
 /// ICONS ///
 import CalendarIcon from '../icons/CalendarIcon';
@@ -46,9 +47,15 @@ const tools = [
 ];
 
 const ToolBar = (props) =>
-    (<div className="tool-bar">
-        {tools.map((tool) => <ToolButton key={tool.modalName} {...tool} {...props}/>)}
-    </div>);
+
+
+    (
+    
+        <div className="tool-bar">
+            {tools.map((tool) => <ToolButton key={tool.modalName} {...tool} {...props}/>)}
+        </div>
+ 
+    );
 
 
 export default ToolBar;

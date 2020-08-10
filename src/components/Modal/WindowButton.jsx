@@ -32,12 +32,23 @@ const MidButton = styled.img`
 `;
 
 
-const WindowButton = ({ name }) =>
-  name === "deselected" ? (
-      <MidButton src={windowButtons[name]}/>
-  ): (
-      <CloseButtonIcon src={windowButtons[name]}/>
-  );
+const WindowButton = ({ name, setDraggingDisabled }) => {
 
+
+
+  return (
+    name === "deselected" ? (
+        <MidButton 
+          src={windowButtons[name]}
+          
+        />
+    ): (
+        <CloseButtonIcon src={windowButtons[name]}
+         
+        /> )
+  
+  )
+
+};
 
 export default WindowButton;

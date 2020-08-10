@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Rnd } from "react-rnd";
 import {ModalNames} from "../constants";
 import styled from 'styled-components'
@@ -101,8 +101,10 @@ const DraggableResizable = ({name, removeModal}) => {
   const currentContent = modalsContent[name] ;
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
 
+  const [draggingDisabled, setDraggingDisabled] = useState(false);
+
   return <Rnd
-    disableDragging
+    disableDragging={draggingDisabled}
     style={WhiteWindowStyle}
     className="modal-rnd"
     minWidth= "300"
@@ -114,14 +116,21 @@ const DraggableResizable = ({name, removeModal}) => {
       width: 320, 
       height: 200,
     }}
+    
   >
 
     <WhiteHeaderDiv >
       <ButtonsDiv>
-        <button onClick={removeModal}><WindowButton name="close"/></button>
+        <button 
+          onClick={() => removeModal(name)}
+          
+        >
+          <WindowButton 
+          name="close"
+          setDraggingDisabled={setDraggingDisabled}/>
+        </button>
         <WindowButton name="minimize"/>
         <WindowButton name="zoom"/>
-        {/* <WindowButton name="deselected"/> */}
         <div></div>
       </ButtonsDiv>
         <TitleHeader> {title}</TitleHeader>
@@ -129,8 +138,10 @@ const DraggableResizable = ({name, removeModal}) => {
       
       </WhiteHeaderDiv >
       
-    {/* </WhiteHeaderDiv> */}
-    <BodyDiv>
+    <BodyDiv
+      onMouseOver={() => setDraggingDisabled(true)}
+      onMouseLeave={() => setDraggingDisabled(false)}
+    >
       {currentContent}
     </BodyDiv>
   </Rnd>
