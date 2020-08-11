@@ -16,47 +16,37 @@ import WindowButton from './WindowButton';
 // `;
 
 const WhiteHeaderDiv = styled.div`
+  position: relative;
   display:flex;
   flex-direction: row;
-  width: 100%;
-  height: 28px;
-  justify-content: space-between;
-  border-bottom: 1px solid #CCCCCC;
- 
+  justify-content: center;
+  border-bottom: 1px solid #CCC;
   align-items: stretch;
+  padding: 0 10px;
 `;
 
 const ButtonsDiv = styled.div`
-  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
-`;
-
-const HeaderEnd = styled.div`
-  width: 150px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 10px;
 `;
 
 const TitleHeader = styled.div`
-  
   display: flex;
   align-items: center;
-  margin-left: 20px;
   
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
+  line-height: 25px;
   
   font-size: 15px;
   color: #191919;
-  opacity: 0.6;
-  
+  opacity: 0.6;  
 `;
 
 const BodyDiv = styled.div`
@@ -138,10 +128,8 @@ const DraggableResizable = ({name, removeModal, modalsOpenedState, setModalsOpen
         </button>
         <WindowButton name="minimize"/>
         <WindowButton name="zoom"/>
-        <div></div>
       </ButtonsDiv>
-        <TitleHeader> {title}</TitleHeader>
-      <HeaderEnd></HeaderEnd>
+      <TitleHeader> {title}</TitleHeader>
       
       </WhiteHeaderDiv >
       
