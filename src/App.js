@@ -6,7 +6,8 @@ import ToolBar from './components/ToolBar/ToolBar';
 import TopBar from './components/TopBar/TopBar';
 import DraggableResizable from './components/Modal/DraggableResizable';
 import {ModalNames} from "./components/constants";
-
+import CalendarIcon from "./components/icons/CalendarIcon";
+import ToolButton from "./components/ToolBar/ToolButton";
 
 ///// CONTENT FOR MODAL WINDOWS /////
 const modalsContent = {
@@ -48,7 +49,39 @@ function reducer(state, action) {
   }
 }
 
+const modals = {
+  [ModalNames.calendar]: {
+    Content: <div>Calendar Content</div>,
+    isActive: false,
+    toolButton: {
+      Icon: CalendarIcon,
+      title: 'Calendar',
+    },
+    x: 0,
+    y: 0,
+    width: 200,
+    height: 300,
+  },
+};
+
 function App() {
+  const [modals, setModals] = useState(modals);
+  const openModal = (name) => setModals({
+    ...modals,
+    [name]: {
+      ...modals[name],
+      isActive: true
+    }
+  });
+  const closeModal = (name) => setModals({
+    ...modals,
+    [name]: {
+      ...modals[name],
+      isActive: false
+    }
+  });
+
+
   const [modalNames, dispatch] = useReducer(reducer, initialState);
 
   const [modalsOpenedState, setModalsOpenedState] = useState(modalsOpened);
@@ -56,17 +89,16 @@ function App() {
   const addModal = (name) => dispatch({
     type: ADD_MODAL_NAME,
     modalName: name,
-  })
+  });
 
   const removeModal = (name) => dispatch({
     type: REMOVE_MODAL_NAME,
     modalName: name,
-  })
-
+  });
   
   return (
     <div className="App">
-      <div className="App-Holder">
+      < className="App-Holder">
         <TopBar></TopBar>
     
         {modalNames.map( modalName => (
@@ -84,7 +116,17 @@ function App() {
             removeModal={removeModal}
             modalsOpenedState={modalsOpenedState}
             setModalsOpenedState={setModalsOpenedState}
-        />
+        >
+          {/*{tools.map((tool) =>*/}
+          {/*    <ToolButton*/}
+          {/*        key={tool.modalName}*/}
+
+          {/*        {...tool}*/}
+          {/*        {...props}*/}
+          {/*    />)}*/}
+        </ToolBar>
+
+
 
       </div>
     </div>
