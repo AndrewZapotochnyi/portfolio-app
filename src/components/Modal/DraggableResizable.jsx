@@ -5,15 +5,15 @@ import styled from 'styled-components'
 
 import WindowButton from './WindowButton';
 
-const TransparentHeaderDiv = styled.div`
-  display:flex;
-  width: 100%;
-  height: 52px;
-  justify-content: space-between;
-  border-bottom: 1px solid grey;
+// const TransparentHeaderDiv = styled.div`
+//   display:flex;
+//   width: 100%;
+//   height: 52px;
+//   justify-content: space-between;
+//   border-bottom: 1px solid grey;
   
-  align-items: stretch;
-`;
+//   align-items: stretch;
+// `;
 
 const WhiteHeaderDiv = styled.div`
   display:flex;
@@ -69,12 +69,12 @@ const BodyDiv = styled.div`
   border-bottom-right-radius: 10px;
 `;
 
-const TransparentWindowStyle = {
-  display: "flex",
-  border: "solid 1px #ddd",
-  background: "rgba(249, 249, 249, 0.7)",
-  padding: "0"
-};
+// const TransparentWindowStyle = {
+//   display: "flex",
+//   border: "solid 1px #ddd",
+//   background: "rgba(249, 249, 249, 0.7)",
+//   padding: "0"
+// };
 
 const WhiteWindowStyle = {
   display: "flex",

@@ -1,4 +1,4 @@
-import React, {useReducer, createContext, useContext, useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import './App.css';
 import './styles/App.scss';
 import './components/ToolBar/ToolBar'
@@ -6,7 +6,7 @@ import ToolBar from './components/ToolBar/ToolBar';
 import TopBar from './components/TopBar/TopBar';
 import DraggableResizable from './components/Modal/DraggableResizable';
 import {ModalNames} from "./components/constants";
-import WindowContext from './helpers/Context';
+
 
 ///// CONTENT FOR MODAL WINDOWS /////
 const modalsContent = {
@@ -78,10 +78,6 @@ function App() {
               modalsOpenedState={modalsOpenedState}
               setModalsOpenedState={setModalsOpenedState}
             />))}
-    
-    
-   
-        <button onClick={() => setModalsOpenedState({...modalsOpenedState, "CALENDAR": true})}>Hello </button>
         
         <ToolBar
             addModal={addModal}
@@ -89,10 +85,6 @@ function App() {
             modalsOpenedState={modalsOpenedState}
             setModalsOpenedState={setModalsOpenedState}
         />
-
-
-          
-    
 
       </div>
     </div>

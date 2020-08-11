@@ -1,8 +1,7 @@
-import React, {useReducer, createContext, useContext} from 'react';
+import React from 'react';
 import './ToolButton'
 import ToolButton from './ToolButton';
 import { ModalNames} from "../constants";
-import WindowContext from '../../helpers/Context';
 
 
 /// ICONS ///

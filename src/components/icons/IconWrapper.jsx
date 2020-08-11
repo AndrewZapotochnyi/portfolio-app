@@ -1,5 +1,3 @@
-import React from 'react';
-import CalendarImage from '../../styles/icons/Calendar.svg'
 import styled from 'styled-components'
 
 const IconWrap = styled.img`

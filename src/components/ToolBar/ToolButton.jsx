@@ -52,14 +52,18 @@ let ToolButton = ({Icon, title, modalName, addModal, removeModal, modalsOpenedSt
     let newState = modalsOpenedState;
 
     const handleClick = () => {
+        console.log("Click");
+
         if (!isActive) {
             addModal(modalName);       
-            newState[modalName] = true;       
+            newState[modalName] = true; 
+            setModalsOpenedState(newState);      
         } else {
             removeModal(modalName);
             newState[modalName] = false;
+            setModalsOpenedState(newState);
         }
-        setModalsOpenedState(newState);
+        
         setIsActive(!isActive);
     };
 

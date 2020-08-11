@@ -65,11 +65,11 @@ let TopBar = () => {
       
       { !isActive && 
       <ButtonInActive onClick={handleClick} >
-        <img src={logo} className="apple-logo"></img>
+        <img src={logo} alt="logo" className="apple-logo"></img>
       </ButtonInActive> }
       { isActive && 
       <ButtonActive onClick={handleClick} >
-        <img src={logo} className="apple-logo"></img>
+        <img src={logo} alt="active-logo" className="apple-logo"></img>
       </ButtonActive> }
 
       {isActive && <Dropdown> 
