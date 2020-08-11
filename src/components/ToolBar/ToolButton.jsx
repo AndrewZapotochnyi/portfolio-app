@@ -47,24 +47,15 @@ const Tooltip = styled.div`
 
 let ToolButton = ({Icon, title, modalName, addModal, removeModal, modalsOpenedState, setModalsOpenedState}) => {
     const [isHoovered, setIsHoovered] = useState(false);
-    const [isActive, setIsActive] = useState(false);
-
-    let newState = modalsOpenedState;
 
     const handleClick = () => {
-        console.log("Click");
-
-        if (!isActive) {
-            addModal(modalName);       
-            newState[modalName] = true; 
-            setModalsOpenedState(newState);      
+        if (!modalsOpenedState[modalName]) {
+            addModal(modalName);
+            setModalsOpenedState({...modalsOpenedState, [modalName]: true});
         } else {
             removeModal(modalName);
-            newState[modalName] = false;
-            setModalsOpenedState(newState);
+            setModalsOpenedState({...modalsOpenedState, [modalName]: false});
         }
-        
-        setIsActive(!isActive);
     };
 
     if (modalsOpenedState[modalName]) {
