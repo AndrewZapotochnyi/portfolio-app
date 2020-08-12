@@ -1,97 +1,36 @@
 import React from 'react';
 import './ToolButton'
 import ToolButton from './ToolButton';
-import { ModalNames} from "../constants";
+import styled from 'styled-components'
 
+const ToolBarStyle = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    background: rgba(249, 249, 249, 0.3);
+    background-blend-mode: luminosity;
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(81.5485px);
+    border-radius: 20px;
+`;
 
-/// ICONS ///
-import CalendarIcon from '../icons/CalendarIcon';
-import ContactsIcon from '../icons/ContactsIcon';
-import FinderIcon from '../icons/FinderIcon';
-import MailIcon from '../icons/MailIcon';
-import MessagesIcon from '../icons/MessagesIcon';
-import SafariIcon from '../icons/SafariIcon';
-import PhotosIcon from '../icons/PhotosIcon';
-////////////
-
-// const tools = [
-//     {
-//         Icon: CalendarIcon,
-//         title: 'Calendar',
-//         modalName: ModalNames.calendar,
-//     },{
-//         Icon: ContactsIcon,
-//         title: 'Contacts',
-//         modalName: ModalNames.contacts,
-//     }, {
-//       Icon: FinderIcon,
-//       title: 'Finder',
-//       modalName: ModalNames.finder,
-//   }, {
-//       Icon: MailIcon,
-//       title: 'Mail',
-//       modalName: ModalNames.mail,
-//   }, {
-//       Icon: MessagesIcon,
-//       title: 'Messages',
-//       modalName: ModalNames.messages,
-//   }, {
-//       Icon: SafariIcon,
-//       title: 'Safari',
-//       modalName: ModalNames.safari,
-//   }, {
-//       Icon: PhotosIcon,
-//       title: 'Photos',
-//       modalName: ModalNames.photos,
-//   },
-// ];
 
 const ToolBar = (props) => {
-
-    // Object.entries(props.modals).map(([key, subject], i) => (
-    //     console.log(subject)
-    // ))
-
     return (
-        // <div className="tool-bar">
-        //     {tools.map((tool) => 
-        //         <ToolButton 
-        //             key={tool.modalName} 
-                    
-        //             {...tool} 
-        //             {...props} 
-        //             />)}
-        // </div>
-
-        <div className="tool-bar">
+        <ToolBarStyle className="tool-bar">
                 {Object.entries(props.modals).map(([key, subject], i) => (
                     <ToolButton
                         Icon={subject.toolButton.Icon} 
                         title={subject.toolButton.title} 
                         modalName={key} 
-                        isActive={subject.isActive}
-                        // addModal={} 
-                        // removeModal={} 
-                        // modalsOpenedState={} 
-                        // setModalsOpenedState={}
+                        isActive={subject.isActive}    
                         {...props} 
-                    >
-                        
+                    >     
                     </ToolButton>
             ))}
-        </div>
-        
-
+        </ToolBarStyle>
     );
-
-
-
 }
-
-
-
-
-    
-
 
 export default ToolBar;

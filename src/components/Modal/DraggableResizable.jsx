@@ -57,9 +57,8 @@ const WhiteWindowStyle = {
   
 }
 
-const DraggableResizable = ({name, removeModal, subject }) => {
+const DraggableResizable = ({name, removeModal, children }) => {
 
-  const currentContent = subject ;
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
 
@@ -104,7 +103,7 @@ const DraggableResizable = ({name, removeModal, subject }) => {
       onMouseOver={() => setDraggingDisabled(true)}
       onMouseLeave={() => setDraggingDisabled(false)}
       >
-      {currentContent}
+      {children}
     </BodyDiv>
   </Rnd>
 };

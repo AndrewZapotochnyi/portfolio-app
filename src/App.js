@@ -1,11 +1,11 @@
-import React, {useReducer, useState} from 'react';
+import React, { useState} from 'react';
 import './App.css';
 import './styles/App.scss';
 import './components/ToolBar/ToolBar'
 import ToolBar from './components/ToolBar/ToolBar';
 import TopBar from './components/TopBar/TopBar';
 import DraggableResizable from './components/Modal/DraggableResizable';
-import {modalsStateDefault} from "./components/constants";
+import {modalsStateDefault} from './ModalsStateDefault';
 
 function App() {
   
@@ -30,16 +30,16 @@ function App() {
       <div className="App-Holder">
         <TopBar></TopBar>
     
-        {Object.entries(modals).map(([key, subject], i) => (
+        {Object.entries(modals).map(([key, {isActive, Content}], i) => (
           <div>
-            {subject.isActive &&
+            {isActive &&
               <DraggableResizable 
                 name={key}
                 removeModal={closeModal}
                 key={key}
-                subject={modals[key].Content}
-              />
-            }
+              > {Content}
+              </DraggableResizable>
+            } 
           </div>
         ))}
         
@@ -47,7 +47,7 @@ function App() {
             addModal={openModal}
             removeModal={closeModal}
             modals={modals}
-        >
+            >
         </ToolBar>
 
       </div>
