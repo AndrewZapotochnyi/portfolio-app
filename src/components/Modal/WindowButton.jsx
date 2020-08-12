@@ -14,7 +14,6 @@ const windowButtons = {
   deselected: Deselected,
 };
 
-
 const CloseButtonIcon = styled.img`
   margin: 2px;
   width: 12px;
@@ -32,12 +31,20 @@ const MidButton = styled.img`
 `;
 
 
-const WindowButton = ({ name }) =>
-  name === "deselected" ? (
-      <MidButton src={windowButtons[name]}/>
-  ): (
-      <CloseButtonIcon src={windowButtons[name]}/>
-  );
+const WindowButton = ({ name }) => {
 
+  return (
+    name === "deselected" ? (
+        <MidButton 
+          src={windowButtons[name]}
+          
+        />
+    ): (
+        <CloseButtonIcon src={windowButtons[name]}
+         
+        /> )
+  )
+
+};
 
 export default WindowButton;

@@ -17,20 +17,8 @@ const StyledButton = styled.button`
         align-items: center;
         background-color: transparent;
         border: none;
-        
+        outline: none;
     `;
-
-const StyledButtonActive = styled.button`
-        cursor: pointer;
-        position: relative;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: transparent;
-        border: none;
-       
-    `;
-
 
 const Tooltip = styled.div`
         color: black;
@@ -46,9 +34,8 @@ const Tooltip = styled.div`
         box-shadow: 0 0 3px #999999;
     `;
 
-let ToolButton = ({Icon, title, modalName, addModal, removeModal}) => {
+let ToolButton = ({Icon, title, modalName, addModal, removeModal, isActive}) => {
     const [isHoovered, setIsHoovered] = useState(false);
-    const [isActive, setIsActive] = useState(false);
 
     const handleClick = () => {
         if (!isActive) {
@@ -56,25 +43,10 @@ let ToolButton = ({Icon, title, modalName, addModal, removeModal}) => {
         } else {
             removeModal(modalName);
         }
-        setIsActive(!isActive);
     };
 
-    if (isActive) {
-        return (
-            <StyledButtonActive
-                onMouseEnter={() => setIsHoovered(true)}
-                onMouseLeave={() => setIsHoovered(false)}
-                onClick={handleClick}
-            >
-                {isHoovered && <Tooltip>{title}</Tooltip>}
-                <Icon />
-                {isActive && <Dot/>}
-            </StyledButtonActive>
-        );
-    }
-
     return (
-        <StyledButton className="tool-button"
+        <StyledButton
             onMouseEnter={() => setIsHoovered(true)}
             onMouseLeave={() => setIsHoovered(false)}
             onClick={handleClick}

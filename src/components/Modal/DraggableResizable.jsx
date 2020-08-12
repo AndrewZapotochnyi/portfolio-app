@@ -1,62 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Rnd } from "react-rnd";
 import {ModalNames} from "../constants";
 import styled from 'styled-components'
 
 import WindowButton from './WindowButton';
 
-const TransparentHeaderDiv = styled.div`
-  display:flex;
-  width: 100%;
-  height: 52px;
-  justify-content: space-between;
-  border-bottom: 1px solid grey;
-  
-  align-items: stretch;
-`;
-
 const WhiteHeaderDiv = styled.div`
+  position: relative;
   display:flex;
   flex-direction: row;
-  width: 100%;
-  height: 28px;
-  justify-content: space-between;
-  border-bottom: 1px solid #CCCCCC;
- 
+  justify-content: center;
+  border-bottom: 1px solid #CCC;
   align-items: stretch;
+  padding: 0 10px;
 `;
 
 const ButtonsDiv = styled.div`
-  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
-`;
-
-const HeaderEnd = styled.div`
-  width: 150px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 10px;
 `;
 
 const TitleHeader = styled.div`
-  
   display: flex;
   align-items: center;
-  margin-left: 20px;
   
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
+  line-height: 25px;
   
   font-size: 15px;
   color: #191919;
-  opacity: 0.6;
-  
+  opacity: 0.6;  
 `;
 
 const BodyDiv = styled.div`
@@ -69,13 +49,6 @@ const BodyDiv = styled.div`
   border-bottom-right-radius: 10px;
 `;
 
-const TransparentWindowStyle = {
-  display: "flex",
-  border: "solid 1px #ddd",
-  background: "rgba(249, 249, 249, 0.7)",
-  padding: "0"
-};
-
 const WhiteWindowStyle = {
   display: "flex",
   border: "solid 1px #ddd",
@@ -84,25 +57,18 @@ const WhiteWindowStyle = {
   
 }
 
-// MODAL CONTENT
-const modalsContent = {
-  [ModalNames.calendar]: <div>Calendar Content</div>,
-  [ModalNames.contacts]: <div>Contacts Content</div>,
-  [ModalNames.bucket]: <div>Bucket Content</div>,
-  [ModalNames.finder]: <div>Finder Content</div>,
-  [ModalNames.mail]: <div>Mail Content</div>,
-  [ModalNames.safari]: <div>Safari Content</div>,
-  [ModalNames.photos]: <div>Photos Content</div>,
-  [ModalNames.messages]: <div>Messages Content</div>
-};
+const DraggableResizable = ({name, removeModal, children }) => {
 
-const DraggableResizable = ({name, removeModal}) => {
-
-  const currentContent = modalsContent[name] ;
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
+  const [draggingDisabled, setDraggingDisabled] = useState(false);
+
+  const removeModalHandle = () => {
+    removeModal(name);
+
+  }
 
   return <Rnd
-    disableDragging
+    disableDragging={draggingDisabled}
     style={WhiteWindowStyle}
     className="modal-rnd"
     minWidth= "300"
@@ -114,24 +80,30 @@ const DraggableResizable = ({name, removeModal}) => {
       width: 320, 
       height: 200,
     }}
+    
   >
 
     <WhiteHeaderDiv >
       <ButtonsDiv>
-        <button onClick={removeModal}><WindowButton name="close"/></button>
+        <button 
+          onClick={() => removeModalHandle()}
+          
+        >
+          <WindowButton 
+          name="close"
+          setDraggingDisabled={setDraggingDisabled}/>
+        </button>
         <WindowButton name="minimize"/>
         <WindowButton name="zoom"/>
-        {/* <WindowButton name="deselected"/> */}
-        <div></div>
       </ButtonsDiv>
-        <TitleHeader> {title}</TitleHeader>
-      <HeaderEnd></HeaderEnd>
+      <TitleHeader> {title}</TitleHeader>
+    </WhiteHeaderDiv >
       
-      </WhiteHeaderDiv >
-      
-    {/* </WhiteHeaderDiv> */}
-    <BodyDiv>
-      {currentContent}
+    <BodyDiv
+      onMouseOver={() => setDraggingDisabled(true)}
+      onMouseLeave={() => setDraggingDisabled(false)}
+      >
+      {children}
     </BodyDiv>
   </Rnd>
 };
