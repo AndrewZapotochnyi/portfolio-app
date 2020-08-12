@@ -5,16 +5,6 @@ import styled from 'styled-components'
 
 import WindowButton from './WindowButton';
 
-// const TransparentHeaderDiv = styled.div`
-//   display:flex;
-//   width: 100%;
-//   height: 52px;
-//   justify-content: space-between;
-//   border-bottom: 1px solid grey;
-  
-//   align-items: stretch;
-// `;
-
 const WhiteHeaderDiv = styled.div`
   position: relative;
   display:flex;
@@ -59,13 +49,6 @@ const BodyDiv = styled.div`
   border-bottom-right-radius: 10px;
 `;
 
-// const TransparentWindowStyle = {
-//   display: "flex",
-//   border: "solid 1px #ddd",
-//   background: "rgba(249, 249, 249, 0.7)",
-//   padding: "0"
-// };
-
 const WhiteWindowStyle = {
   display: "flex",
   border: "solid 1px #ddd",
@@ -74,30 +57,15 @@ const WhiteWindowStyle = {
   
 }
 
-// MODAL CONTENT
-const modalsContent = {
-  [ModalNames.calendar]: <div>Calendar Content</div>,
-  [ModalNames.contacts]: <div>Contacts Content</div>,
-  [ModalNames.bucket]: <div>Bucket Content</div>,
-  [ModalNames.finder]: <div>Finder Content</div>,
-  [ModalNames.mail]: <div>Mail Content</div>,
-  [ModalNames.safari]: <div>Safari Content</div>,
-  [ModalNames.photos]: <div>Photos Content</div>,
-  [ModalNames.messages]: <div>Messages Content</div>
-};
+const DraggableResizable = ({name, removeModal, subject }) => {
 
-const DraggableResizable = ({name, removeModal, modalsOpenedState, setModalsOpenedState }) => {
-
-  const currentContent = modalsContent[name] ;
+  const currentContent = subject ;
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
 
   const removeModalHandle = () => {
     removeModal(name);
 
-    let newState = modalsOpenedState;
-    newState[name] = false;
-    setModalsOpenedState(newState);
   }
 
   return <Rnd
@@ -130,13 +98,12 @@ const DraggableResizable = ({name, removeModal, modalsOpenedState, setModalsOpen
         <WindowButton name="zoom"/>
       </ButtonsDiv>
       <TitleHeader> {title}</TitleHeader>
-      
-      </WhiteHeaderDiv >
+    </WhiteHeaderDiv >
       
     <BodyDiv
       onMouseOver={() => setDraggingDisabled(true)}
       onMouseLeave={() => setDraggingDisabled(false)}
-    >
+      >
       {currentContent}
     </BodyDiv>
   </Rnd>

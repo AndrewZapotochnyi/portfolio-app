@@ -14,7 +14,6 @@ const windowButtons = {
   deselected: Deselected,
 };
 
-
 const CloseButtonIcon = styled.img`
   margin: 2px;
   width: 12px;
@@ -32,9 +31,7 @@ const MidButton = styled.img`
 `;
 
 
-const WindowButton = ({ name, setDraggingDisabled }) => {
-
-
+const WindowButton = ({ name }) => {
 
   return (
     name === "deselected" ? (
@@ -46,7 +43,6 @@ const WindowButton = ({ name, setDraggingDisabled }) => {
         <CloseButtonIcon src={windowButtons[name]}
          
         /> )
-  
   )
 
 };

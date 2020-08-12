@@ -34,16 +34,14 @@ const Tooltip = styled.div`
         box-shadow: 0 0 3px #999999;
     `;
 
-let ToolButton = ({Icon, title, modalName, addModal, removeModal, modalsOpenedState, setModalsOpenedState}) => {
+let ToolButton = ({Icon, title, modalName, addModal, removeModal, isActive}) => {
     const [isHoovered, setIsHoovered] = useState(false);
 
     const handleClick = () => {
-        if (!modalsOpenedState[modalName]) {
+        if (!isActive) {
             addModal(modalName);
-            setModalsOpenedState({...modalsOpenedState, [modalName]: true});
         } else {
             removeModal(modalName);
-            setModalsOpenedState({...modalsOpenedState, [modalName]: false});
         }
     };
 
@@ -55,7 +53,7 @@ let ToolButton = ({Icon, title, modalName, addModal, removeModal, modalsOpenedSt
         >
             {isHoovered && <Tooltip>{title}</Tooltip>}
             <Icon />
-            {modalsOpenedState[modalName] && <Dot/>}
+            {isActive && <Dot/>}
         </StyledButton>
     );
 }
