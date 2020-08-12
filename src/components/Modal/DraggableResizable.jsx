@@ -40,7 +40,7 @@ const TitleHeader = styled.div`
 `;
 
 const BodyDiv = styled.div`
-  padding: 10px;
+  // padding: 10px;
   display:flex;
   height: 100%;
   background: #FBFBFB;
@@ -57,7 +57,7 @@ const WhiteWindowStyle = {
   
 }
 
-const DraggableResizable = ({name, removeModal, children }) => {
+const DraggableResizable = ({name, removeModal, children, height, width }) => {
 
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
@@ -71,14 +71,14 @@ const DraggableResizable = ({name, removeModal, children }) => {
     disableDragging={draggingDisabled}
     style={WhiteWindowStyle}
     className="modal-rnd"
-    minWidth= "300"
-    minHeight= "200"
+    minWidth= {width}
+    minHeight= {height}
     // enableResizing= "False"
     default={{
-      x: 200,
-      y: 200,
-      width: 320, 
-      height: 200,
+      x: 0,
+      y: 0,
+      width: {width}, 
+      height: {height},
     }}
     
   >
