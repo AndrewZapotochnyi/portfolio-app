@@ -4,11 +4,17 @@
 }
 
 @font-face {
-  font-family: 'SF Pro Text';
-  src: url("./fonts/SF-Pro.ttf") format("truetype");
+  font-family: 'SF-Pro-Display-Light.otf';
+  src: url("./fonts/SF-Pro-Display-Light.otf") format("truetype");
+  
 }
 
-$font-main: 'SF Pro Text', sans-serif;
+@font-face {
+  font-family: 'SF-Pro-Display-Semibold';
+  src: url("./fonts/SF-Pro-Display-Semibold.otf");
+}
+
+$font-main: 'SF-Pro-Display-Light.otf', sans-serif;
 
 .App-Holder {
   display: flex;
@@ -17,6 +23,7 @@ $font-main: 'SF Pro Text', sans-serif;
 
   height: 100%;
   width: 100%;
+  min-width: 800px;
 
   background-image: url(./images/Background.png);
   background-repeat: no-repeat;
@@ -24,10 +31,10 @@ $font-main: 'SF Pro Text', sans-serif;
 
 
   font-family: $font-main;
-  font-style: normal;
-  font-weight: 500;
+  font-style: "light";
+  font-weight: 300;
   font-size: 40px;
-  line-height: 12px;
+  line-height: 15px;
   color: white;
 
   .tool-bar {

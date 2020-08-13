@@ -4,14 +4,18 @@ import styled from 'styled-components';
 
 import React, { useEffect } from 'react';
 
-const minWidth = "500px";
-const minHeight = "600px";
+const minWidth = "498px";
+const minHeight = "500px";
 const url = "https://calendly.com/andrewzapotochnyi/";
 
 const CalendlyWrapper = styled.div`
-  // width: 100%;
-  // height: 100%;
   margin: 0;
+  
+  margin-bottom: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+  background: white;
 `;
 
 

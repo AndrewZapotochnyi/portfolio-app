@@ -17,7 +17,7 @@ const WhiteHeaderDiv = styled.div`
 
 const ButtonsDiv = styled.div`
   position: absolute;
-  top: 0;
+  top: 3px;
   left: 10px;
   display: flex;
   flex-direction: row;
@@ -43,10 +43,20 @@ const BodyDiv = styled.div`
   // padding: 10px;
   display:flex;
   height: 100%;
-  background: #FBFBFB;
+  // background: #FBFBFB;
 
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+`;
+
+const ButtonBg = styled.button`
+  border-width: 0px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
 `;
 
 const WhiteWindowStyle = {
@@ -54,13 +64,15 @@ const WhiteWindowStyle = {
   border: "solid 1px #ddd",
   background: "rgba(255, 255, 255)",
   padding: "0"
-  
 }
 
-const DraggableResizable = ({name, removeModal, children, height, width }) => {
+
+
+const DraggableResizable = ({name, removeModal, children, height, width, isFixed }) => {
 
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
+
 
   const removeModalHandle = () => {
     removeModal(name);
@@ -73,7 +85,7 @@ const DraggableResizable = ({name, removeModal, children, height, width }) => {
     className="modal-rnd"
     minWidth= {width}
     minHeight= {height}
-    // enableResizing= "False"
+    enableResizing= {isFixed}
     default={{
       x: 0,
       y: 0,
@@ -85,14 +97,13 @@ const DraggableResizable = ({name, removeModal, children, height, width }) => {
 
     <WhiteHeaderDiv >
       <ButtonsDiv>
-        <button 
-          onClick={() => removeModalHandle()}
-          
-        >
-          <WindowButton 
-          name="close"
-          setDraggingDisabled={setDraggingDisabled}/>
-        </button>
+          <ButtonBg 
+            onClick={() => removeModalHandle()}
+          >
+            <WindowButton 
+            name="close"
+            setDraggingDisabled={setDraggingDisabled}/>
+          </ButtonBg>
         <WindowButton name="minimize"/>
         <WindowButton name="zoom"/>
       </ButtonsDiv>
