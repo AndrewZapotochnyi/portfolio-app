@@ -7,7 +7,10 @@ import TopBar from './components/TopBar/TopBar';
 import DraggableResizable from './components/Modal/DraggableResizable';
 import {modalsStateDefault} from './ModalsStateDefault';
 
+
+
 function App() {
+
   
   const [modals, setModals] = useState(modalsStateDefault);
   const openModal = (name) => setModals({
@@ -27,16 +30,20 @@ function App() {
 
   return (
     <div className="App">
+      
+      
       <div className="App-Holder">
         <TopBar></TopBar>
     
-        {Object.entries(modals).map(([key, {isActive, Content}], i) => (
+        {Object.entries(modals).map(([key, {isActive, Content, width, height}], i) => (
           <div>
             {isActive &&
               <DraggableResizable 
                 name={key}
                 removeModal={closeModal}
                 key={key}
+                width={width}
+                height={height}
               > {Content}
               </DraggableResizable>
             } 

@@ -1,54 +1,65 @@
 import React from 'react';
 
 import CalendarIcon from './components/icons/CalendarIcon';
-import ContactsIcon from './components/icons/ContactsIcon';
+import NotesIcon from './components/icons/NotesIcon';
 import FinderIcon from './components/icons/FinderIcon';
 import MailIcon from './components/icons/MailIcon';
 import MessagesIcon from './components/icons/MessagesIcon';
 import SafariIcon from './components/icons/SafariIcon';
 import PhotosIcon from './components/icons/PhotosIcon';
+import PreferencesIcon from './components/icons/PreferencesIcon';
+import PagesIcon from './components/icons/PagesIcon';
+
+import SafariContent from './components/Content/SafariContent';
+import CalendarContent from './components/Content/CalendarContent';
+import NotesContent from './components/Content/NotesContent';
+import MailContent from './components/Content/MailContent';
+import PreferencesContent from './components/Content/PreferencesContent';
+import PagesContent from './components/Content/PagesContent';
+import MessagesContent from './components/Content/MessagesContent';
+
 
 import {ModalNames} from './components/constants';
 
 export const modalsStateDefault = {
-  [ModalNames.calendar]: {
-    Content: <div>Calendar CONTENT</div>,
+  [ModalNames.safari]: {
+    Content: <SafariContent />,
     isActive: true,
+    toolButton: {
+      Icon: SafariIcon,
+      title: 'Safari',
+    },
+    x: 0,
+    y: 0,
+    width: 400,
+    height: 400,
+  },
+  [ModalNames.calendar]: {
+    Content: <CalendarContent />,
+    isActive: false,
     toolButton: {
       Icon: CalendarIcon,
       title: 'Calendar',
     },
     x: 0,
     y: 0,
-    width: 200,
-    height: 300,
+    width: 520,
+    height: 620,
   },
-  [ModalNames.contacts]: {
-    Content: <div>Contacts CONTENT</div>,
+  [ModalNames.notes]: {
+    Content: <NotesContent />,
     isActive: false,
     toolButton: {
-      Icon: ContactsIcon,
-      title: 'Contacts',
+      Icon: NotesIcon,
+      title: 'Notes',
     },
     x: 10,
     y: 10,
     width: 200,
     height: 300,
   },
-  [ModalNames.finder]: {
-      Content: <div>Finder CONTENT</div>,
-      isActive: false,
-      toolButton: {
-        Icon: FinderIcon,
-        title: 'Finder',
-      },
-      x: 0,
-      y: 0,
-      width: 200,
-      height: 300,
-    },
     [ModalNames.mail]: {
-      Content: <div>Mail CONTENT</div>,
+      Content: <MailContent />,
       isActive: false,
       toolButton: {
         Icon: MailIcon,
@@ -60,7 +71,7 @@ export const modalsStateDefault = {
       height: 300,
     },
     [ModalNames.messages]: {
-      Content: <div>Messages CONTENT</div>,
+      Content: <MessagesContent />,
       isActive: false,
       toolButton: {
         Icon: MessagesIcon,
@@ -71,24 +82,24 @@ export const modalsStateDefault = {
       width: 200,
       height: 300,
     },
-    [ModalNames.safari]: {
-      Content: <div>Safari CONTENT</div>,
+    [ModalNames.preferences]: {
+      Content: <PreferencesContent />,
       isActive: false,
       toolButton: {
-        Icon: SafariIcon,
-        title: 'Safari',
+        Icon: PreferencesIcon,
+        title: 'Preferences',
       },
       x: 0,
       y: 0,
       width: 200,
       height: 300,
     },
-    [ModalNames.photos]: {
-      Content: <div>Photos CONTENT</div>,
+    [ModalNames.pages]: {
+      Content: <PagesContent />,
       isActive: false,
       toolButton: {
-        Icon: PhotosIcon,
-        title: 'Photos',
+        Icon: PagesIcon,
+        title: 'Pages',
       },
       x: 0,
       y: 0,
