@@ -35,7 +35,7 @@ function App() {
       <div className="App-Holder">
         <TopBar></TopBar>
     
-        {Object.entries(modals).map(([key, {isActive, Content, width, height}], i) => (
+        {Object.entries(modals).map(([key, {isActive, Content, width, height, isFixed}], i) => (
           <div>
             {isActive &&
               <DraggableResizable 
@@ -44,6 +44,7 @@ function App() {
                 key={key}
                 width={width}
                 height={height}
+                isFixed={isFixed}
               > {Content}
               </DraggableResizable>
             } 
