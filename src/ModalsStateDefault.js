@@ -17,6 +17,7 @@ import MailContent from './components/Content/MailContent';
 import PreferencesContent from './components/Content/PreferencesContent';
 import PagesContent from './components/Content/PagesContent';
 import MessagesContent from './components/Content/MessagesContent';
+import Hello from './components/Content/Hello';
 
 
 import {ModalNames} from './components/constants';
@@ -24,7 +25,7 @@ import {ModalNames} from './components/constants';
 export const modalsStateDefault = {
   [ModalNames.safari]: {
     Content: <SafariContent />,
-    isActive: true,
+    isActive: false,
     isFixed: false,
     toolButton: {
       Icon: SafariIcon,
@@ -51,14 +52,14 @@ export const modalsStateDefault = {
   [ModalNames.notes]: {
     Content: <NotesContent />,
     isActive: false,
-    isFixed: false,
+    isFixed: true,
     toolButton: {
       Icon: NotesIcon,
       title: 'Notes',
     },
     x: 10,
     y: 10,
-    width: 200,
+    width: 520,
     height: 300,
   },
     [ModalNames.mail]: {
@@ -68,19 +69,6 @@ export const modalsStateDefault = {
       toolButton: {
         Icon: MailIcon,
         title: 'Mail',
-      },
-      x: 0,
-      y: 0,
-      width: 200,
-      height: 300,
-    },
-    [ModalNames.messages]: {
-      Content: <MessagesContent />,
-      isActive: false,
-      isFixed: false,
-      toolButton: {
-        Icon: MessagesIcon,
-        title: 'Messages',
       },
       x: 0,
       y: 0,
@@ -97,20 +85,29 @@ export const modalsStateDefault = {
       },
       x: 0,
       y: 0,
-      width: 200,
+      width: 400,
       height: 300,
     },
     [ModalNames.pages]: {
       Content: <PagesContent />,
       isActive: false,
-      isFixed: false,
+      isFixed: true,
       toolButton: {
         Icon: PagesIcon,
         title: 'Pages',
       },
       x: 0,
       y: 0,
-      width: 200,
+      width: 400,
+      height: 300,
+    },
+    [ModalNames.hello]: {
+      Content: <Hello />,
+      isActive: true,
+      isFixed: false,
+      x: 0,
+      y: 0,
+      width: 400,
       height: 300,
     }
 };

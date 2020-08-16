@@ -45,6 +45,8 @@ const BodyDiv = styled.div`
   height: 100%;
   // background: #FBFBFB;
 
+  
+  
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `;
@@ -85,6 +87,8 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
     className="modal-rnd"
     minWidth= {width}
     minHeight= {height}
+    maxHeight= "80vh"
+    maxWidth= "100vh"
     enableResizing= {isFixed}
     default={{
       x: 0,

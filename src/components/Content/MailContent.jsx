@@ -1,33 +1,44 @@
-import React from 'react';
-import Man from '../../styles/images/man.png';
+import React, {useState} from 'react';
+import emailjs from 'emailjs-com';
 import styled from 'styled-components';
 
+const StyledForm = styled.form`
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display:flex;
+  flex-direction: column;
+`;
 
+export default function MailContent() {
 
-const MailContent = () => {
+  const [mailSent, setMailSent] = useState(false);
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('portfolio_website', 'template_2rIQVhfP', e.target, 'user_kJKkjKS2uEpNL7cQNqBPa')
+      .then((result) => {
+          console.log(result.text);
+          setMailSent(true);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
 
   return (
-        <div>
-          <h2>Projects</h2>
-
-          <div>
-          <p>PROJECTS Facebook Audience Analytics App (GitHub repo) Created concept and built a social media analytics app that uses Facebook’s API to create and analyze social media audiences.
-          Tools: Facebook API | React | Ruby on Rails | JS | SQlite | React Router | Sass | Chart.js | Axios | Material UI | Jest  </p>
-
-          <p>Interview Scheduler (GitHub repo) Wrote a React application that allows users to book and cancel interviews. Tools: React | Node.js | JS | HTML | SASS | Axios | Storybook  
-          Tweeter (GitHub repo) Built a single-page Twitter clone. 
-          Tools: HTML | CSS | JS | jQuery | AJAX | Node | Express | MongoDB </p>
-
-          <p>TinyApp (GitHub repo) Created a full stack web app that allows users to shorten long URLs. Tools: JavaScript | Node.js | Express 
-          Lotide Library Mock (GitHub repo) Built a simple Lotide-like library with some of the common useful methods.
-          Tools: JavaScript </p>
-
-          </div>
-          
-
-        </div>
-
-        );
-};
-
-export default MailContent;
+    <StyledForm className="contact-form" onSubmit={sendEmail}>
+      {mailSent && <div>I will get back to you!</div>}
+      <input type="hidden" name="contact_number" />
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </StyledForm>
+  );
+}
