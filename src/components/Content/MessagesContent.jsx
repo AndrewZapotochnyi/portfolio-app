@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledForm = styled.form`
   margin: 0;
-  padding: 20px;
+  // padding: 20px;
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

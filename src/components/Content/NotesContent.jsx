@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { colors } from '../../styles/colors'
+
 const NotesWrapper = styled.div`
   margin: 0;
   border-bottom-left-radius: 10px;
@@ -36,7 +38,7 @@ const NotesRightBar = styled.div`
 
 const NotesBarTitle = styled.button`
   border-width: 0;
-  background: white;
+  background: ${props => props.isActive ? colors.lightgray : colors.white};
   border-bottom: 1px solid #CCC;
   height: 50px;
   width: 200px;
@@ -89,14 +91,13 @@ const NotesContent = () => {
     <NotesWrapper>
 
       <NotesLeftBar>
-        { Object.keys(notesEducationContent).map((key) => {
-          return (
-            <NotesBarTitle onClick={() => setNoteOpened(key)}>
-            <div>{notesEducationContent[key].title}</div>
-            <LeftBarSubTitle>{notesEducationContent[key].subtitle}</LeftBarSubTitle>
+        { Object.keys(notesEducationContent).map((key) => (
+            <NotesBarTitle isActive={key === noteOpened} onClick={() => setNoteOpened(key)}>
+              <div>{notesEducationContent[key].title}</div>
+              <LeftBarSubTitle>{notesEducationContent[key].subtitle}</LeftBarSubTitle>
             </NotesBarTitle>
           )
-        })}
+        )}
       </NotesLeftBar>
 
       <NotesRightBar>
