@@ -51,8 +51,9 @@ let PreferencesButton = ({Icon, title}) => {
             onMouseLeave={() => setIsHoovered(false)}
             onClick={handleClick}
         >
-            {isHoovered && <Tooltip>{title}</Tooltip>}
+            {/* {isHoovered && <Tooltip>{title}</Tooltip>} */}
             <Icon />
+            {title}
         </StyledButton>
     );
 }
