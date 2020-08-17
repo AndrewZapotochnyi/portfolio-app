@@ -6,7 +6,8 @@ const MailWrapper = styled.div`
     width: 100%;
     height: 100%;
     text-align: left;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
 `;
 
 const StyledForm = styled.form`
@@ -15,19 +16,17 @@ const StyledForm = styled.form`
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  // display:flex;
-  // flex-direction: column;
+  flex-grow: 2;
+  display:flex;
+  flex-direction: column;
 `;
 
 const StyledLineHolder = styled.div`
   border-bottom: 1px solid #CCC;
   width: 100% - 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 0px;
+  padding: 5px 0;
 `;
 
 const StyledLabel = styled.label`
@@ -37,10 +36,11 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-  flex-grow: 2;
   outline: none;
   border: none;
   margin-bottom: 2px;
+  padding: 5px;
+  max-width: 100px;
 `;
 
 const ActiveName = styled.div`
@@ -54,11 +54,17 @@ const ActiveName = styled.div`
 const StyledTextArea = styled.textarea`
   width: 100%;
   height: 100%;
-  min-height: 200px;
   outline: none;
   border: none;
+  resize: none;
+  padding: 0;
 `;
 
+const FlexWrapper = styled.div`
+    flex-grow: 2;
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 10px;
+`;
 
 export default function MailContent() {
 
@@ -100,14 +106,12 @@ export default function MailContent() {
         </StyledLineHolder>
         
         
-        
-        <StyledLineHolder>
-          
-          <StyledTextArea name="message" />
-          
-        </StyledLineHolder>
+        <FlexWrapper>
+            <StyledTextArea name="message" />
+        </FlexWrapper>
 
-        <StyledInput type="submit" value="Send" />
+
+        <StyledInput type="submit" value="Send"/>
 
       </StyledForm>
     </MailWrapper>

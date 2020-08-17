@@ -7,14 +7,14 @@ const PagesWrapper = styled.div`
   left: 0px;
   top: 0px;
   bottom: 10px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display:flex;
   flex-direction: column;
   text-align: left;
   overflow-y: scroll;
-  padding: 10px;
+  // padding: 10px;
   max-height: 70vh;
 `;
 

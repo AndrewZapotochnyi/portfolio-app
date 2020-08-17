@@ -42,11 +42,10 @@ const TitleHeader = styled.div`
 const BodyDiv = styled.div`
   // padding: 10px;
   display:flex;
-  height: 100%;
+  height: calc(100% - 35px);
+  padding: 20px;
   // background: #FBFBFB;
 
-  
-  
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `;
@@ -85,11 +84,11 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
     disableDragging={draggingDisabled}
     style={WhiteWindowStyle}
     className="modal-rnd"
-    minWidth= {width}
-    minHeight= {height}
-    maxHeight= "80vh"
-    maxWidth= "100vh"
-    enableResizing= {isFixed}
+    minWidth={width}
+    minHeight={height}
+    maxHeight="80vh"
+    maxWidth="100vh"
+    enableResizing={!isFixed}
     default={{
       x: 0,
       y: 0,
@@ -115,6 +114,7 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
     </WhiteHeaderDiv >
       
     <BodyDiv
+        data-e2e-id='bodyDiv'
       onMouseOver={() => setDraggingDisabled(true)}
       onMouseLeave={() => setDraggingDisabled(false)}
       >

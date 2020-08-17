@@ -19,23 +19,15 @@ const ToolBarStyle = styled.div`
 const ToolBar = (props) => {
     return (
         <ToolBarStyle className="tool-bar">
-                {Object.entries(props.modals).map(([key, subject], i) => {
-
-                    if (subject.toolButton) {
-                        return <ToolButton
-                        Icon={subject.toolButton.Icon} 
-                        title={subject.toolButton.title} 
-                        modalName={key} 
-                        isActive={subject.isActive}    
-                        {...props} 
-                        >     
-                        </ToolButton>
-                    }
-                    
-
-                }
-                    
-                    
+                {Object.entries(props.modals).map(([key, subject]) => subject.toolButton && (
+                    <ToolButton
+                        Icon={subject.toolButton.Icon}
+                        title={subject.toolButton.title}
+                        modalName={key}
+                        isActive={subject.isActive}
+                        {...props}
+                    />
+                )
             )}
         </ToolBarStyle>
     );

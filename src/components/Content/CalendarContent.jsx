@@ -11,11 +11,12 @@ const url = "https://calendly.com/andrewzapotochnyi/";
 const CalendlyWrapper = styled.div`
   margin: 0;
   
-  margin-bottom: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: white;
   background: white;
+  top: -20px;
+  left: -20px;
 `;
 
 
