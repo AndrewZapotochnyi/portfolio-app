@@ -39,7 +39,7 @@ export const modalsStateDefault = {
   [ModalNames.calendar]: {
     Content: <CalendarContent />,
     isActive: false,
-    isFixed: false,
+    isFixed: true,
     toolButton: {
       Icon: CalendarIcon,
       title: 'Calendar',
@@ -52,7 +52,7 @@ export const modalsStateDefault = {
   [ModalNames.notes]: {
     Content: <NotesContent />,
     isActive: false,
-    isFixed: true,
+    isFixed: false,
     toolButton: {
       Icon: NotesIcon,
       title: 'Notes',
@@ -91,7 +91,7 @@ export const modalsStateDefault = {
     [ModalNames.pages]: {
       Content: <PagesContent />,
       isActive: false,
-      isFixed: true,
+      isFixed: false,
       toolButton: {
         Icon: PagesIcon,
         title: 'Pages',

@@ -1,10 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import PreferencesButton from './PreferencesButtons/PreferencesButton';
+import JsIcon from './PreferencesButtons/Js';
+import RubyIcon from './PreferencesButtons/Ruby';
+import PythonIcon from './PreferencesButtons/Python';
+
+const PreferencesWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background: white;
+`;
+
 
 const PreferenceDiv = styled.div`
   margin: 0;
-  height: 50px;
-  width: 400px;
+  height: 70px;
+  width: 100%;
   display:flex;
   background: #ccc;
 `;
@@ -12,9 +23,25 @@ const PreferenceDiv = styled.div`
 const PreferencesContent = () => {
 
   return (
-        <div>
+        <PreferencesWrapper>
           <h2>Preferences Content</h2>
-          <PreferenceDiv></PreferenceDiv>
+          <PreferenceDiv>
+            <PreferencesButton 
+              Icon={JsIcon}
+              title="JavaScript"
+            />
+            <PreferencesButton
+              Icon={RubyIcon}
+              title="Ruby"
+            />
+            <PreferencesButton 
+              Icon={PythonIcon}
+              title="Python"
+            />
+
+           
+
+          </PreferenceDiv>
 
           <p>LANGUAGES: JavaScript, HTML, CSS, Python, Ruby
           FRAMEWORKS/LIBRARIES/ENVIRONMENTS: Node.js, React, Rails, Express, jQuery, Bootstrap, SASS, Facebook API
@@ -22,7 +49,7 @@ const PreferencesContent = () => {
           TESTING: Mocha, Cypress, Jest
           </p>
          
-        </div>
+        </PreferencesWrapper>
 
         );
 };

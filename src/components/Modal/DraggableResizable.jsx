@@ -89,7 +89,7 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
     minHeight= {height}
     maxHeight= "80vh"
     maxWidth= "100vh"
-    enableResizing= {isFixed}
+    enableResizing= {!isFixed}
     default={{
       x: 0,
       y: 0,
