@@ -1,70 +1,28 @@
 import React from 'react';
-import Man from '../../styles/images/man.png';
 import styled from 'styled-components';
-
-const Img = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #CCCCCC;
-  box-shadow: 1px 0px 1px 0px #666;
-`;
-
-const SafariWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  background: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const TitleBig = styled.h2`
-  font-family: 'SF-Pro-Display-Semibold';
-  font-size: 32px;
-  line-height: 1.1;
-  letter-spacing: 0em;
-  color: rgb(29, 29, 31);
-`;
-
-const SubTitle = styled.h3`
-font-family: 'SF-Pro-Display-Semibold';
-font-size: 21px;
-line-height: 1.1;
-letter-spacing: 0em;
-color: rgb(29, 29, 31);
-`;
-
-const AboutMe = styled.p`
-  width: 450px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 16px;
-  line-height: 1.1;
-  letter-spacing: 0em;
-  color: rgb(29, 29, 31);
-`;
-
 
 const SafariContent = () => {
 
   return (
-        <SafariWrapper>
-          <TitleBig>Welcome to my desktop!</TitleBig>
-          <Img src={Man} alt="Andrew Zapotochnyi"></Img>
-            <SubTitle>Hey, I'm Andrew Zapotochnyi. </SubTitle>
-              <AboutMe>I'm an accomplished technology professional and recent bootcamp graduate 
-            with 10 years of experience in digital marketing, UX, and product 
-            delivery seeking transition to dedicated software development role. 
-            </AboutMe> 
-            <AboutMe>Take a look at my desktop to learn more about me!</AboutMe>
+          <div>
+          <h2>Projects</h2>
 
+          <div>
+          <p>PROJECTS Facebook Audience Analytics App (GitHub repo) Created concept and built a social media analytics app that uses Facebook’s API to create and analyze social media audiences.
+          Tools: Facebook API | React | Ruby on Rails | JS | SQlite | React Router | Sass | Chart.js | Axios | Material UI | Jest  </p>
 
-        </SafariWrapper>
+          <p>Interview Scheduler (GitHub repo) Wrote a React application that allows users to book and cancel interviews. Tools: React | Node.js | JS | HTML | SASS | Axios | Storybook  
+          Tweeter (GitHub repo) Built a single-page Twitter clone. 
+          Tools: HTML | CSS | JS | jQuery | AJAX | Node | Express | MongoDB </p>
+
+          <p>TinyApp (GitHub repo) Created a full stack web app that allows users to shorten long URLs. Tools: JavaScript | Node.js | Express 
+          Lotide Library Mock (GitHub repo) Built a simple Lotide-like library with some of the common useful methods.
+          Tools: JavaScript </p>
+
+          </div>
+          
+
+        </div>
 
         );
 };

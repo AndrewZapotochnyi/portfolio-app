@@ -1,33 +1,115 @@
-import React from 'react';
-import Man from '../../styles/images/man.png';
+import React, {useState} from 'react';
+import emailjs from 'emailjs-com';
 import styled from 'styled-components';
 
+const MailWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 20px;
+`;
+
+const StyledForm = styled.form`
+  margin: 0;
+  
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  // display:flex;
+  // flex-direction: column;
+`;
+
+const StyledLineHolder = styled.div`
+  border-bottom: 1px solid #CCC;
+  width: 100% - 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 0px;
+`;
+
+const StyledLabel = styled.label`
+  color: #666;
+  margin-right: 10px;
+  float: left;
+`;
+
+const StyledInput = styled.input`
+  flex-grow: 2;
+  outline: none;
+  border: none;
+  margin-bottom: 2px;
+`;
+
+const ActiveName = styled.div`
+  background-color: #0063E2;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 4px;
+  
+`;
+
+const StyledTextArea = styled.textarea`
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  outline: none;
+  border: none;
+`;
 
 
-const MailContent = () => {
+export default function MailContent() {
+
+  const [mailSent, setMailSent] = useState(false);
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('portfolio_website', 'template_2rIQVhfP', e.target, 'user_kJKkjKS2uEpNL7cQNqBPa')
+      .then((result) => {
+          console.log(result.text);
+          setMailSent(true);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
 
   return (
-        <div>
-          <h2>Projects</h2>
+    <MailWrapper>
+      
+      <StyledLineHolder>
+        <StyledLabel>To:</StyledLabel> 
+        <ActiveName>Andrew Zapotochnyi</ActiveName>
+      </StyledLineHolder>
+        
+      <StyledForm className="contact-form" onSubmit={sendEmail}>
+        {mailSent && <div>I will get back to you!</div>}
+        <StyledInput type="hidden" name="contact_number" />
 
-          <div>
-          <p>PROJECTS Facebook Audience Analytics App (GitHub repo) Created concept and built a social media analytics app that uses Facebook’s API to create and analyze social media audiences.
-          Tools: Facebook API | React | Ruby on Rails | JS | SQlite | React Router | Sass | Chart.js | Axios | Material UI | Jest  </p>
 
-          <p>Interview Scheduler (GitHub repo) Wrote a React application that allows users to book and cancel interviews. Tools: React | Node.js | JS | HTML | SASS | Axios | Storybook  
-          Tweeter (GitHub repo) Built a single-page Twitter clone. 
-          Tools: HTML | CSS | JS | jQuery | AJAX | Node | Express | MongoDB </p>
+        <StyledLineHolder>
+          <StyledLabel>From (Name):</StyledLabel>
+          <StyledInput type="text" name="user_name" />
+        </StyledLineHolder>
 
-          <p>TinyApp (GitHub repo) Created a full stack web app that allows users to shorten long URLs. Tools: JavaScript | Node.js | Express 
-          Lotide Library Mock (GitHub repo) Built a simple Lotide-like library with some of the common useful methods.
-          Tools: JavaScript </p>
-
-          </div>
+        <StyledLineHolder>
+          <StyledLabel>From (Email):</StyledLabel>
+          <StyledInput type="email" name="user_email" />
+        </StyledLineHolder>
+        
+        
+        
+        <StyledLineHolder>
           
+          <StyledTextArea name="message" />
+          
+        </StyledLineHolder>
 
-        </div>
+        <StyledInput type="submit" value="Send" />
 
-        );
-};
-
-export default MailContent;
+      </StyledForm>
+    </MailWrapper>
+  );
+}

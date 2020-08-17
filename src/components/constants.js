@@ -11,4 +11,5 @@ export const ModalNames = {
     messages: 'MESSAGES',
     preferences: 'PREFERENCES',
     pages: 'PAGES',
+    hello: 'HELLO',
 };
