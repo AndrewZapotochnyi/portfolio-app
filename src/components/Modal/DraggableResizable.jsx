@@ -64,7 +64,8 @@ const WhiteWindowStyle = {
   display: "flex",
   border: "solid 1px #ddd",
   background: "rgba(255, 255, 255)",
-  padding: "0"
+  padding: "0",
+  zIndex: "999",
 }
 
 
