@@ -25,7 +25,7 @@ import {ModalNames} from './components/constants';
 export const modalsStateDefault = {
   [ModalNames.safari]: {
     Content: <SafariContent />,
-    isActive: false,
+    isActive: true,
     isFixed: false,
     toolButton: {
       Icon: SafariIcon,
@@ -33,8 +33,8 @@ export const modalsStateDefault = {
     },
     x: 0,
     y: 0,
-    width: 400,
-    height: 520,
+    width: 600,
+    height: 450,
   },
   [ModalNames.calendar]: {
     Content: <CalendarContent />,
@@ -64,7 +64,7 @@ export const modalsStateDefault = {
   },
     [ModalNames.mail]: {
       Content: <MailContent />,
-      isActive: true,
+      isActive: false,
       isFixed: false,
       toolButton: {
         Icon: MailIcon,
