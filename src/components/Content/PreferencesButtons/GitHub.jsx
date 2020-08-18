@@ -1,11 +1,11 @@
 import React from 'react';
 import GitHubImage from '../../../styles/icons/Preferences/GitHub.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let GitHubIcon = () => {
 
   return (
-        <IconWrap src={GitHubImage} alt="GitHub Image"></IconWrap>
+        <PreferencesIconWrap src={GitHubImage} alt="GitHub Image"></PreferencesIconWrap>
         );
 };
 

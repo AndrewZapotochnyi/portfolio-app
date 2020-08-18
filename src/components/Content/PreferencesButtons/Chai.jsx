@@ -1,11 +1,11 @@
 import React from 'react';
 import ChaiImage from '../../../styles/icons/Preferences/Chai.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let ChaiIcon = () => {
 
   return (
-        <IconWrap src={ChaiImage} alt="Chai Image"></IconWrap>
+        <PreferencesIconWrap src={ChaiImage} alt="Chai Image"></PreferencesIconWrap>
         );
 };
 

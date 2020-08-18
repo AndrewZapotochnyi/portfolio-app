@@ -1,11 +1,11 @@
 import React from 'react';
 import SassImage from '../../../styles/icons/Preferences/Sass.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let SassIcon = () => {
 
   return (
-        <IconWrap src={SassImage} alt="Ruby Image"></IconWrap>
+        <PreferencesIconWrap src={SassImage} alt="Ruby Image"></PreferencesIconWrap>
         );
 };
 

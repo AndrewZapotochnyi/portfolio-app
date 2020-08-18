@@ -1,11 +1,11 @@
 import React from 'react';
 import PostgreSQLImage from '../../../styles/icons/Preferences/PostgreSQL.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let PostgreSQLIcon = () => {
 
   return (
-        <IconWrap src={PostgreSQLImage} alt="PostgreSQL Image"></IconWrap>
+        <PreferencesIconWrap src={PostgreSQLImage} alt="PostgreSQL Image"></PreferencesIconWrap>
         );
 };
 

@@ -40,10 +40,10 @@ const TitleHeader = styled.div`
 `;
 
 const BodyDiv = styled.div`
-  // padding: 10px;
+  
   display:flex;
   height: calc(100% - 35px);
-  padding: 20px;
+  padding: 20px 0;
   // background: #FBFBFB;
 
   border-bottom-left-radius: 10px;

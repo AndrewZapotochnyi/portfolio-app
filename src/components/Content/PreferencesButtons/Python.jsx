@@ -1,11 +1,11 @@
 import React from 'react';
 import PythonImage from '../../../styles/icons/Preferences/Python.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let PythonIcon = () => {
 
   return (
-        <IconWrap src={PythonImage} alt="Python Image"></IconWrap>
+        <PreferencesIconWrap src={PythonImage} alt="Python Image"></PreferencesIconWrap>
         );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import RailsImage from '../../../styles/icons/Preferences/Rails.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let RailsIcon = () => {
 
   return (
-        <IconWrap src={RailsImage} alt="Rails Image"></IconWrap>
+        <PreferencesIconWrap src={RailsImage} alt="Rails Image"></PreferencesIconWrap>
         );
 };
 
