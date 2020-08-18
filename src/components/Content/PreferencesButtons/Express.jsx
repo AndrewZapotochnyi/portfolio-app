@@ -1,11 +1,11 @@
 import React from 'react';
 import ExpressImage from '../../../styles/icons/Preferences/Express.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let ExpressIcon = () => {
 
   return (
-        <IconWrap src={ExpressImage} alt="Express Image"></IconWrap>
+        <PreferencesIconWrap src={ExpressImage} alt="Express Image"></PreferencesIconWrap>
         );
 };
 

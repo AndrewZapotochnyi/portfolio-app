@@ -37,7 +37,6 @@ const Frameworks = [
   {Icon: jQueryIcon, title: "jQuery"}, 
   {Icon: ExpressIcon, title: "Express JS"}, 
   {Icon: MaterialUiIcon, title: "Material UI"}, 
-  {Icon: SassIcon, title: "SASS"},
 ]
 
 const systemsDatabases = [
@@ -62,7 +61,9 @@ const preferencesIcons = {
 }
   
 const HeaderPreferences = styled.h4`
-  margin: 0;
+  margin: 5px 20px;
+  text-align: left;
+  font-family: 'SF-Pro-Display-Semibold';
 `;
 
 const PreferencesWrapper = styled.div`
@@ -73,37 +74,38 @@ const PreferencesWrapper = styled.div`
 
 const PreferenceDiv = styled.div`
   margin: 0;
-  padding: 10px;
-  width: 100%;
+  padding: 10px 20px;
+  width: calc(100%-20px);
+  height: 90px;
   display:flex;
-  background: #ccc;
+  background: #E5E5E5;
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
 `;
 
 
 
 const PreferencesContent = () => {
-
   return (
         
-        <PreferencesWrapper>
-          { Object.keys(preferencesIcons).map((key) => (
-            <div>
-              <HeaderPreferences>{preferencesIcons[key].headline}</HeaderPreferences>
-              <PreferenceDiv>
-                  { preferencesIcons[key].Icons.map((value) => (
-                  <PreferencesButton 
-                    Icon={value.Icon}
-                    title={value.title}
-                  />
-                  ))}
-              </PreferenceDiv>
-            </div>
-          )
-          )}
+    <PreferencesWrapper>
+      { Object.keys(preferencesIcons).map((key) => (
+        <div>
+          <HeaderPreferences>{preferencesIcons[key].headline}</HeaderPreferences>
+          <PreferenceDiv>
+              { preferencesIcons[key].Icons.map((value) => (
+              <PreferencesButton 
+                Icon={value.Icon}
+                title={value.title}
+              />
+              ))}
+          </PreferenceDiv>
+        </div>
+      )
+      )}
 
-
-        </PreferencesWrapper>
-        );
+    </PreferencesWrapper>
+    );
 };
 
 export default PreferencesContent;

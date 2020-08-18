@@ -1,11 +1,11 @@
 import React from 'react';
 import FacebookApiImage from '../../../styles/icons/Preferences/FacebookApi.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let FacebookApiIcon = () => {
 
   return (
-        <IconWrap src={FacebookApiImage} alt="Facebook API Image"></IconWrap>
+        <PreferencesIconWrap src={FacebookApiImage} alt="Facebook API Image"></PreferencesIconWrap>
         );
 };
 

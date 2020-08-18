@@ -1,11 +1,11 @@
 import React from 'react';
 import CypressImage from '../../../styles/icons/Preferences/Cypress.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let CypressIcon = () => {
 
   return (
-        <IconWrap src={CypressImage} alt="Cypress Image"></IconWrap>
+        <PreferencesIconWrap src={CypressImage} alt="Cypress Image"></PreferencesIconWrap>
         );
 };
 

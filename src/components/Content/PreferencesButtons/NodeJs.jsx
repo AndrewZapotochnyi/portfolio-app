@@ -1,11 +1,11 @@
 import React from 'react';
 import NodeJsImage from '../../../styles/icons/Preferences/NodeJs.svg';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let NodeJsIcon = () => {
 
   return (
-        <IconWrap src={NodeJsImage} alt="NodeJS Image"></IconWrap>
+        <PreferencesIconWrap src={NodeJsImage} alt="NodeJS Image"></PreferencesIconWrap>
         );
 };
 

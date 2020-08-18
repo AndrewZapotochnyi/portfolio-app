@@ -85,7 +85,7 @@ export const modalsStateDefault = {
       },
       x: 0,
       y: 0,
-      width: 600,
+      width: 570,
       height: 400,
     },
     [ModalNames.pages]: {

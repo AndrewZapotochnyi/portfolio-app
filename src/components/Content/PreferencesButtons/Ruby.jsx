@@ -1,11 +1,11 @@
 import React from 'react';
 import RubyImage from '../../../styles/icons/Preferences/Ruby.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let RubyIcon = () => {
 
   return (
-        <IconWrap src={RubyImage} alt="Ruby Image"></IconWrap>
+        <PreferencesIconWrap src={RubyImage} alt="Ruby Image"></PreferencesIconWrap>
         );
 };
 
