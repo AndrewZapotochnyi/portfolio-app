@@ -7,15 +7,26 @@ const PagesWrapper = styled.div`
   left: 0px;
   top: 0px;
   bottom: 10px;
-  // padding-bottom: 20px;
+  
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display:flex;
   flex-direction: column;
   text-align: left;
   overflow-y: scroll;
-  // padding: 10px;
+  padding: 0 20px;
   max-height: 70vh;
+  
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
 `;
 
 const JobTitleAndSubtitle = styled.p`

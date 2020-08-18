@@ -64,7 +64,7 @@ export const modalsStateDefault = {
   },
     [ModalNames.mail]: {
       Content: <MailContent />,
-      isActive: false,
+      isActive: true,
       isFixed: false,
       toolButton: {
         Icon: MailIcon,
@@ -72,12 +72,12 @@ export const modalsStateDefault = {
       },
       x: 0,
       y: 0,
-      width: 200,
+      width: 300,
       height: 300,
     },
     [ModalNames.preferences]: {
       Content: <PreferencesContent />,
-      isActive: true,
+      isActive: false,
       isFixed: true,
       toolButton: {
         Icon: PreferencesIcon,

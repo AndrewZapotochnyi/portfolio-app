@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors'
 
 const NotesWrapper = styled.div`
-  margin: 0;
+  margin: 0 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display:flex;

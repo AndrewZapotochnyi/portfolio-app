@@ -15,8 +15,8 @@ const CalendlyWrapper = styled.div`
   border-bottom-right-radius: 10px;
   background-color: white;
   background: white;
-  top: -20px;
-  left: -20px;
+  top: 0px;
+  left: 0px;
 `;
 
 
