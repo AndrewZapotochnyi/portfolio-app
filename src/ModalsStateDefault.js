@@ -1,26 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import CalendarIcon from './components/icons/CalendarIcon';
-import NotesIcon from './components/icons/NotesIcon';
-import FinderIcon from './components/icons/FinderIcon';
-import MailIcon from './components/icons/MailIcon';
-import MessagesIcon from './components/icons/MessagesIcon';
-import SafariIcon from './components/icons/SafariIcon';
-import PhotosIcon from './components/icons/PhotosIcon';
-import PreferencesIcon from './components/icons/PreferencesIcon';
-import PagesIcon from './components/icons/PagesIcon';
+import CalendarIcon from "./components/icons/CalendarIcon";
+import NotesIcon from "./components/icons/NotesIcon";
+import FinderIcon from "./components/icons/FinderIcon";
+import MailIcon from "./components/icons/MailIcon";
+import MessagesIcon from "./components/icons/MessagesIcon";
+import SafariIcon from "./components/icons/SafariIcon";
+import PhotosIcon from "./components/icons/PhotosIcon";
+import PreferencesIcon from "./components/icons/PreferencesIcon";
+import PagesIcon from "./components/icons/PagesIcon";
 
-import SafariContent from './components/Content/SafariContent';
-import CalendarContent from './components/Content/CalendarContent';
-import NotesContent from './components/Content/NotesContent';
-import MailContent from './components/Content/MailContent';
-import PreferencesContent from './components/Content/PreferencesContent';
-import PagesContent from './components/Content/PagesContent';
-import MessagesContent from './components/Content/MessagesContent';
-import Hello from './components/Content/Hello';
+import SafariContent from "./components/Content/SafariContent";
+import CalendarContent from "./components/Content/CalendarContent";
+import NotesContent from "./components/Content/NotesContent";
+import MailContent from "./components/Content/MailContent";
+import PreferencesContent from "./components/Content/PreferencesContent";
+import PagesContent from "./components/Content/PagesContent";
+import MessagesContent from "./components/Content/MessagesContent";
+import Hello from "./components/Content/Hello";
 
-
-import {ModalNames} from './components/constants';
+import { ModalNames } from "./components/constants";
 
 export const modalsStateDefault = {
   [ModalNames.safari]: {
@@ -30,7 +29,7 @@ export const modalsStateDefault = {
     isOnTop: false,
     toolButton: {
       Icon: SafariIcon,
-      title: 'Safari',
+      title: "Safari",
     },
     x: 0,
     y: 0,
@@ -44,7 +43,7 @@ export const modalsStateDefault = {
     isOnTop: false,
     toolButton: {
       Icon: CalendarIcon,
-      title: 'Calendar',
+      title: "Calendar",
     },
     x: 0,
     y: 0,
@@ -58,7 +57,7 @@ export const modalsStateDefault = {
     isOnTop: false,
     toolButton: {
       Icon: NotesIcon,
-      title: 'Notes',
+      title: "Notes",
     },
     x: 10,
     y: 10,
