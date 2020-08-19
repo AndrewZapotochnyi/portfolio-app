@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Rnd } from "react-rnd";
-import {ModalNames} from "../constants";
-import styled from 'styled-components'
+import { ModalNames } from "../constants";
+import styled from "styled-components";
 
-import WindowButton from './WindowButton';
+import WindowButton from "./WindowButton";
 
-const WhiteHeaderDiv = styled.div`
+const HeaderDiv = styled.div`
   position: relative;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
   align-items: stretch;
   padding: 0 10px;
 `;
@@ -27,21 +27,20 @@ const ButtonsDiv = styled.div`
 const TitleHeader = styled.div`
   display: flex;
   align-items: center;
-  
+
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 25px;
-  
+
   font-size: 15px;
   color: #191919;
-  opacity: 0.6;  
+  opacity: 0.6;
 `;
 
 const BodyDiv = styled.div`
-  
-  display:flex;
+  display: flex;
   height: calc(100% - 55px);
   padding: 20px 0;
   // background: #FBFBFB;
@@ -60,27 +59,37 @@ const ButtonBg = styled.button`
   padding-right: 0px;
 `;
 
-const WhiteWindowStyle = {
-  display: "flex",
-  border: "solid 1px #ddd",
-  background: "rgba(255, 255, 255)",
-  padding: "0",
-  zIndex: "999",
-}
 
 
 
-const DraggableResizable = ({name, removeModal, children, height, width, isFixed }) => {
 
+// const DraggableResizable = ({name, removeModal, children, height, width, isFixed, moveOnTop, isOnTop }) => {
+
+const DraggableResizable = ({
+  name,
+  removeModal,
+  children,
+  height,
+  width,
+  isFixed,
+  isOnTop,
+  moveOnTop
+  }) => {
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
 
+  const WhiteWindowStyle = {
+    display: "flex",
+    border: "solid 1px #ddd",
+    background: "rgba(255, 255, 255)",
+    padding: "0",
+    zIndex: isOnTop ? "999" : "0",
+  }
 
 
-
-  const removeModalHandle = () => {
+  const removeModalHandle = (event) => {
+    event.stopPropagation();
     removeModal(name);
-
   }
 
   return <Rnd
@@ -101,10 +110,10 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
     
   >
 
-    <WhiteHeaderDiv >
+    <HeaderDiv onClick={() => moveOnTop(name)}>
       <ButtonsDiv>
           <ButtonBg 
-            onClick={() => removeModalHandle()}
+            onClick={removeModalHandle}
           >
             <WindowButton 
             name="close"
@@ -114,16 +123,17 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
         <WindowButton name="zoom"/>
       </ButtonsDiv>
       <TitleHeader> {title}</TitleHeader>
-    </WhiteHeaderDiv >
+    </HeaderDiv>
       
     <BodyDiv
         data-e2e-id='bodyDiv'
       onMouseOver={() => setDraggingDisabled(true)}
       onMouseLeave={() => setDraggingDisabled(false)}
       >
-      {children}
-    </BodyDiv>
-  </Rnd>
+        {children}
+      </BodyDiv>
+    </Rnd>
+  
 };
 
 export default DraggableResizable;

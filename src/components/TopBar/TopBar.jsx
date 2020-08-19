@@ -1,59 +1,47 @@
-import React, { useState } from 'react';
-import logo from '../../styles/images/Apple_Logo.png';
-import styled from 'styled-components'
+import React, { useState } from "react";
+import logo from "../../styles/images/Apple_Logo.png";
+import styled from "styled-components";
 
+const MenuItems = styled.div`
+  margin-bottom: 5px;
+`;
 
-const Dropdown = styled.div`
-  margin-top: 105px;
+const Logo = styled.div`
+  position: relative;
+`;
+
+const Button = styled.button`
+  width: 36px;
+  height: 24px;
+  background: ${(props) =>
+    props.isActive ? "rgba(242, 242, 242, 0.4)" : "transparent"};
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+`;
+
+const DropdownList = styled.ul`
   color: black;
   font-size: 15px;
   background: rgba(249, 249, 249, 0.7);
   backdrop-filter: blur(30px);
   border-radius: 10px;
   position: absolute;
-  box-shadow: 0 0 3px #999999;  
-`;
+  box-shadow: 0 0 3px #999999;
+  width: 150px;
 
-const ButtonActive = styled.div`
-  width: 36px;
-  height: 24px;
-  background: rgba(242, 242, 242, 0.4);
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin-left: 20px;
-  `;
-
-const ButtonInActive = styled.div`
-  width: 36px;
-  height: 24px;
-  // background: rgba(242, 242, 242, 0.4);
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin-left: 20px;
-`;
-
-const DropdownList = styled.ul`
   list-style-type: none;
   margin: 0;
-  padding: 7px 10px;
+  padding: 10px 10px 0 10px;
   text-align: left;
 `;
 
 const ListItem = styled.li`
-  
-  margin-left: 5px;
-  margin-top: 10px;
-`;
-
-const MenuItems = styled.div`
-  margin-bottom: 5px;
-
+  margin-bottom: 10px;
 `;
 
 let TopBar = () => {
-
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
@@ -62,32 +50,28 @@ let TopBar = () => {
 
   return (
     <div className="top-bar">
-      
-      { !isActive && 
-      <ButtonInActive onClick={handleClick} >
-        <img src={logo} alt="logo" className="apple-logo"></img>
-      </ButtonInActive> }
-      { isActive && 
-      <ButtonActive onClick={handleClick} >
-        <img src={logo} alt="active-logo" className="apple-logo"></img>
-      </ButtonActive> }
-
-      {isActive && <Dropdown> 
+      <Logo>
+        <Button isActive={isActive} onClick={handleClick}>
+          <img
+            src={logo}
+            alt={isActive ? "active-logo" : "logo"}
+            className="apple-logo"
+          />
+        </Button>
+        {isActive && (
           <DropdownList>
             <ListItem>About this Mac </ListItem>
             <ListItem>System Preferences ... </ListItem>
             <ListItem>App Store ... </ListItem>
           </DropdownList>
-      </Dropdown>}
-      
+        )}
+      </Logo>
 
       <MenuItems className="top-menu-items">Finder</MenuItems>
       <MenuItems className="top-menu-items">File</MenuItems>
       <MenuItems className="top-menu-items">Edit</MenuItems>
-      
-      
-    
-    </div>);
-}
+    </div>
+  );
+};
 
 export default TopBar;

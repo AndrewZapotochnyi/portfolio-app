@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import emailjs from 'emailjs-com';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import styled from "styled-components";
 
 const StyledForm = styled.form`
   margin: 0;
@@ -8,24 +8,32 @@ const StyledForm = styled.form`
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 `;
 
 export default function MessagesContent() {
-
   const [mailSent, setMailSent] = useState(false);
 
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('portfolio_website', 'template_2rIQVhfP', e.target, 'user_kJKkjKS2uEpNL7cQNqBPa')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "portfolio_website",
+        "template_2rIQVhfP",
+        e.target,
+        "user_kJKkjKS2uEpNL7cQNqBPa"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
           setMailSent(true);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
+        }
+      );
   }
 
   return (
