@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import { colors } from '../../styles/colors'
+import { colors } from "../../styles/colors";
 
 const NotesWrapper = styled.div`
   margin: 0 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  display:flex;
+  display: flex;
   flex-direction: row;
 `;
 
@@ -19,16 +19,15 @@ const NotesLeftBar = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 14px;
-  
 `;
 
 const NotesRightBar = styled.div`
   margin: 0;
   padding: 10px;
-  
+
   border-bottom-right-radius: 10px;
   background: white;
-  border-left: 1px solid #CCC;
+  border-left: 1px solid #ccc;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -37,74 +36,73 @@ const NotesRightBar = styled.div`
 
 const NotesBarTitle = styled.button`
   border-width: 0;
-  background: ${props => props.isActive ? colors.lightgray : colors.white};
-  border-bottom: 1px solid #CCC;
+  background: ${(props) => (props.isActive ? colors.lightgray : colors.white)};
+  border-bottom: 1px solid #ccc;
   height: 50px;
   width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  font-family: 'SF-Pro-Display-Semibold';
+  font-family: "SF-Pro-Display-Semibold";
   outline: none;
 `;
 
 const LeftBarSubTitle = styled.div`
-  font-family: 'SF-Pro-Display-Light.otf';
+  font-family: "SF-Pro-Display-Light.otf";
 `;
 
 const notesEducationContent = {
   lighthouse: {
-    title: 'Web Development Bootcamp',
-    subtitle: 'Lighthouse Labs (2020)',
-    content: 'Lighthouse Labs – Toronto (2020)'
+    title: "Web Development Bootcamp",
+    subtitle: "Lighthouse Labs (2020)",
+    content: "Lighthouse Labs – Toronto (2020)",
   },
   oxford: {
-    title: 'Blockchain Strategy',
-    subtitle: 'University of Oxford (2018)',
-    content: 'Blockchain Strategy, University of Oxford Said Business School'
+    title: "Blockchain Strategy",
+    subtitle: "University of Oxford (2018)",
+    content: "Blockchain Strategy, University of Oxford Said Business School",
   },
   brainstation: {
-    title: 'Web Development Course',
-    subtitle: 'Part-time, Brainstation (2016)',
-    content: 'Web Development Course - Part-time'
+    title: "Web Development Course",
+    subtitle: "Part-time, Brainstation (2016)",
+    content: "Web Development Course - Part-time",
   },
   southampton: {
-    title: 'Digital Marketing Course',
-    subtitle: 'University of Southampton (2014)',
-    content: 'Digital Marketing Course, University of Southampton - Southampton, England'
+    title: "Digital Marketing Course",
+    subtitle: "University of Southampton (2014)",
+    content:
+      "Digital Marketing Course, University of Southampton - Southampton, England",
   },
   alfrednobel: {
-    title: 'Bachelor’s in Marketing',
-    subtitle: 'Alfred Nobel University (2011)',
-    content: 'Bachelor’s in Marketing, Alfred Nobel University - Ukraine'
-  }
-}
+    title: "Bachelor’s in Marketing",
+    subtitle: "Alfred Nobel University (2011)",
+    content: "Bachelor’s in Marketing, Alfred Nobel University - Ukraine",
+  },
+};
 
 const NotesContent = () => {
-
   const [noteOpened, setNoteOpened] = useState("lighthouse");
 
   return (
     <NotesWrapper>
-
       <NotesLeftBar>
-        { Object.keys(notesEducationContent).map((key) => (
-            <NotesBarTitle isActive={key === noteOpened} onClick={() => setNoteOpened(key)}>
-              <div>{notesEducationContent[key].title}</div>
-              <LeftBarSubTitle>{notesEducationContent[key].subtitle}</LeftBarSubTitle>
-            </NotesBarTitle>
-          )
-        )}
+        {Object.keys(notesEducationContent).map((key) => (
+          <NotesBarTitle
+            isActive={key === noteOpened}
+            onClick={() => setNoteOpened(key)}
+          >
+            <div>{notesEducationContent[key].title}</div>
+            <LeftBarSubTitle>
+              {notesEducationContent[key].subtitle}
+            </LeftBarSubTitle>
+          </NotesBarTitle>
+        ))}
       </NotesLeftBar>
 
-      <NotesRightBar>
-                {notesEducationContent[noteOpened].content}
-      </NotesRightBar>
-      
+      <NotesRightBar>{notesEducationContent[noteOpened].content}</NotesRightBar>
     </NotesWrapper>
-
-    );
+  );
 };
 
 export default NotesContent;

@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const Dot = styled.div`
-        position: absolute;
-        color: black;
-        bottom: -7px;
-        border: 3px solid #191919;
-        border-radius: 70%;
-    `;
+  position: absolute;
+  color: black;
+  bottom: -7px;
+  border: 3px solid #191919;
+  border-radius: 70%;
+`;
 
 const StyledButton = styled.button`
   cursor: pointer;
   position: relative;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: transparent;
@@ -27,7 +27,7 @@ const Tooltip = styled.div`
   color: black;
   font-size: 15px;
   display: flex;
-  flex-flow: center; 
+  flex-flow: center;
   background: rgba(249, 249, 249, 0.7);
   backdrop-filter: blur(30px);
   padding: 7px 12px;
@@ -43,28 +43,26 @@ const IconTitle = styled.div`
   color: #666666;
 `;
 
-let PreferencesButton = ({Icon, title}) => {
-    const [isHoovered, setIsHoovered] = useState(false);
+let PreferencesButton = ({ Icon, title }) => {
+  const [isHoovered, setIsHoovered] = useState(false);
 
-    const handleClick = () => {
-        if (!isHoovered) {
-            
-        } else {
+  const handleClick = () => {
+    if (!isHoovered) {
+    } else {
+    }
+  };
 
-        }
-    };
-
-    return (
-        <StyledButton
-            onMouseEnter={() => setIsHoovered(true)}
-            onMouseLeave={() => setIsHoovered(false)}
-            onClick={handleClick}
-        >
-            {/* {isHoovered && <Tooltip>{title}</Tooltip>} */}
-            <Icon />
-            <IconTitle>{title}</IconTitle>
-        </StyledButton>
-    );
-}
+  return (
+    <StyledButton
+      onMouseEnter={() => setIsHoovered(true)}
+      onMouseLeave={() => setIsHoovered(false)}
+      onClick={handleClick}
+    >
+      {/* {isHoovered && <Tooltip>{title}</Tooltip>} */}
+      <Icon />
+      <IconTitle>{title}</IconTitle>
+    </StyledButton>
+  );
+};
 
 export default PreferencesButton;
