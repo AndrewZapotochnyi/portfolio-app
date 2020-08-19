@@ -65,6 +65,7 @@ const StyledTextArea = styled.textarea`
   outline: none;
   border: none;
   resize: none;
+  min-height: 80px;
   padding: 0;
 `;
 
@@ -72,6 +73,10 @@ const FlexWrapper = styled.div`
     flex-grow: 2;
     border-bottom: 1px solid #CCC;
     margin-bottom: 10px;
+`;
+
+const StyledSendButton = styled.button`
+  width: 200px;
 `;
 
 export default function MailContent() {
@@ -119,7 +124,7 @@ export default function MailContent() {
         </FlexWrapper>
 
 
-        <StyledInput type="submit" value="Send"/>
+        <StyledSendButton type="submit" value="Send">Send</StyledSendButton>
 
       </StyledForm>
     </MailWrapper>

@@ -103,7 +103,7 @@ export const modalsStateDefault = {
     },
     [ModalNames.hello]: {
       Content: <Hello />,
-      isActive: false,
+      isActive: true,
       isFixed: false,
       x: 0,
       y: 0,

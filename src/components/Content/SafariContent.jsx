@@ -45,7 +45,7 @@ const slides = [
 ];
 
 const Background = styled.div`
-  background-color: #ffffff;
+  background-color: #0084cb;
   background-image: linear-gradient(0deg, #ffffff 0%, #dadada 54%, #ffffff 100%);
   height: 100%;
   color: black;
@@ -61,22 +61,24 @@ const HeroImage = styled.img`
 `;
 
 const SlideHeader = styled.h1`
-font-family: 'SF-Pro-Display-Semibold';
-
+  font-family: 'SF-Pro-Display-Semibold';
 `;
 
+const StyledP = styled.p`
+  margin: 0 40px;
+`;
 
 const SafariContent = () => {
 
   return ( 
     
-            <Slider class="slider-css">
+            <Slider>
               {slides.map((slide, index) => <Background key={index}>
                 <SlideHeader>{slide.title}</SlideHeader>
-                <p>{slide.description}</p>
+                <StyledP>{slide.description}</StyledP>
                 <section><HeroImage src={slide.image} /></section>
-                <p>{slide.tools}</p>
-                <p><a href={slide.link} target="_blank">GitHub repo</a></p>
+                <StyledP>{slide.tools}</StyledP>
+                <StyledP><a href={slide.link} target="_blank">GitHub repo</a></StyledP>
               </Background>)}
             </Slider>
           
