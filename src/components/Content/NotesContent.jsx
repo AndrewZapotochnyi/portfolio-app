@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors'
 
 const NotesWrapper = styled.div`
-  margin: 0;
+  margin: 0 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display:flex;
@@ -13,7 +13,6 @@ const NotesWrapper = styled.div`
 
 const NotesLeftBar = styled.div`
   margin: 0;
-  width: 210px;
   height: 100%;
   border-bottom-left-radius: 10px;
   background: white;
@@ -42,7 +41,6 @@ const NotesBarTitle = styled.button`
   border-bottom: 1px solid #CCC;
   height: 50px;
   width: 200px;
-  margin-left: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;

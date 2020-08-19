@@ -40,10 +40,10 @@ const TitleHeader = styled.div`
 `;
 
 const BodyDiv = styled.div`
-  // padding: 10px;
+  
   display:flex;
-  height: calc(100% - 35px);
-  padding: 20px;
+  height: calc(100% - 55px);
+  padding: 20px 0;
   // background: #FBFBFB;
 
   border-bottom-left-radius: 10px;
@@ -64,7 +64,8 @@ const WhiteWindowStyle = {
   display: "flex",
   border: "solid 1px #ddd",
   background: "rgba(255, 255, 255)",
-  padding: "0"
+  padding: "0",
+  zIndex: "999",
 }
 
 
@@ -73,6 +74,8 @@ const DraggableResizable = ({name, removeModal, children, height, width, isFixed
 
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
+
+
 
 
   const removeModalHandle = () => {

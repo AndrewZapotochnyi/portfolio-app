@@ -8,6 +8,7 @@ const MailWrapper = styled.div`
     text-align: left;
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
 `;
 
 const StyledForm = styled.form`
@@ -24,15 +25,21 @@ const StyledForm = styled.form`
 const StyledLineHolder = styled.div`
   border-bottom: 1px solid #CCC;
   width: 100% - 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
+  flex-direction: row;
   padding: 5px 0;
 `;
 
 const StyledLabel = styled.label`
   color: #666;
   margin-right: 10px;
+  padding-top: 7px;
   float: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  width: max-content;
 `;
 
 const StyledInput = styled.input`
@@ -40,7 +47,8 @@ const StyledInput = styled.input`
   border: none;
   margin-bottom: 2px;
   padding: 5px;
-  max-width: 100px;
+
+  flex-grow: 2;
 `;
 
 const ActiveName = styled.div`
@@ -57,6 +65,7 @@ const StyledTextArea = styled.textarea`
   outline: none;
   border: none;
   resize: none;
+  min-height: 80px;
   padding: 0;
 `;
 
@@ -64,6 +73,10 @@ const FlexWrapper = styled.div`
     flex-grow: 2;
     border-bottom: 1px solid #CCC;
     margin-bottom: 10px;
+`;
+
+const StyledSendButton = styled.button`
+  width: 200px;
 `;
 
 export default function MailContent() {
@@ -111,7 +124,7 @@ export default function MailContent() {
         </FlexWrapper>
 
 
-        <StyledInput type="submit" value="Send"/>
+        <StyledSendButton type="submit" value="Send">Send</StyledSendButton>
 
       </StyledForm>
     </MailWrapper>

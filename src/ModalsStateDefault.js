@@ -25,7 +25,7 @@ import {ModalNames} from './components/constants';
 export const modalsStateDefault = {
   [ModalNames.safari]: {
     Content: <SafariContent />,
-    isActive: false,
+    isActive: true,
     isFixed: false,
     toolButton: {
       Icon: SafariIcon,
@@ -33,8 +33,8 @@ export const modalsStateDefault = {
     },
     x: 0,
     y: 0,
-    width: 400,
-    height: 520,
+    width: 600,
+    height: 450,
   },
   [ModalNames.calendar]: {
     Content: <CalendarContent />,
@@ -64,7 +64,7 @@ export const modalsStateDefault = {
   },
     [ModalNames.mail]: {
       Content: <MailContent />,
-      isActive: true,
+      isActive: false,
       isFixed: false,
       toolButton: {
         Icon: MailIcon,
@@ -72,21 +72,21 @@ export const modalsStateDefault = {
       },
       x: 0,
       y: 0,
-      width: 200,
+      width: 300,
       height: 300,
     },
     [ModalNames.preferences]: {
       Content: <PreferencesContent />,
       isActive: false,
-      isFixed: false,
+      isFixed: true,
       toolButton: {
         Icon: PreferencesIcon,
         title: 'Preferences',
       },
       x: 0,
       y: 0,
-      width: 400,
-      height: 300,
+      width: 570,
+      height: 400,
     },
     [ModalNames.pages]: {
       Content: <PagesContent />,
@@ -103,7 +103,7 @@ export const modalsStateDefault = {
     },
     [ModalNames.hello]: {
       Content: <Hello />,
-      isActive: false,
+      isActive: true,
       isFixed: false,
       x: 0,
       y: 0,

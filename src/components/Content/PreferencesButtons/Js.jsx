@@ -1,11 +1,11 @@
 import React from 'react';
 import JsImage from '../../../styles/icons/Preferences/JavaScript.png';
-import IconWrap from '../../icons/IconWrapper';
+import PreferencesIconWrap from './PreferencesIconWrap';
 
 let JsIcon = () => {
 
   return (
-        <IconWrap src={JsImage} alt="JavaScript Image"></IconWrap>
+        <PreferencesIconWrap src={JsImage} alt="JavaScript Image"></PreferencesIconWrap>
         );
 };
 
