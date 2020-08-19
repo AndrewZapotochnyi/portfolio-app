@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Rnd } from "react-rnd";
-import {ModalNames} from "../constants";
-import styled from 'styled-components'
+import { ModalNames } from "../constants";
+import styled from "styled-components";
 
-import WindowButton from './WindowButton';
+import WindowButton from "./WindowButton";
 
 const WhiteHeaderDiv = styled.div`
   position: relative;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
   align-items: stretch;
   padding: 0 10px;
 `;
@@ -27,21 +27,20 @@ const ButtonsDiv = styled.div`
 const TitleHeader = styled.div`
   display: flex;
   align-items: center;
-  
+
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 25px;
-  
+
   font-size: 15px;
   color: #191919;
-  opacity: 0.6;  
+  opacity: 0.6;
 `;
 
 const BodyDiv = styled.div`
-  
-  display:flex;
+  display: flex;
   height: calc(100% - 55px);
   padding: 20px 0;
   // background: #FBFBFB;
@@ -66,64 +65,63 @@ const WhiteWindowStyle = {
   background: "rgba(255, 255, 255)",
   padding: "0",
   zIndex: "999",
-}
+};
 
-
-
-const DraggableResizable = ({name, removeModal, children, height, width, isFixed }) => {
-
+const DraggableResizable = ({
+  name,
+  removeModal,
+  children,
+  height,
+  width,
+  isFixed,
+}) => {
   const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
 
-
-
-
   const removeModalHandle = () => {
     removeModal(name);
+  };
 
-  }
-
-  return <Rnd
-    disableDragging={draggingDisabled}
-    style={WhiteWindowStyle}
-    className="modal-rnd"
-    minWidth={width}
-    minHeight={height}
-    maxHeight="80vh"
-    maxWidth="100vh"
-    enableResizing={!isFixed}
-    default={{
-      x: 0,
-      y: 0,
-      width: {width}, 
-      height: {height},
-    }}
-    
-  >
-
-    <WhiteHeaderDiv >
-      <ButtonsDiv>
-          <ButtonBg 
-            onClick={() => removeModalHandle()}
-          >
-            <WindowButton 
-            name="close"
-            setDraggingDisabled={setDraggingDisabled}/>
+  return (
+    <Rnd
+      disableDragging={draggingDisabled}
+      style={WhiteWindowStyle}
+      className="modal-rnd"
+      minWidth={width}
+      minHeight={height}
+      maxHeight="80vh"
+      maxWidth="100vh"
+      enableResizing={!isFixed}
+      default={{
+        x: 0,
+        y: 0,
+        width: { width },
+        height: { height },
+      }}
+    >
+      <WhiteHeaderDiv>
+        <ButtonsDiv>
+          <ButtonBg onClick={() => removeModalHandle()}>
+            <WindowButton
+              name="close"
+              setDraggingDisabled={setDraggingDisabled}
+            />
           </ButtonBg>
-        <WindowButton name="minimize"/>
-        <WindowButton name="zoom"/>
-      </ButtonsDiv>
-      <TitleHeader> {title}</TitleHeader>
-    </WhiteHeaderDiv >
-      
-    <BodyDiv
-        data-e2e-id='bodyDiv'
-      onMouseOver={() => setDraggingDisabled(true)}
-      onMouseLeave={() => setDraggingDisabled(false)}
+          <WindowButton name="minimize" />
+          <WindowButton name="zoom" />
+        </ButtonsDiv>
+        <TitleHeader> {title}</TitleHeader>
+      </WhiteHeaderDiv>
+
+      <BodyDiv
+        data-e2e-id="bodyDiv"
+        onMouseOver={() => setDraggingDisabled(true)}
+        onMouseLeave={() => setDraggingDisabled(false)}
       >
-      {children}
-    </BodyDiv>
-  </Rnd>
+        {children}
+      </BodyDiv>
+    </Rnd>
+  );
 };
 
 export default DraggableResizable;
