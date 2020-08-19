@@ -27,6 +27,14 @@ function App() {
       isActive: false
     }
   });
+  const moveOnTop = (name) => setModals(
+    Object.entries(modals).reduce((acc, [key, value]) => {
+      const isOnTop = key === name;
+      return {...acc, [key]: {...value, isOnTop }}
+    }, {})
+  )
+  
+  console.log(modals)
 
   return (
     <div className="App">
@@ -35,7 +43,7 @@ function App() {
       <div className="App-Holder">
         <TopBar></TopBar>
     
-        {Object.entries(modals).map(([key, {isActive, Content, width, height, isFixed}], i) => (
+        {Object.entries(modals).map(([key, {isActive, Content, width, height, isFixed, isOnTop}], i) => (
           <div>
             {isActive &&
               <DraggableResizable 
@@ -45,6 +53,8 @@ function App() {
                 width={width}
                 height={height}
                 isFixed={isFixed}
+                isOnTop={isOnTop}
+                moveOnTop={moveOnTop}
               > {Content}
               </DraggableResizable>
             } 

@@ -27,6 +27,7 @@ export const modalsStateDefault = {
     Content: <SafariContent />,
     isActive: true,
     isFixed: false,
+    isOnTop: false,
     toolButton: {
       Icon: SafariIcon,
       title: 'Safari',
@@ -40,6 +41,7 @@ export const modalsStateDefault = {
     Content: <CalendarContent />,
     isActive: false,
     isFixed: true,
+    isOnTop: false,
     toolButton: {
       Icon: CalendarIcon,
       title: 'Calendar',
@@ -53,6 +55,7 @@ export const modalsStateDefault = {
     Content: <NotesContent />,
     isActive: false,
     isFixed: false,
+    isOnTop: false,
     toolButton: {
       Icon: NotesIcon,
       title: 'Notes',
@@ -66,6 +69,7 @@ export const modalsStateDefault = {
       Content: <MailContent />,
       isActive: false,
       isFixed: false,
+      isOnTop: false,
       toolButton: {
         Icon: MailIcon,
         title: 'Mail',
@@ -79,6 +83,7 @@ export const modalsStateDefault = {
       Content: <PreferencesContent />,
       isActive: false,
       isFixed: true,
+      isOnTop: false,
       toolButton: {
         Icon: PreferencesIcon,
         title: 'Preferences',
@@ -92,6 +97,7 @@ export const modalsStateDefault = {
       Content: <PagesContent />,
       isActive: false,
       isFixed: false,
+      isOnTop: false,
       toolButton: {
         Icon: PagesIcon,
         title: 'Pages',
@@ -105,6 +111,7 @@ export const modalsStateDefault = {
       Content: <Hello />,
       isActive: true,
       isFixed: false,
+      isOnTop: false,
       x: 0,
       y: 0,
       width: 400,
