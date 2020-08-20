@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import logo from "../../styles/images/Apple_Logo.png";
 import styled from "styled-components";
+import DropDownButton from "./DropDownButton";
 
 const MenuItems = styled.div`
   margin-bottom: 5px;
+  cursor: pointer;
+`;
+
+const RightHolder = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 5px;
 `;
 
 const Logo = styled.div`
@@ -26,19 +34,44 @@ const DropdownList = styled.ul`
   font-size: 15px;
   background: rgba(249, 249, 249, 0.7);
   backdrop-filter: blur(30px);
-  border-radius: 10px;
+  border-radius: 4px;
   position: absolute;
   box-shadow: 0 0 3px #999999;
-  width: 150px;
+  width: 140px;
 
   list-style-type: none;
   margin: 0;
-  padding: 10px 10px 0 10px;
+  padding: 5px;
   text-align: left;
 `;
 
 const ListItem = styled.li`
   margin-bottom: 10px;
+`;
+
+const TopBarStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+  font-size: 15px;
+  // padding-left: 20px;
+
+  width: 100%;
+  height: 24px;
+`;
+
+const LeftHolder = styled.div`
+  display: flex;
+  margin-left: 10px;
+`;
+
+const A = styled.a`
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 `;
 
 let TopBar = ({ addModal }) => {
@@ -54,29 +87,47 @@ let TopBar = ({ addModal }) => {
   };
 
   return (
-    <div className="top-bar">
-      <Logo>
-        <Button isActive={isActive} onClick={handleClick}>
-          <img
-            src={logo}
-            alt={isActive ? "active-logo" : "logo"}
-            className="apple-logo"
-          />
-        </Button>
-        {isActive && (
-          <DropdownList>
-            <button onClick={() => openModal("CREDENTIALS")}>
-              Project Credentials{" "}
-            </button>
-            <button onClick={() => openModal("HELLO")}>Hello </button>
-          </DropdownList>
-        )}
-      </Logo>
+    <TopBarStyle className="top-bar">
+      <LeftHolder>
+        <Logo>
+          <Button isActive={isActive} onClick={handleClick}>
+            <img
+              src={logo}
+              alt={isActive ? "active-logo" : "logo"}
+              className="apple-logo"
+            />
+          </Button>
+          {isActive && (
+            <DropdownList>
+              <DropDownButton
+                ModalName="HELLO"
+                title="Hello world!"
+                openModal={openModal}
+              />
 
-      <MenuItems className="top-menu-items">Finder</MenuItems>
-      <MenuItems className="top-menu-items">File</MenuItems>
-      <MenuItems className="top-menu-items">Edit</MenuItems>
-    </div>
+              <DropDownButton
+                ModalName="CREDENTIALS"
+                title="Project Credentials"
+                openModal={openModal}
+              />
+            </DropdownList>
+          )}
+        </Logo>
+
+        <MenuItems className="top-menu-items">
+          <A href="https://www.linkedin.com/in/zapotochnyi/" target="_blank">
+            LinkedIn
+          </A>
+        </MenuItems>
+        <MenuItems className="top-menu-items">
+          <A href="https://github.com/AndrewZapotochnyi" target="_blank">
+            GitHub
+          </A>
+        </MenuItems>
+      </LeftHolder>
+
+      <RightHolder>Andrew Zapotochnyi</RightHolder>
+    </TopBarStyle>
   );
 };
 

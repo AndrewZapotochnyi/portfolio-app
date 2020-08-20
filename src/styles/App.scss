@@ -178,16 +178,6 @@ $font-main: "SF-Pro-Display-Light.otf", sans-serif;
 }
 
 .top-bar {
-  display: flex;
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(1px);
-  font-size: 15px;
-  padding-left: 20px;
-
-  width: 100%;
-  height: 24px;
-
   .apple-logo {
     width: 18px;
     height: 18px;

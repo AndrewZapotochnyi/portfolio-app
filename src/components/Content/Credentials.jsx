@@ -12,10 +12,12 @@ const Img = styled.img`
   box-shadow: 1px 0px 1px 0px #666;
 `;
 
-const SafariWrapper = styled.div`
+const CredentialsWrapper = styled.div`
   width: 100%;
   height: 100%;
   background: white;
+  padding: 0 20px;
+  text-align: left;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: flex;
@@ -25,6 +27,8 @@ const SafariWrapper = styled.div`
 
 const TitleBig = styled.h2`
   font-family: "SF-Pro-Display-Semibold";
+  margin-top: 0;
+  margin-bottom: 10px;
   font-size: 32px;
   line-height: 1.1;
   letter-spacing: 0em;
@@ -51,7 +55,7 @@ const AboutMe = styled.p`
 
 const Credentials = () => {
   return (
-    <SafariWrapper>
+    <CredentialsWrapper>
       <TitleBig>Credentials</TitleBig>
 
       <AboutMe>Development: Andrew Zapotochnyi</AboutMe>
@@ -63,8 +67,8 @@ const Credentials = () => {
       </AboutMe>
       <AboutMe>Design: Big Sur UI Kit by ls.graphics</AboutMe>
 
-      <AboutMe>Take a look at my desktop to learn more about me!</AboutMe>
-    </SafariWrapper>
+      <AboutMe>View this project on GitHub</AboutMe>
+    </CredentialsWrapper>
   );
 };
 

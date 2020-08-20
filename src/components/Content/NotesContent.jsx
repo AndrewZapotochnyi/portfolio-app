@@ -23,7 +23,7 @@ const NotesLeftBar = styled.div`
 
 const NotesRightBar = styled.div`
   margin: 0;
-  padding: 10px;
+  padding: 0px 20px;
 
   border-bottom-right-radius: 10px;
   background: white;
@@ -32,6 +32,7 @@ const NotesRightBar = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   flex-grow: 2;
+  text-align: left;
 `;
 
 const NotesBarTitle = styled.button`
@@ -39,7 +40,7 @@ const NotesBarTitle = styled.button`
   background: ${(props) => (props.isActive ? colors.lightgray : colors.white)};
   border-bottom: 1px solid #ccc;
   height: 50px;
-  width: 200px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,32 +53,90 @@ const LeftBarSubTitle = styled.div`
   font-family: "SF-Pro-Display-Light.otf";
 `;
 
+const NoteHolder = styled.div`
+  margin-top: 0px;
+`;
+
 const notesEducationContent = {
   lighthouse: {
-    title: "Web Development Bootcamp",
+    title: "Diploma, Web Development",
     subtitle: "Lighthouse Labs (2020)",
-    content: "Lighthouse Labs – Toronto (2020)",
+    content: (
+      <NoteHolder>
+        <p>
+          Lighthouse Labs is a coding bootcamp for web and mobile software
+          development in multiple cities across Canada.{" "}
+        </p>
+        <p>
+          I've completed a full-time immersive 12 hours a day, six days a week,
+          12 weeks program.
+        </p>
+        <p>
+          Technologies and frameworks learned: JavaScript, NodeJS, jQuery,
+          React, Sass, Ruby On Rails, Git, Ajax, Express, EJS, Bootstrap,
+          ActiveRecord, SQL, PostgreSQL.
+        </p>
+      </NoteHolder>
+    ),
   },
   oxford: {
-    title: "Blockchain Strategy",
+    title: "Blockchain Strategy Programme",
     subtitle: "University of Oxford (2018)",
-    content: "Blockchain Strategy, University of Oxford Said Business School",
+    content: (
+      <NoteHolder>
+        <p>
+          The Oxford Blockchain Strategy Programme cohesively integrates
+          relevant information on blockchain for business leaders and innovators
+          by showcasing best use cases, value propositions, and implementation
+          strategies in the blockchain industry.
+        </p>
+      </NoteHolder>
+    ),
   },
   brainstation: {
     title: "Web Development Course",
     subtitle: "Part-time, Brainstation (2016)",
-    content: "Web Development Course - Part-time",
+    content: (
+      <NoteHolder>
+        <p>
+          BrainStation is the global leader in digital skills training,
+          empowering businesses and brands to succeed in the digital age.{" "}
+        </p>
+        <p>
+          I've completed a part-time web development course with the focus on
+          front-end technologies, such as CSS3, HTML5, Javascript, Git, JQuery,
+          Ajax, Bootstrap.
+        </p>
+      </NoteHolder>
+    ),
   },
   southampton: {
     title: "Digital Marketing Course",
-    subtitle: "University of Southampton (2014)",
-    content:
-      "Digital Marketing Course, University of Southampton - Southampton, England",
+    subtitle: "University of Southampton, UK (2014)",
+    content: (
+      <NoteHolder>
+        <p>
+          I've completed a short digital marketing course on emerging trends in
+          digital culture and online consumer behavior, data analytics, and
+          privacy.
+        </p>
+      </NoteHolder>
+    ),
   },
   alfrednobel: {
     title: "Bachelor’s in Marketing",
     subtitle: "Alfred Nobel University (2011)",
-    content: "Bachelor’s in Marketing, Alfred Nobel University - Ukraine",
+    content: (
+      <NoteHolder>
+        <p>
+          Alfred Nobel University is one of the top private universities in
+          Ukraine. It is committed to enhancing innovative technologies in
+          teaching, and it helps to strengthen the country's position in the
+          international arena, which is reflected in its mission.{" "}
+        </p>
+        <p>I have earned a Bachelor's degree in Marketing.</p>
+      </NoteHolder>
+    ),
   },
 };
 

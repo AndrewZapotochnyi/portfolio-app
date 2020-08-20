@@ -104,14 +104,12 @@ const DraggableResizable = ({
       onDragStop={(e, d) => {
         setPosition({ x: d.x, y: d.y });
       }}
-      default={
-        {
-          // x: 0,
-          // y: 0,
-          // width: {width},
-          // height: {height},
-        }
-      }
+      default={{
+        // x: 0,
+        // y: 0,
+        width: { width },
+        height: { height },
+      }}
     >
       <HeaderDiv onClick={() => moveOnTop(name)}>
         <ButtonsDiv>
