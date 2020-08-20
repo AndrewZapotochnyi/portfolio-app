@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
+import SendImage from "../../styles/icons/Send.png";
 
 const MailWrapper = styled.div`
   width: 100%;
@@ -64,7 +65,7 @@ const StyledTextArea = styled.textarea`
   outline: none;
   border: none;
   resize: none;
-  min-height: 80px;
+  min-height: 60px;
   padding: 0;
 `;
 
@@ -75,7 +76,23 @@ const FlexWrapper = styled.div`
 `;
 
 const StyledSendButton = styled.button`
-  width: 200px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #191919;
+  align-self: flex-end;
+`;
+
+const EmailSent = styled.div`
+  color: #cf0b10;
+`;
+
+const SendImageSize = styled.img`
+  height: 30px;
+  width: 30px;
 `;
 
 export default function MailContent() {
@@ -110,7 +127,6 @@ export default function MailContent() {
       </StyledLineHolder>
 
       <StyledForm className="contact-form" onSubmit={sendEmail}>
-        {mailSent && <div>I will get back to you!</div>}
         <StyledInput type="hidden" name="contact_number" />
 
         <StyledLineHolder>
@@ -127,9 +143,13 @@ export default function MailContent() {
           <StyledTextArea name="message" />
         </FlexWrapper>
 
-        <StyledSendButton type="submit" value="Send">
-          Send
-        </StyledSendButton>
+        {mailSent && <EmailSent>Your message has been sent!</EmailSent>}
+        {!mailSent && (
+          <StyledSendButton type="submit" value="Send">
+            Send
+            <SendImageSize src={SendImage} alt="send" />
+          </StyledSendButton>
+        )}
       </StyledForm>
     </MailWrapper>
   );
