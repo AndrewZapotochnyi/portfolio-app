@@ -41,11 +41,16 @@ const ListItem = styled.li`
   margin-bottom: 10px;
 `;
 
-let TopBar = () => {
+let TopBar = ({ addModal }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsActive(!isActive);
+  };
+
+  const openModal = (name) => {
+    setIsActive(!isActive);
+    addModal(name);
   };
 
   return (
@@ -60,9 +65,10 @@ let TopBar = () => {
         </Button>
         {isActive && (
           <DropdownList>
-            <ListItem>About this Mac </ListItem>
-            <ListItem>System Preferences ... </ListItem>
-            <ListItem>App Store ... </ListItem>
+            <button onClick={() => openModal("CREDENTIALS")}>
+              Project Credentials{" "}
+            </button>
+            <button onClick={() => openModal("HELLO")}>Hello </button>
           </DropdownList>
         )}
       </Logo>

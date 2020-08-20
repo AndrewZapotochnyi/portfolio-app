@@ -41,6 +41,7 @@ let ToolButton = ({
   addModal,
   removeModal,
   isActive,
+  moveOnTop,
 }) => {
   const [isHoovered, setIsHoovered] = useState(false);
 
