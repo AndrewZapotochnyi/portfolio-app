@@ -22,8 +22,6 @@ const IconTitle = styled.div`
 `;
 
 let PreferencesButton = ({ Icon, title }) => {
-  const [isHoovered, setIsHoovered] = useState(false);
-
   return (
     <StyledButton
     // onMouseEnter={() => setIsHoovered(true)}
