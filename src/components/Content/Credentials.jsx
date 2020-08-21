@@ -53,21 +53,41 @@ const AboutMe = styled.p`
   color: rgb(29, 29, 31);
 `;
 
+const A = styled.a`
+  color: inherit; /* blue colors for links too */
+  // text-decoration: inherit; /* no underline */
+`;
+
 const Credentials = () => {
   return (
     <CredentialsWrapper>
       <TitleBig>Credentials</TitleBig>
 
-      <AboutMe>Development: Andrew Zapotochnyi</AboutMe>
-      <AboutMe>Mentorship and code-reviews: Serhii Rumiantsev</AboutMe>
-      <AboutMe>Idea: Konstantine Kupriyanov, Andrew Zapotochnyi</AboutMe>
       <AboutMe>
-        Tech-stack: React | React Rnd | Styled Components | React Animated
-        Slider | Sass
+        <b>Development:</b> Andrew Zapotochnyi
       </AboutMe>
-      <AboutMe>Design: Big Sur UI Kit by ls.graphics</AboutMe>
+      <AboutMe>
+        <b>Mentorship and code-reviews:</b> Serhii Rumiantsev
+      </AboutMe>
+      <AboutMe>
+        <b>Idea:</b> Konstantine Kupriyanov, Andrew Zapotochnyi
+      </AboutMe>
+      <AboutMe>
+        <b>Tech-stack:</b> React | React Rnd | Styled Components | React
+        Animated Slider | Sass
+      </AboutMe>
+      <AboutMe>
+        <b>Design template</b>: Big Sur UI Kit by ls.graphics
+      </AboutMe>
 
-      <AboutMe>View this project on GitHub</AboutMe>
+      <AboutMe>
+        <A
+          href="https://github.com/AndrewZapotochnyi/portfolio-app"
+          target="_blank"
+        >
+          View this project on GitHub
+        </A>
+      </AboutMe>
     </CredentialsWrapper>
   );
 };

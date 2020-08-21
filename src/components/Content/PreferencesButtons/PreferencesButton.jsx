@@ -9,8 +9,8 @@ const Dot = styled.div`
   border-radius: 70%;
 `;
 
-const StyledButton = styled.button`
-  cursor: pointer;
+const StyledButton = styled.div`
+  // cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,11 @@ const IconTitle = styled.div`
   color: #666666;
 `;
 
+const IconWrapSize = styled.div`
+  width: 60px;
+  height: 60px;
+`;
+
 let PreferencesButton = ({ Icon, title }) => {
   const [isHoovered, setIsHoovered] = useState(false);
 
@@ -54,9 +59,9 @@ let PreferencesButton = ({ Icon, title }) => {
 
   return (
     <StyledButton
-      onMouseEnter={() => setIsHoovered(true)}
-      onMouseLeave={() => setIsHoovered(false)}
-      onClick={handleClick}
+    // onMouseEnter={() => setIsHoovered(true)}
+    // onMouseLeave={() => setIsHoovered(false)}
+    // onClick={handleClick}
     >
       {/* {isHoovered && <Tooltip>{title}</Tooltip>} */}
       <Icon />
