@@ -115,12 +115,20 @@ let TopBar = ({ addModal }) => {
         </Logo>
 
         <MenuItems className="top-menu-items">
-          <A href="https://www.linkedin.com/in/zapotochnyi/" target="_blank">
+          <A
+            href="https://www.linkedin.com/in/zapotochnyi/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </A>
         </MenuItems>
         <MenuItems className="top-menu-items">
-          <A href="https://github.com/AndrewZapotochnyi" target="_blank">
+          <A
+            href="https://github.com/AndrewZapotochnyi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </A>
         </MenuItems>

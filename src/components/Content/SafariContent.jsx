@@ -93,7 +93,7 @@ const SafariContent = () => {
           </section>
           <StyledP>{slide.tools}</StyledP>
           <StyledP>
-            <a href={slide.link} target="_blank">
+            <a href={slide.link} target="_blank" rel="noopener noreferrer">
               GitHub repo
             </a>
           </StyledP>
