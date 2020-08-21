@@ -45,10 +45,6 @@ const DropdownList = styled.ul`
   text-align: left;
 `;
 
-const ListItem = styled.li`
-  margin-bottom: 10px;
-`;
-
 const TopBarStyle = styled.div`
   display: flex;
   flex-direction: row;

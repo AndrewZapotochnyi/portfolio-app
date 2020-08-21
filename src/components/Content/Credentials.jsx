@@ -1,16 +1,5 @@
 import React from "react";
-import Man from "../../styles/images/man.png";
 import styled from "styled-components";
-
-const Img = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #cccccc;
-  box-shadow: 1px 0px 1px 0px #666;
-`;
 
 const CredentialsWrapper = styled.div`
   width: 100%;
@@ -30,14 +19,6 @@ const TitleBig = styled.h2`
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 32px;
-  line-height: 1.1;
-  letter-spacing: 0em;
-  color: rgb(29, 29, 31);
-`;
-
-const SubTitle = styled.h3`
-  font-family: "SF-Pro-Display-Semibold";
-  font-size: 21px;
   line-height: 1.1;
   letter-spacing: 0em;
   color: rgb(29, 29, 31);

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { Rnd } from "react-rnd";
-import { ModalNames } from "../constants";
 import styled from "styled-components";
 
 import WindowButton from "./WindowButton";
@@ -99,7 +98,7 @@ const DraggableResizable = ({
           : 0,
       });
     }
-  }, [refContainer]);
+  }, [refContainer, countPosition, done]);
 
   const WhiteWindowStyle = {
     display: "flex",
