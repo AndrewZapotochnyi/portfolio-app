@@ -7,8 +7,6 @@ import TopBar from "./components/TopBar/TopBar";
 import DraggableResizable from "./components/Modal/DraggableResizable";
 import { modalsStateDefault } from "./ModalsStateDefault";
 
-import styled from "styled-components";
-
 function App() {
   const [modals, setModals] = useState(modalsStateDefault);
 

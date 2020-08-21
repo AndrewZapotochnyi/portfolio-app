@@ -25,13 +25,6 @@ const CloseButtonIcon = styled.img`
   cursor: pointer;
 `;
 
-const MidButton = styled.img`
-  width: 32px;
-  height: 24px;
-  margin-left: 14px;
-  margin-right: 4px;
-`;
-
 const WindowButton = ({ name }) => {
   const [isHoovered, setIsHoovered] = useState(false);
 

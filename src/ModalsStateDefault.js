@@ -2,11 +2,10 @@ import React from "react";
 
 import CalendarIcon from "./components/icons/CalendarIcon";
 import NotesIcon from "./components/icons/NotesIcon";
-import FinderIcon from "./components/icons/FinderIcon";
 import MailIcon from "./components/icons/MailIcon";
-import MessagesIcon from "./components/icons/MessagesIcon";
+
 import SafariIcon from "./components/icons/SafariIcon";
-import PhotosIcon from "./components/icons/PhotosIcon";
+
 import PreferencesIcon from "./components/icons/PreferencesIcon";
 import PagesIcon from "./components/icons/PagesIcon";
 
@@ -16,7 +15,7 @@ import NotesContent from "./components/Content/NotesContent";
 import MailContent from "./components/Content/MailContent";
 import PreferencesContent from "./components/Content/PreferencesContent";
 import PagesContent from "./components/Content/PagesContent";
-import MessagesContent from "./components/Content/MessagesContent";
+
 import Hello from "./components/Content/Hello";
 import Credentials from "./components/Content/Credentials";
 

@@ -12,7 +12,6 @@ import RailsIcon from "./PreferencesButtons/Rails";
 import jQueryIcon from "./PreferencesButtons/jQuery";
 import ExpressIcon from "./PreferencesButtons/Express";
 import MaterialUiIcon from "./PreferencesButtons/MaterialUi";
-import SassIcon from "./PreferencesButtons/Sass";
 import FacebookApiIcon from "./PreferencesButtons/FacebookApi";
 import GitHubIcon from "./PreferencesButtons/GitHub";
 import SQLiteIcon from "./PreferencesButtons/SQLite";

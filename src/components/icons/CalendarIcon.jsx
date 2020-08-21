@@ -1,6 +1,4 @@
 import React from "react";
-import CalendarImage from "../../styles/icons/Calendar.svg";
-import IconWrap from "./IconWrapper";
 
 import styled from "styled-components";
 
