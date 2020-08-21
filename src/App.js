@@ -41,12 +41,10 @@ function App() {
       }, {})
     );
 
-  console.log(modals);
-
   return (
     <div className="App">
       <div className="App-Holder">
-        <TopBar addModal={openModal}></TopBar>
+        <TopBar addModal={openModal} />
 
         {Object.entries(modals).map(
           (
@@ -62,6 +60,7 @@ function App() {
                 isOnTop,
                 x,
                 y,
+                countPosition,
               },
             ],
             i
@@ -80,6 +79,7 @@ function App() {
                   title={title}
                   x={x}
                   y={y}
+                  countPosition={countPosition}
                 >
                   {" "}
                   {Content}

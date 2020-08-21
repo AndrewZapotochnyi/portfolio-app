@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { Rnd } from "react-rnd";
 import { ModalNames } from "../constants";
 import styled from "styled-components";
@@ -70,12 +70,31 @@ const DraggableResizable = ({
   isFixed,
   isOnTop,
   moveOnTop,
-  x,
-  y,
+  countPosition,
 }) => {
   // const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
-  const [position, setPosition] = useState({ x: x, y: y });
+  const [done, setDone] = useState(false);
+  const [position, setPosition] = useState({
+    x: !countPosition ? -1 * (width / 2) : 0,
+    y: 0,
+  });
+  const refContainer = useRef(null);
+
+  useLayoutEffect(() => {
+    if (!!refContainer.current.clientWidth && !done && countPosition) {
+      console.log("done");
+      setDone(true);
+      setPosition({
+        y: !!refContainer?.current?.clientHeight
+          ? -1 * (refContainer.current.clientHeight / 2)
+          : 0,
+        x: !!refContainer?.current?.clientWidth
+          ? -1 * (refContainer.current.clientWidth / 2)
+          : 0,
+      });
+    }
+  }, [refContainer]);
 
   const WhiteWindowStyle = {
     display: "flex",
@@ -97,41 +116,36 @@ const DraggableResizable = ({
       className="modal-rnd"
       minWidth={width}
       minHeight={height}
-      maxHeight="80vh"
-      maxWidth="100vh"
       enableResizing={!isFixed}
+      bounds="window"
       position={{ x: position.x, y: position.y }}
       onDragStop={(e, d) => {
         setPosition({ x: d.x, y: d.y });
       }}
-      default={{
-        // x: 0,
-        // y: 0,
-        width: { width },
-        height: { height },
-      }}
     >
-      <HeaderDiv onClick={() => moveOnTop(name)}>
-        <ButtonsDiv>
-          <ButtonBg onClick={removeModalHandle}>
-            <WindowButton
-              name="close"
-              setDraggingDisabled={setDraggingDisabled}
-            />
-          </ButtonBg>
-          <WindowButton name="minimize" />
-          <WindowButton name="zoom" />
-        </ButtonsDiv>
-        <TitleHeader> {title}</TitleHeader>
-      </HeaderDiv>
+      <div data-e2e-id="hello" ref={refContainer}>
+        <HeaderDiv onClick={() => moveOnTop(name)}>
+          <ButtonsDiv>
+            <ButtonBg onClick={removeModalHandle}>
+              <WindowButton
+                name="close"
+                setDraggingDisabled={setDraggingDisabled}
+              />
+            </ButtonBg>
+            <WindowButton name="minimize" />
+            <WindowButton name="zoom" />
+          </ButtonsDiv>
+          <TitleHeader> {title}</TitleHeader>
+        </HeaderDiv>
 
-      <BodyDiv
-        data-e2e-id="bodyDiv"
-        onMouseOver={() => setDraggingDisabled(true)}
-        onMouseLeave={() => setDraggingDisabled(false)}
-      >
-        {children}
-      </BodyDiv>
+        <BodyDiv
+          data-e2e-id="bodyDiv"
+          onMouseOver={() => setDraggingDisabled(true)}
+          onMouseLeave={() => setDraggingDisabled(false)}
+        >
+          {children}
+        </BodyDiv>
+      </div>
     </Rnd>
   );
 };
