@@ -27,7 +27,7 @@ export const modalsStateDefault = {
     Content: <SafariContent />,
     title: "Safari - My Projects",
     isActive: false,
-    isFixed: false,
+    isFixed: true,
     isOnTop: false,
     toolButton: {
       Icon: SafariIcon,
@@ -88,7 +88,7 @@ export const modalsStateDefault = {
     Content: <PagesContent />,
     title: "Pages - Work Experience",
     isActive: false,
-    isFixed: false,
+    isFixed: true,
     isOnTop: false,
     toolButton: {
       Icon: PagesIcon,
@@ -125,7 +125,8 @@ export const modalsStateDefault = {
     x: -200,
     y: -550,
     width: 400,
-    height: 300,
+    height: 500,
+    countPosition: true,
   },
   [ModalNames.credentials]: {
     Content: <Credentials />,
@@ -137,5 +138,6 @@ export const modalsStateDefault = {
     y: -600,
     width: 500,
     height: 300,
+    countPosition: true,
   },
 };

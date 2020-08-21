@@ -44,8 +44,8 @@ const BodyDiv = styled.div`
 
   height: calc(100% - 55px);
   padding: 20px 0;
-  // background: #FBFBFB;
 
+  flex-grow: 2;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `;
@@ -60,6 +60,12 @@ const ButtonBg = styled.button`
   padding-right: 0px;
 `;
 
+const RefContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
+
 const DraggableResizable = ({
   name,
   title,
@@ -72,7 +78,6 @@ const DraggableResizable = ({
   moveOnTop,
   countPosition,
 }) => {
-  // const title = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const [draggingDisabled, setDraggingDisabled] = useState(false);
   const [done, setDone] = useState(false);
   const [position, setPosition] = useState({
@@ -122,8 +127,12 @@ const DraggableResizable = ({
       onDragStop={(e, d) => {
         setPosition({ x: d.x, y: d.y });
       }}
+      default={{
+        width: { width },
+        height: { height },
+      }}
     >
-      <div data-e2e-id="hello" ref={refContainer}>
+      <RefContainerDiv data-e2e-id="hello" ref={refContainer}>
         <HeaderDiv onClick={() => moveOnTop(name)}>
           <ButtonsDiv>
             <ButtonBg onClick={removeModalHandle}>
@@ -145,7 +154,7 @@ const DraggableResizable = ({
         >
           {children}
         </BodyDiv>
-      </div>
+      </RefContainerDiv>
     </Rnd>
   );
 };

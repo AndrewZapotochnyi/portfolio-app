@@ -13,9 +13,10 @@ const PagesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  overflow: hidden;
   overflow-y: scroll;
   padding: 0 20px;
-  max-height: 70vh;
+  max-height: 50vh;
 
   ::-webkit-scrollbar {
     -webkit-appearance: none;

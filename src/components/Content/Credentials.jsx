@@ -84,6 +84,7 @@ const Credentials = () => {
         <A
           href="https://github.com/AndrewZapotochnyi/portfolio-app"
           target="_blank"
+          rel="noopener noreferrer"
         >
           View this project on GitHub
         </A>
