@@ -74,13 +74,13 @@ const PreferencesWrapper = styled.div`
 
 const PreferenceDiv = styled.div`
   margin: 0;
-  padding: 10px 20px;
+  padding: 5px 20px;
   width: calc(100%-20px);
   height: 90px;
   display: flex;
-  background: #e5e5e5;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
+  background: #f6f6f6;
+  // border-bottom: 1px solid #ccc;
+  // border-top: 1px solid #ccc;
 `;
 
 const PreferencesContent = () => {

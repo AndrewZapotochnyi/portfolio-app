@@ -9,11 +9,12 @@ const NotesWrapper = styled.div`
   border-bottom-right-radius: 10px;
   display: flex;
   flex-direction: row;
+  // height: 100%;
 `;
 
 const NotesLeftBar = styled.div`
   margin: 0;
-  height: 100%;
+  // height: 100%;
   border-bottom-left-radius: 10px;
   background: white;
   display: flex;
