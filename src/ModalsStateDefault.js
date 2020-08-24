@@ -10,6 +10,8 @@ import PreferencesIcon from "./components/icons/PreferencesIcon";
 import PagesIcon from "./components/icons/PagesIcon";
 
 import SafariContent from "./components/Content/SafariContent";
+import Mobile from "./components/Mobile/Mobile";
+
 import CalendarContent from "./components/Content/CalendarContent";
 import NotesContent from "./components/Content/NotesContent";
 import MailContent from "./components/Content/MailContent";
@@ -26,7 +28,7 @@ export const modalsStateDefault = {
     Content: <SafariContent />,
     title: "Safari - My Projects",
     isActive: false,
-    isFixed: true,
+    isFixed: false,
     isOnTop: false,
     toolButton: {
       Icon: SafariIcon,
@@ -126,6 +128,7 @@ export const modalsStateDefault = {
     width: 400,
     height: 500,
     countPosition: true,
+    upperY: true,
   },
   [ModalNames.credentials]: {
     Content: <Credentials />,
@@ -138,5 +141,6 @@ export const modalsStateDefault = {
     width: 500,
     height: 300,
     countPosition: true,
+    upperY: true,
   },
 };

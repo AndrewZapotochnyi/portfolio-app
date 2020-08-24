@@ -48,6 +48,7 @@ const NotesBarTitle = styled.button`
   align-items: flex-start;
   font-family: "SF-Pro-Display-Semibold";
   outline: none;
+  cursor: pointer;
 `;
 
 const LeftBarSubTitle = styled.div`

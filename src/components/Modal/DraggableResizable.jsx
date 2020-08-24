@@ -76,6 +76,7 @@ const DraggableResizable = ({
   isOnTop,
   moveOnTop,
   countPosition,
+  upperY,
 }) => {
   const [draggingDisabled, setDraggingDisabled] = useState(false);
   const [done, setDone] = useState(false);
@@ -89,14 +90,28 @@ const DraggableResizable = ({
     if (!!refContainer.current.clientWidth && !done && countPosition) {
       console.log("done");
       setDone(true);
-      setPosition({
-        y: !!refContainer?.current?.clientHeight
-          ? -1 * (refContainer.current.clientHeight / 2)
-          : 0,
-        x: !!refContainer?.current?.clientWidth
-          ? -1 * (refContainer.current.clientWidth / 2)
-          : 0,
-      });
+
+      console.log("upperY", upperY);
+
+      if (upperY) {
+        setPosition({
+          y: !!refContainer?.current?.clientHeight
+            ? -1 * refContainer.current.clientHeight
+            : 0,
+          x: !!refContainer?.current?.clientWidth
+            ? -1 * (refContainer.current.clientWidth / 2)
+            : 0,
+        });
+      } else {
+        setPosition({
+          y: !!refContainer?.current?.clientHeight
+            ? -1 * (refContainer.current.clientHeight / 2)
+            : 0,
+          x: !!refContainer?.current?.clientWidth
+            ? -1 * (refContainer.current.clientWidth / 2)
+            : 0,
+        });
+      }
     }
   }, [refContainer, countPosition, done]);
 
