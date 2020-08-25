@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import FacebookAppImage from "../../styles/images/FacebookApp.png";
-import SchedulerImage from "../../styles/images/Scheduler.png";
-import TweeterImage from "../../styles/images/Tweeter.png";
-import DigindecImage from "../../styles/images/Digindec.png";
-import AzblockchainImage from "../../styles/images/Azblockchain.png";
+import FacebookAppImage from "../../styles/images/FacebookApp.jpg";
+import SchedulerImage from "../../styles/images/Scheduler.jpg";
+import TweeterImage from "../../styles/images/Tweeter.jpg";
+import DigindecImage from "../../styles/images/Digindec.jpg";
+import AzblockchainImage from "../../styles/images/Azblockchain.jpg";
 
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";

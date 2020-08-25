@@ -44,7 +44,7 @@ function App() {
   // MOBILE HANDLING
 
   const size = useWindowSize();
-  const mobile = size.width < 500 || size.height < 500 ? true : false;
+  const mobile = size.width < 600 || size.height < 600 ? true : false;
 
   // Hook
   function useWindowSize() {
