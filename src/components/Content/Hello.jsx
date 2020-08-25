@@ -37,12 +37,15 @@ const SubTitle = styled.h3`
   line-height: 1.1;
   letter-spacing: 0em;
   color: rgb(29, 29, 31);
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 
 const AboutMe = styled.p`
-  width: 450px;
   margin-top: 5px;
   margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
   font-size: 16px;
   line-height: 1.1;
   letter-spacing: 0em;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const PreferencesIconWrap = styled.img`
-  max-width: 60px;
-  max-height: 60px;
-  min-height: 50px;
+  max-width: 40px;
+  max-height: 40px;
+  // min-height: 50px;
 
   // margin-right: 10px;
   display: flex;

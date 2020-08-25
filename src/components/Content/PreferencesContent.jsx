@@ -60,7 +60,7 @@ const preferencesIcons = {
 };
 
 const HeaderPreferences = styled.h4`
-  margin: 5px 20px;
+  margin: 2px 20px;
   text-align: left;
   font-family: "SF-Pro-Display-Semibold";
 `;
@@ -73,7 +73,9 @@ const PreferencesWrapper = styled.div`
 
 const PreferenceDiv = styled.div`
   margin: 0;
-  padding: 5px 20px;
+  padding: 0;
+  padding-left: 20px;
+  padding-bottom: 0px;
   width: calc(100%-20px);
   height: 90px;
   display: flex;

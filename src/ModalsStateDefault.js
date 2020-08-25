@@ -1,6 +1,6 @@
 import React from "react";
 
-import CalendarIcon from "./components/icons/CalendarIcon";
+// import CalendarIcon from "./components/icons/CalendarIcon";
 import NotesIcon from "./components/icons/NotesIcon";
 import MailIcon from "./components/icons/MailIcon";
 
@@ -10,7 +10,9 @@ import PreferencesIcon from "./components/icons/PreferencesIcon";
 import PagesIcon from "./components/icons/PagesIcon";
 
 import SafariContent from "./components/Content/SafariContent";
-import CalendarContent from "./components/Content/CalendarContent";
+// import Mobile from "./components/Mobile/Mobile";
+
+// import CalendarContent from "./components/Content/CalendarContent";
 import NotesContent from "./components/Content/NotesContent";
 import MailContent from "./components/Content/MailContent";
 import PreferencesContent from "./components/Content/PreferencesContent";
@@ -26,7 +28,7 @@ export const modalsStateDefault = {
     Content: <SafariContent />,
     title: "Safari - My Projects",
     isActive: false,
-    isFixed: true,
+    isFixed: false,
     isOnTop: false,
     toolButton: {
       Icon: SafariIcon,
@@ -99,22 +101,22 @@ export const modalsStateDefault = {
     height: 400,
     countPosition: true,
   },
-  [ModalNames.calendar]: {
-    Content: <CalendarContent />,
-    title: "Calendar - Book A Call With Me",
-    isActive: false,
-    isFixed: true,
-    isOnTop: false,
-    toolButton: {
-      Icon: CalendarIcon,
-      title: "Calendar",
-    },
-    x: -380,
-    y: -400,
-    width: 500,
-    height: 400,
-    countPosition: true,
-  },
+  // [ModalNames.calendar]: {
+  //   Content: <CalendarContent />,
+  //   title: "Calendar - Book A Call With Me",
+  //   isActive: false,
+  //   isFixed: true,
+  //   isOnTop: false,
+  //   toolButton: {
+  //     Icon: CalendarIcon,
+  //     title: "Calendar",
+  //   },
+  //   x: -380,
+  //   y: -400,
+  //   width: 500,
+  //   height: 400,
+  //   countPosition: true,
+  // },
   [ModalNames.hello]: {
     Content: <Hello />,
     title: "Hello world!",
@@ -126,6 +128,7 @@ export const modalsStateDefault = {
     width: 400,
     height: 500,
     countPosition: true,
+    upperY: true,
   },
   [ModalNames.credentials]: {
     Content: <Credentials />,
@@ -138,5 +141,6 @@ export const modalsStateDefault = {
     width: 500,
     height: 300,
     countPosition: true,
+    upperY: true,
   },
 };

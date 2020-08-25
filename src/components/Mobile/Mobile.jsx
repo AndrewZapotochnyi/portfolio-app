@@ -5,11 +5,25 @@ import SchedulerImage from "../../styles/images/Scheduler.png";
 import TweeterImage from "../../styles/images/Tweeter.png";
 import DigindecImage from "../../styles/images/Digindec.png";
 import AzblockchainImage from "../../styles/images/Azblockchain.png";
+import Man from "../../styles/images/man.png";
+
+// //Bootstrap
+// import Button from 'react-bootstrap/Button';
+//
 
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 
 const slides = [
+  {
+    title: "Hello, I'm Andrew",
+    description: `I'm an accomplished technology professional and recent bootcamp graduate
+      with 10 years of experience in digital marketing, UX, and product
+      delivery seeking transition to dedicated software development role.`,
+    tools: "Take a look at my projects to learn more about me!",
+    image: Man,
+    link: ["https://www.linkedin.com/in/zapotochnyi/", "My LinkedIn"],
+  },
   {
     title: "Facebook Audience Analytics App",
     description:
@@ -17,7 +31,10 @@ const slides = [
     tools:
       "Tools: Facebook API | React | Ruby on Rails | JS | SQlite | React Router | Sass | Chart.js | Axios | Material UI | Jest",
     image: FacebookAppImage,
-    link: "https://github.com/AndrewZapotochnyi/FB-Audience-Outreach",
+    link: [
+      "https://github.com/AndrewZapotochnyi/FB-Audience-Outreach",
+      "GitHub Repo",
+    ],
   },
   {
     title: "Interview Scheduler",
@@ -25,14 +42,14 @@ const slides = [
       "As a part of Lighthouse Labs program wrote a React application that allows users to book and cancel interviews.",
     tools: "Tools: React | Node.js | JS | HTML | SASS | Axios | Storybook",
     image: SchedulerImage,
-    link: "https://github.com/AndrewZapotochnyi/Scheduler",
+    link: ["https://github.com/AndrewZapotochnyi/Scheduler", "GitHub Repo"],
   },
   {
     title: "Tweeter",
     description: "Built a single-page Twitter clone. ",
     tools: "Tools: HTML | CSS | JS | jQuery | AJAX | Node | Express | MongoDB",
     image: TweeterImage,
-    link: "https://github.com/AndrewZapotochnyi/tweeter",
+    link: ["https://github.com/AndrewZapotochnyi/tweeter", "GitHub Repo"],
   },
   {
     title: "Digital Independence Declaration",
@@ -40,35 +57,25 @@ const slides = [
       "Developed program concept and created website logic, wireframes, and UX. Led team in development",
     tools: "",
     image: DigindecImage,
-    link: "https://digindec.com/",
+    link: ["https://digindec.com/", "Digindec.com"],
   },
   {
     title: "AZ Blockchain Inc.",
     description:
-      "Hired and coordinated team to build company’s web presence azblockchain.co",
+      "Hired and coordinated team to build my company’s web presence",
     tools: "",
     image: AzblockchainImage,
-    link: "http://azblockchain.co/",
+    link: ["http://azblockchain.co/", "AZBlockchain.co"],
   },
 ];
 
 const Background = styled.div`
-  background-color: #0084cb;
-  background-image: linear-gradient(
-    0deg,
-    #ffffff 0%,
-    #dadada 54%,
-    #ffffff 100%
-  );
   height: 100%;
   color: black;
 `;
 
 const HeroImage = styled.img`
-  width: auto;
-  max-width: 70%;
-  max-height: 200px;
-  min-height: 100px;
+  height: 200px;
   margin: 20px;
 
   -webkit-box-shadow: 0 5px 2px #777;
@@ -78,15 +85,16 @@ const HeroImage = styled.img`
 
 const SlideHeader = styled.h1`
   font-family: "SF-Pro-Display-Semibold";
-  line-height: 1.1;
+  font-size: 32px;
+  margin-top: 5%;
 `;
 
 const StyledP = styled.p`
-  margin: 0 40px;
+  margin: 40px 40px;
   line-height: 1.1;
 `;
 
-const SafariContent = () => {
+const Mobile = () => {
   return (
     <Slider>
       {slides.map((slide, index) => (
@@ -98,8 +106,8 @@ const SafariContent = () => {
           </section>
           <StyledP>{slide.tools}</StyledP>
           <StyledP>
-            <a href={slide.link} target="_blank" rel="noopener noreferrer">
-              GitHub repo
+            <a href={slide.link[0]} target="_blank" rel="noopener noreferrer">
+              {slide.link[1]}
             </a>
           </StyledP>
         </Background>
@@ -108,4 +116,4 @@ const SafariContent = () => {
   );
 };
 
-export default SafariContent;
+export default Mobile;
