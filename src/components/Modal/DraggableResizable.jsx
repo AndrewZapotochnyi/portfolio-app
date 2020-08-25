@@ -113,7 +113,7 @@ const DraggableResizable = ({
         });
       }
     }
-  }, [refContainer, countPosition, done]);
+  }, [refContainer, countPosition, done, upperY]);
 
   const WhiteWindowStyle = {
     display: "flex",

@@ -7,8 +7,6 @@ import TopBar from "./components/TopBar/TopBar";
 import DraggableResizable from "./components/Modal/DraggableResizable";
 import MobileWindow from "./components/Modal/MobileWindow.jsx";
 import { modalsStateDefault } from "./ModalsStateDefault";
-import Mobile from "./components/Mobile/Mobile";
-// import Desktop from './components/Desktop';
 
 function App() {
   const [modals, setModals] = useState(modalsStateDefault);

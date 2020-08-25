@@ -1,5 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
-import { Rnd } from "react-rnd";
+import React from "react";
 import styled from "styled-components";
 
 import WindowButton from "./WindowButton";
@@ -68,22 +67,7 @@ const RefContainerDiv = styled.div`
   flex-grow: 1;
 `;
 
-const MobileWindow = ({
-  name,
-  title,
-  removeModal,
-  children,
-  height,
-  width,
-  isFixed,
-  isOnTop,
-  moveOnTop,
-  countPosition,
-  upperY,
-}) => {
-  const [draggingDisabled, setDraggingDisabled] = useState(false);
-  const [done, setDone] = useState(false);
-
+const MobileWindow = ({ name, title, removeModal, children, moveOnTop }) => {
   const MobileWindowStyle = styled.div`
     display: flex,
     border: solid 1px #ddd,
@@ -102,10 +86,7 @@ const MobileWindow = ({
         <HeaderDiv onClick={() => moveOnTop(name)}>
           <ButtonsDiv>
             <ButtonBg onClick={removeModalHandle}>
-              <WindowButton
-                name="close"
-                setDraggingDisabled={setDraggingDisabled}
-              />
+              <WindowButton name="close" />
             </ButtonBg>
             <WindowButton name="minimize" />
             <WindowButton name="zoom" />
@@ -113,13 +94,7 @@ const MobileWindow = ({
           <TitleHeader> {title}</TitleHeader>
         </HeaderDiv>
 
-        <BodyDiv
-          data-e2e-id="bodyDiv"
-          onMouseOver={() => setDraggingDisabled(true)}
-          onMouseLeave={() => setDraggingDisabled(false)}
-        >
-          {children}
-        </BodyDiv>
+        <BodyDiv data-e2e-id="bodyDiv">{children}</BodyDiv>
       </RefContainerDiv>
     </MobileWindowStyle>
   );

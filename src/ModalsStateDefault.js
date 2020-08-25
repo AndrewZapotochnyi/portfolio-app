@@ -1,6 +1,6 @@
 import React from "react";
 
-import CalendarIcon from "./components/icons/CalendarIcon";
+// import CalendarIcon from "./components/icons/CalendarIcon";
 import NotesIcon from "./components/icons/NotesIcon";
 import MailIcon from "./components/icons/MailIcon";
 
@@ -10,9 +10,9 @@ import PreferencesIcon from "./components/icons/PreferencesIcon";
 import PagesIcon from "./components/icons/PagesIcon";
 
 import SafariContent from "./components/Content/SafariContent";
-import Mobile from "./components/Mobile/Mobile";
+// import Mobile from "./components/Mobile/Mobile";
 
-import CalendarContent from "./components/Content/CalendarContent";
+// import CalendarContent from "./components/Content/CalendarContent";
 import NotesContent from "./components/Content/NotesContent";
 import MailContent from "./components/Content/MailContent";
 import PreferencesContent from "./components/Content/PreferencesContent";
