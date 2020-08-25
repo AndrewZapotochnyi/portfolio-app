@@ -13,6 +13,8 @@ const ToolBarStyle = styled.div`
   box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(81.5485px);
   border-radius: 20px;
+  justify-content: center;
+  min-width: max-content;
 `;
 
 const ToolBar = (props) => {

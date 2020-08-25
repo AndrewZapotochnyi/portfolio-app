@@ -5,6 +5,7 @@ import "./components/ToolBar/ToolBar";
 import ToolBar from "./components/ToolBar/ToolBar";
 import TopBar from "./components/TopBar/TopBar";
 import DraggableResizable from "./components/Modal/DraggableResizable";
+import MobileWindow from "./components/Modal/MobileWindow.jsx";
 import { modalsStateDefault } from "./ModalsStateDefault";
 import Mobile from "./components/Mobile/Mobile";
 // import Desktop from './components/Desktop';
@@ -76,7 +77,61 @@ function App() {
     return (
       <div className="App">
         <div className="App-Mobile">
-          <Mobile></Mobile>
+          {/* <Mobile></Mobile> */}
+
+          <TopBar addModal={openModal} />
+
+          {Object.entries(modals).map(
+            (
+              [
+                key,
+                {
+                  isActive,
+                  Content,
+                  title,
+                  width,
+                  height,
+                  isFixed,
+                  isOnTop,
+                  x,
+                  y,
+                  countPosition,
+                  upperY,
+                },
+              ],
+              i
+            ) => (
+              <div>
+                {isActive && (
+                  <MobileWindow
+                    name={key}
+                    removeModal={closeModal}
+                    key={key}
+                    width={width}
+                    height={height}
+                    isFixed={isFixed}
+                    isOnTop={isOnTop}
+                    moveOnTop={moveOnTop}
+                    title={title}
+                    x={0}
+                    y={0}
+                    countPosition={countPosition}
+                    upperY={upperY}
+                  >
+                    {" "}
+                    {Content}
+                  </MobileWindow>
+                )}
+              </div>
+            )
+          )}
+
+          <ToolBar
+            addModal={openModal}
+            removeModal={closeModal}
+            modals={modals}
+            moveOnTop={moveOnTop}
+          />
         </div>
       </div>
     );

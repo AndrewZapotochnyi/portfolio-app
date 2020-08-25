@@ -25,7 +25,7 @@ const TitleBig = styled.h2`
 `;
 
 const AboutMe = styled.p`
-  width: 450px;
+  width: 95%;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 16px;

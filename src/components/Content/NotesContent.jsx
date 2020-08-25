@@ -9,7 +9,7 @@ const NotesWrapper = styled.div`
   border-bottom-right-radius: 10px;
   display: flex;
   flex-direction: row;
-  // height: 100%;
+  // max-height: 80%;
 `;
 
 const NotesLeftBar = styled.div`
@@ -41,7 +41,7 @@ const NotesBarTitle = styled.button`
   background: ${(props) => (props.isActive ? colors.lightgray : colors.white)};
   border-bottom: 1px solid #ccc;
   height: 50px;
-  width: 220px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -65,7 +65,10 @@ const Background = styled.div`
 `;
 
 const HeroImage = styled.img`
-  height: 200px;
+  width: auto;
+  max-width: 70%;
+  max-height: 200px;
+  min-height: 100px;
   margin: 20px;
 
   -webkit-box-shadow: 0 5px 2px #777;
@@ -75,10 +78,12 @@ const HeroImage = styled.img`
 
 const SlideHeader = styled.h1`
   font-family: "SF-Pro-Display-Semibold";
+  line-height: 1.1;
 `;
 
 const StyledP = styled.p`
   margin: 0 40px;
+  line-height: 1.1;
 `;
 
 const SafariContent = () => {

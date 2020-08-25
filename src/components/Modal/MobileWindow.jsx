@@ -12,6 +12,9 @@ const HeaderDiv = styled.div`
   border-bottom: 1px solid #ccc;
   align-items: stretch;
   padding: 0 10px;
+  background: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const ButtonsDiv = styled.div`
@@ -43,7 +46,7 @@ const BodyDiv = styled.div`
 
   height: calc(100% - 55px);
   padding: 20px 0;
-
+  background: white;
   flex-grow: 2;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -65,7 +68,7 @@ const RefContainerDiv = styled.div`
   flex-grow: 1;
 `;
 
-const DraggableResizable = ({
+const MobileWindow = ({
   name,
   title,
   removeModal,
@@ -80,73 +83,22 @@ const DraggableResizable = ({
 }) => {
   const [draggingDisabled, setDraggingDisabled] = useState(false);
   const [done, setDone] = useState(false);
-  const [position, setPosition] = useState({
-    x: !countPosition ? -1 * (width / 2) : 0,
-    y: 0,
-  });
-  const refContainer = useRef(null);
 
-  useLayoutEffect(() => {
-    if (!!refContainer.current.clientWidth && !done && countPosition) {
-      console.log("done");
-      setDone(true);
-
-      console.log("upperY", upperY);
-
-      if (upperY) {
-        setPosition({
-          y: !!refContainer?.current?.clientHeight
-            ? -1 * (refContainer.current.clientHeight / 1.5)
-            : 0,
-          x: !!refContainer?.current?.clientWidth
-            ? -1 * (refContainer.current.clientWidth / 2)
-            : 0,
-        });
-      } else {
-        setPosition({
-          y: !!refContainer?.current?.clientHeight
-            ? -1 * (refContainer.current.clientHeight / 2)
-            : 0,
-          x: !!refContainer?.current?.clientWidth
-            ? -1 * (refContainer.current.clientWidth / 2)
-            : 0,
-        });
-      }
-    }
-  }, [refContainer, countPosition, done]);
-
-  const WhiteWindowStyle = {
-    display: "flex",
-    border: "solid 1px #ddd",
-    background: "rgba(255, 255, 255)",
+  const MobileWindowStyle = styled.div`
+    display: flex,
+    border: solid 1px #ddd,
+    background: rgba(255, 255, 255),
     padding: "0",
-    zIndex: isOnTop ? "999" : "0",
-  };
-
+    z-index: isOnTop ? "999" : "0",
+    height: 80%`;
   const removeModalHandle = (event) => {
     event.stopPropagation();
     removeModal(name);
   };
 
   return (
-    <Rnd
-      disableDragging={draggingDisabled}
-      style={WhiteWindowStyle}
-      className="modal-rnd"
-      minWidth={width}
-      minHeight={height}
-      enableResizing={!isFixed}
-      bounds="window"
-      position={{ x: position.x, y: position.y }}
-      onDragStop={(e, d) => {
-        setPosition({ x: d.x, y: d.y });
-      }}
-      default={{
-        width: { width },
-        height: { height },
-      }}
-    >
-      <RefContainerDiv data-e2e-id="hello" ref={refContainer}>
+    <MobileWindowStyle className="modal-rnd-mobile">
+      <RefContainerDiv data-e2e-id="hello">
         <HeaderDiv onClick={() => moveOnTop(name)}>
           <ButtonsDiv>
             <ButtonBg onClick={removeModalHandle}>
@@ -169,8 +121,8 @@ const DraggableResizable = ({
           {children}
         </BodyDiv>
       </RefContainerDiv>
-    </Rnd>
+    </MobileWindowStyle>
   );
 };
 
-export default DraggableResizable;
+export default MobileWindow;
