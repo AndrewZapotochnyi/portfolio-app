@@ -68,14 +68,7 @@ const RefContainerDiv = styled.div`
   flex-grow: 1;
 `;
 
-const MobileWindow = ({
-  name,
-  title,
-  removeModal,
-  children,
-  moveOnTop,
-  isMobile,
-}) => {
+const MobileWindow = ({ name, title, removeModal, children, moveOnTop }) => {
   const MobileWindowStyle = styled.div`
     display: flex,
     border: solid 1px #ddd,
@@ -87,8 +80,6 @@ const MobileWindow = ({
     event.stopPropagation();
     removeModal(name);
   };
-
-  let Content = children;
 
   return (
     <MobileWindowStyle className="modal-rnd-mobile">
