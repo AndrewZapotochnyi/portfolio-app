@@ -120,9 +120,9 @@ export const modalsStateDefault = {
   [ModalNames.hello]: {
     Content: <Hello />,
     title: "Hello world!",
-    isActive: false,
+    isActive: true,
     isFixed: true,
-    isOnTop: false,
+    isOnTop: true,
     x: -200,
     y: -550,
     width: 400,

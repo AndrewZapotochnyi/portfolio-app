@@ -4,12 +4,13 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 const NotesWrapper = styled.div`
-  margin: 0 20px;
+  margin: 0 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: flex;
   flex-direction: row;
-  // max-height: 80%;
+
+  line-height: 1.1;
 `;
 
 const NotesLeftBar = styled.div`
@@ -41,7 +42,7 @@ const NotesBarTitle = styled.button`
   background: ${(props) => (props.isActive ? colors.lightgray : colors.white)};
   border-bottom: 1px solid #ccc;
   height: 50px;
-  width: 200px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,22 +57,20 @@ const LeftBarSubTitle = styled.div`
 `;
 
 const NoteHolder = styled.div`
-  margin-top: 0px;
+  margin-top: -10px;
+  max-height: 80%;
 `;
 
 const notesEducationContent = {
   lighthouse: {
     title: "Diploma, Web Development",
-    subtitle: "Lighthouse Labs (2020)",
+    subtitle: "Lighthouse Labs",
     content: (
       <NoteHolder>
         <p>
           Lighthouse Labs is a coding bootcamp for web and mobile software
-          development in multiple cities across Canada.{" "}
-        </p>
-        <p>
-          I've completed a full-time immersive 12 hours a day, six days a week,
-          12 weeks program.
+          development in Canada. I've completed a full-time immersive 12 hours a
+          day, six days a week, 12 weeks program.
         </p>
         <p>
           Technologies and frameworks learned: JavaScript, NodeJS, jQuery,
@@ -82,8 +81,8 @@ const notesEducationContent = {
     ),
   },
   oxford: {
-    title: "Blockchain Strategy Programme",
-    subtitle: "University of Oxford (2018)",
+    title: "Blockchain Programme",
+    subtitle: "University of Oxford",
     content: (
       <NoteHolder>
         <p>
@@ -97,7 +96,7 @@ const notesEducationContent = {
   },
   brainstation: {
     title: "Web Development Course",
-    subtitle: "Part-time, Brainstation (2016)",
+    subtitle: "Part-time, Brainstation",
     content: (
       <NoteHolder>
         <p>
@@ -114,7 +113,7 @@ const notesEducationContent = {
   },
   southampton: {
     title: "Digital Marketing Course",
-    subtitle: "University of Southampton, UK (2014)",
+    subtitle: "University of Southampton",
     content: (
       <NoteHolder>
         <p>
@@ -127,7 +126,7 @@ const notesEducationContent = {
   },
   alfrednobel: {
     title: "Bachelor’s in Marketing",
-    subtitle: "Alfred Nobel University (2011)",
+    subtitle: "Alfred Nobel University",
     content: (
       <NoteHolder>
         <p>
@@ -142,11 +141,11 @@ const notesEducationContent = {
   },
 };
 
-const NotesContent = () => {
+const NotesContent = ({ isMobile }) => {
   const [noteOpened, setNoteOpened] = useState("lighthouse");
 
   return (
-    <NotesWrapper>
+    <NotesWrapper isMobile={isMobile}>
       <NotesLeftBar>
         {Object.keys(notesEducationContent).map((key) => (
           <NotesBarTitle

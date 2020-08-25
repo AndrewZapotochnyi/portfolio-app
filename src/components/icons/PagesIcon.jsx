@@ -2,8 +2,14 @@ import React from "react";
 import PagesImage from "../../styles/icons/pages.png";
 import IconWrap from "./IconWrapper";
 
-let PagesIcon = () => {
-  return <IconWrap src={PagesImage} alt="Pages Image"></IconWrap>;
+let PagesIcon = ({ iconMobile }) => {
+  return (
+    <IconWrap
+      src={PagesImage}
+      alt="Pages Image"
+      iconMobile={iconMobile}
+    ></IconWrap>
+  );
 };
 
 export default PagesIcon;

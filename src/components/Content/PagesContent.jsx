@@ -16,7 +16,7 @@ const PagesWrapper = styled.div`
   overflow: hidden;
   overflow-y: scroll;
   padding: 0 20px;
-  max-height: 50vh;
+  max-height: 70vh;
 
   ::-webkit-scrollbar {
     -webkit-appearance: none;

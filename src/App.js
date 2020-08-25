@@ -44,7 +44,7 @@ function App() {
   // MOBILE HANDLING
 
   const size = useWindowSize();
-  const mobile = size.width < 600 || size.height < 600 ? true : false;
+  const mobile = size.width < 500 || size.height < 500 ? true : false;
 
   // Hook
   function useWindowSize() {
@@ -115,6 +115,7 @@ function App() {
                     y={0}
                     countPosition={countPosition}
                     upperY={upperY}
+                    isMobile={true}
                   >
                     {" "}
                     {Content}
@@ -129,6 +130,7 @@ function App() {
             removeModal={closeModal}
             modals={modals}
             moveOnTop={moveOnTop}
+            iconMobile={true}
           />
         </div>
       </div>

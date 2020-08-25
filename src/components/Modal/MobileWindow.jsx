@@ -42,8 +42,9 @@ const TitleHeader = styled.div`
 
 const BodyDiv = styled.div`
   display: flex;
-
+  overflow: hidden;
   height: calc(100% - 55px);
+  max-height: 90%;
   padding: 20px 0;
   background: white;
   flex-grow: 2;
@@ -67,7 +68,14 @@ const RefContainerDiv = styled.div`
   flex-grow: 1;
 `;
 
-const MobileWindow = ({ name, title, removeModal, children, moveOnTop }) => {
+const MobileWindow = ({
+  name,
+  title,
+  removeModal,
+  children,
+  moveOnTop,
+  isMobile,
+}) => {
   const MobileWindowStyle = styled.div`
     display: flex,
     border: solid 1px #ddd,
@@ -79,6 +87,8 @@ const MobileWindow = ({ name, title, removeModal, children, moveOnTop }) => {
     event.stopPropagation();
     removeModal(name);
   };
+
+  let Content = children;
 
   return (
     <MobileWindowStyle className="modal-rnd-mobile">

@@ -42,6 +42,7 @@ let ToolButton = ({
   removeModal,
   isActive,
   moveOnTop,
+  iconMobile,
 }) => {
   const [isHoovered, setIsHoovered] = useState(false);
 
@@ -60,7 +61,7 @@ let ToolButton = ({
       onClick={handleClick}
     >
       {isHoovered && <Tooltip>{title}</Tooltip>}
-      <Icon />
+      <Icon iconMobile={iconMobile} />
       {isActive && <Dot />}
     </StyledButton>
   );

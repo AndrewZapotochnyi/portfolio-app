@@ -32,7 +32,7 @@ const LanguagesIcons = [
 const Frameworks = [
   { Icon: NodeJsIcon, title: "NodeJS" },
   { Icon: ReactIcon, title: "React" },
-  { Icon: RailsIcon, title: "Ruby on Rails" },
+  { Icon: RailsIcon, title: "Rails" },
   { Icon: jQueryIcon, title: "jQuery" },
   { Icon: ExpressIcon, title: "Express JS" },
   { Icon: MaterialUiIcon, title: "Material UI" },

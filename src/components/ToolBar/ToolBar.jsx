@@ -26,6 +26,7 @@ const ToolBar = (props) => {
             <ToolButton
               Icon={subject.toolButton.Icon}
               title={subject.toolButton.title}
+              iconSize={props.iconSize}
               modalName={key}
               isActive={subject.isActive}
               {...props}
