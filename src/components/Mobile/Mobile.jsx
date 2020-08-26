@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import FacebookAppImage from "../../styles/images/FacebookApp.png";
-import SchedulerImage from "../../styles/images/Scheduler.png";
-import TweeterImage from "../../styles/images/Tweeter.png";
-import DigindecImage from "../../styles/images/Digindec.png";
-import AzblockchainImage from "../../styles/images/Azblockchain.png";
+import FacebookAppImage from "../../styles/images/FacebookApp.jpg";
+import SchedulerImage from "../../styles/images/Scheduler.jpg";
+import TweeterImage from "../../styles/images/Tweeter.jpg";
+import DigindecImage from "../../styles/images/Digindec.jpg";
+import AzblockchainImage from "../../styles/images/Azblockchain.jpg";
 import Man from "../../styles/images/man.png";
 
 // //Bootstrap
@@ -71,12 +71,24 @@ const slides = [
 
 const Background = styled.div`
   height: 100%;
-  color: black;
+  color: #191919;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  background-color: #0084cb;
+  background-image: linear-gradient(
+    0deg,
+    #ffffff 0%,
+    #dadada 54%,
+    #ffffff 100%
+  );
 `;
 
 const HeroImage = styled.img`
-  height: 200px;
-  margin: 20px;
+  width: 50%;
+  margin: 5px;
 
   -webkit-box-shadow: 0 5px 2px #777;
   -moz-box-shadow: 0 5px 10px #777;
@@ -85,13 +97,16 @@ const HeroImage = styled.img`
 
 const SlideHeader = styled.h1`
   font-family: "SF-Pro-Display-Semibold";
-  font-size: 32px;
+  font-size: 6vh;
   margin-top: 5%;
+  line-height: 1.1;
+  color: #191919;
 `;
 
 const StyledP = styled.p`
-  margin: 40px 40px;
+  margin: 2% 2%;
   line-height: 1.1;
+  font-size: 3vh;
 `;
 
 const Mobile = () => {

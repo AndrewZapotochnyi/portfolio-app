@@ -5,8 +5,9 @@ import "./components/ToolBar/ToolBar";
 import ToolBar from "./components/ToolBar/ToolBar";
 import TopBar from "./components/TopBar/TopBar";
 import DraggableResizable from "./components/Modal/DraggableResizable";
-import MobileWindow from "./components/Modal/MobileWindow.jsx";
+// import MobileWindow from "./components/Modal/MobileWindow.jsx";
 import { modalsStateDefault } from "./ModalsStateDefault";
+import Mobile from "./components/Mobile/Mobile";
 
 function App() {
   const [modals, setModals] = useState(modalsStateDefault);
@@ -75,9 +76,9 @@ function App() {
     return (
       <div className="App">
         <div className="App-Mobile">
-          {/* <Mobile></Mobile> */}
+          <Mobile></Mobile>
 
-          <TopBar addModal={openModal} />
+          {/* <TopBar addModal={openModal} />
 
           {Object.entries(modals).map(
             (
@@ -131,7 +132,7 @@ function App() {
             modals={modals}
             moveOnTop={moveOnTop}
             iconMobile={true}
-          />
+          /> */}
         </div>
       </div>
     );
