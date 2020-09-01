@@ -8,6 +8,7 @@ import DraggableResizable from "./components/Modal/DraggableResizable";
 // import MobileWindow from "./components/Modal/MobileWindow.jsx";
 import { modalsStateDefault } from "./ModalsStateDefault";
 import Mobile from "./components/Mobile/Mobile";
+import MobileB from "./components/Mobile/MobileB";
 
 function App() {
   const [modals, setModals] = useState(modalsStateDefault);
@@ -39,6 +40,15 @@ function App() {
       Object.entries(modals).reduce((acc, [key, value]) => {
         const isOnTop = key === name;
         return { ...acc, [key]: { ...value, isOnTop } };
+      }, {})
+    );
+
+  const openMobile = (name) =>
+    setModals(
+      Object.entries(modals).reduce((acc, [key, value]) => {
+        const isActive = key === name;
+        const isOnTop = key === name;
+        return { ...acc, [key]: { ...value, isOnTop, isActive } };
       }, {})
     );
 
@@ -76,7 +86,15 @@ function App() {
     return (
       <div className="App">
         <div className="App-Mobile">
-          <Mobile></Mobile>
+          {/* <Mobile></Mobile> */}
+
+          <MobileB
+            openModal={openModal}
+            modals={modals}
+            closeModal={closeModal}
+            setModals={setModals}
+            openMobile={openMobile}
+          ></MobileB>
 
           {/* <TopBar addModal={openModal} />
 

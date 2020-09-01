@@ -197,6 +197,12 @@ $font-main: "SF-Pro-Display-Light.otf", sans-serif;
   }
 }
 
+.mobileVersionB {
+  background-image: url(./images/Background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .App-Mobile {
   display: flex;
   flex-direction: column;
