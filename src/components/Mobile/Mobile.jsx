@@ -16,15 +16,6 @@ import "react-animated-slider/build/horizontal.css";
 
 const slides = [
   {
-    title: "Hello, I'm Andrew",
-    description: `I'm an accomplished technology professional and recent bootcamp graduate
-      with 10 years of experience in digital marketing, UX, and product
-      delivery seeking transition to dedicated software development role.`,
-    tools: "Take a look at my projects to learn more about me!",
-    image: Man,
-    link: ["https://www.linkedin.com/in/zapotochnyi/", "My LinkedIn"],
-  },
-  {
     title: "Facebook Audience Analytics App",
     description:
       "Created concept and built a social media analytics app that uses Facebook’s API to create and analyze social media audiences",
@@ -70,43 +61,46 @@ const slides = [
 ];
 
 const Background = styled.div`
-  height: 100%;
+  max-height: 60vh;
   color: #191919;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 
-  background-color: #0084cb;
-  background-image: linear-gradient(
-    0deg,
-    #ffffff 0%,
-    #dadada 54%,
-    #ffffff 100%
-  );
+  // background-color: #0084cb;
+  // background-image: linear-gradient(
+  //   0deg,
+  //   #ffffff 0%,
+  //   #dadada 54%,
+  //   #ffffff 100%
+  // );
 `;
 
 const HeroImage = styled.img`
-  width: 50%;
-  margin: 5px;
+  width: 30vw;
+  margin: 0;
 
-  -webkit-box-shadow: 0 5px 2px #777;
-  -moz-box-shadow: 0 5px 10px #777;
-  box-shadow: 0 5px 10px #777;
+  // -webkit-box-shadow: 0 5px 2px #777;
+  // -moz-box-shadow: 0 5px 10px #777;
+  // box-shadow: 0 5px 10px #777;
 `;
 
 const SlideHeader = styled.h1`
   font-family: "SF-Pro-Display-Semibold";
-  font-size: 6vh;
-  margin-top: 5%;
+  font-size: 4vh;
+  // margin-top: 5%;
   line-height: 1.1;
   color: #191919;
+  text-align: center;
 `;
 
 const StyledP = styled.p`
-  margin: 2% 2%;
-  line-height: 1.1;
+  margin: 0 60px;
+  text-align: center;
   font-size: 3vh;
+  line-height: 1.1;
 `;
 
 const Mobile = () => {

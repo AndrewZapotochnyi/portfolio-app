@@ -84,75 +84,13 @@ function App() {
 
   if (mobile) {
     return (
-      <div className="App">
-        <div className="App-Mobile">
-          {/* <Mobile></Mobile> */}
-
-          <MobileB
-            openModal={openModal}
-            modals={modals}
-            closeModal={closeModal}
-            setModals={setModals}
-            openMobile={openMobile}
-          ></MobileB>
-
-          {/* <TopBar addModal={openModal} />
-
-          {Object.entries(modals).map(
-            (
-              [
-                key,
-                {
-                  isActive,
-                  Content,
-                  title,
-                  width,
-                  height,
-                  isFixed,
-                  isOnTop,
-                  x,
-                  y,
-                  countPosition,
-                  upperY,
-                },
-              ],
-              i
-            ) => (
-              <div>
-                {isActive && (
-                  <MobileWindow
-                    name={key}
-                    removeModal={closeModal}
-                    key={key}
-                    width={width}
-                    height={height}
-                    isFixed={isFixed}
-                    isOnTop={isOnTop}
-                    moveOnTop={moveOnTop}
-                    title={title}
-                    x={0}
-                    y={0}
-                    countPosition={countPosition}
-                    upperY={upperY}
-                    isMobile={true}
-                  >
-                    {" "}
-                    {Content}
-                  </MobileWindow>
-                )}
-              </div>
-            )
-          )}
-
-          <ToolBar
-            addModal={openModal}
-            removeModal={closeModal}
-            modals={modals}
-            moveOnTop={moveOnTop}
-            iconMobile={true}
-          /> */}
-        </div>
-      </div>
+      <MobileB
+        openModal={openModal}
+        modals={modals}
+        closeModal={closeModal}
+        setModals={setModals}
+        openMobile={openMobile}
+      ></MobileB>
     );
   }
 
