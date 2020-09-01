@@ -47,7 +47,7 @@ let ToolButton = ({
     if (!isActive) {
       openMobile(modalName);
     } else {
-      closeModal(modalName);
+      openMobile(modalName);
     }
 
     console.log("click");
@@ -56,8 +56,8 @@ let ToolButton = ({
   return (
     <StyledButton onClick={() => handleClick()}>
       {isActive && <Dot />}
-      <Icon />
-      {title}
+      <Icon iconMobile="true" />
+      {/* {title} */}
     </StyledButton>
   );
 };

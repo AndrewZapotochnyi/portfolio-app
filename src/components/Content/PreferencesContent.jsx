@@ -52,7 +52,7 @@ const testing = [
   { Icon: JestIcon, title: "Jest" },
 ];
 
-const preferencesIcons = {
+export const preferencesIcons = {
   languages: { Icons: LanguagesIcons, headline: "Languages" },
   frameworks: { Icons: Frameworks, headline: "Frameworks and Libraries" },
   systems: { Icons: systemsDatabases, headline: "Systems, Databases and API" },

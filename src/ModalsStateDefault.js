@@ -10,15 +10,24 @@ import PreferencesIcon from "./components/icons/PreferencesIcon";
 import PagesIcon from "./components/icons/PagesIcon";
 
 import SafariContent from "./components/Content/SafariContent";
-// import Mobile from "./components/Mobile/Mobile";
+import SafariMobile from "./components/Mobile/Mobile";
 
 // import CalendarContent from "./components/Content/CalendarContent";
 import NotesContent from "./components/Content/NotesContent";
+import NotesMobile from "./components/Mobile/Content/NotesMobile";
+
 import MailContent from "./components/Content/MailContent";
+import MailMobile from "./components/Mobile/Content/MailMobile";
+
 import PreferencesContent from "./components/Content/PreferencesContent";
+import PreferencesMobile from "./components/Mobile/Content/PreferencesMobile";
+
 import PagesContent from "./components/Content/PagesContent";
+import MobilePagesContent from "./components/Mobile/Content/MobilePages";
 
 import Hello from "./components/Content/Hello";
+import HelloMobile from "./components/Mobile/Content/HelloMobile";
+
 import Credentials from "./components/Content/Credentials";
 
 import { ModalNames } from "./components/constants";
@@ -26,6 +35,7 @@ import { ModalNames } from "./components/constants";
 export const modalsStateDefault = {
   [ModalNames.safari]: {
     Content: <SafariContent />,
+    ContentMobile: <SafariMobile />,
     title: "Safari - My Projects",
     isActive: false,
     isFixed: false,
@@ -41,6 +51,7 @@ export const modalsStateDefault = {
   },
   [ModalNames.notes]: {
     Content: <NotesContent />,
+    ContentMobile: <NotesMobile />,
     title: "Notes - Education",
     isActive: false,
     isFixed: false,
@@ -56,6 +67,7 @@ export const modalsStateDefault = {
   },
   [ModalNames.mail]: {
     Content: <MailContent />,
+    ContentMobile: <MailMobile />,
     title: "Mail - Send Me An Email",
     isActive: false,
     isFixed: false,
@@ -71,6 +83,7 @@ export const modalsStateDefault = {
   },
   [ModalNames.preferences]: {
     Content: <PreferencesContent />,
+    ContentMobile: <PreferencesMobile />,
     title: "Preferences - Tech Skills",
     isActive: false,
     isFixed: true,
@@ -87,6 +100,7 @@ export const modalsStateDefault = {
   },
   [ModalNames.pages]: {
     Content: <PagesContent />,
+    ContentMobile: <MobilePagesContent />,
     title: "Pages - Work Experience",
     isActive: false,
     isFixed: true,
@@ -119,6 +133,7 @@ export const modalsStateDefault = {
   // },
   [ModalNames.hello]: {
     Content: <Hello />,
+    ContentMobile: <HelloMobile />,
     title: "Hello world!",
     isActive: true,
     isFixed: true,
@@ -132,6 +147,7 @@ export const modalsStateDefault = {
   },
   [ModalNames.credentials]: {
     Content: <Credentials />,
+    ContentMobile: <Credentials />,
     title: "Project Credentials",
     isActive: false,
     isFixed: true,
