@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Dot = styled.div`
@@ -18,20 +18,6 @@ const StyledButton = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
-`;
-
-const Tooltip = styled.div`
-  color: black;
-  font-size: 15px;
-  display: flex;
-  flex-flow: center;
-  background: rgba(249, 249, 249, 0.7);
-  backdrop-filter: blur(30px);
-  padding: 7px 12px;
-  border-radius: 10px;
-  position: absolute;
-  top: -80%;
-  box-shadow: 0 0 3px #999999;
 `;
 
 let ToolButton = ({

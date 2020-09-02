@@ -5,7 +5,6 @@ import SchedulerImage from "../../styles/images/Scheduler.jpg";
 import TweeterImage from "../../styles/images/Tweeter.jpg";
 import DigindecImage from "../../styles/images/Digindec.jpg";
 import AzblockchainImage from "../../styles/images/Azblockchain.jpg";
-import Man from "../../styles/images/man.png";
 
 // //Bootstrap
 // import Button from 'react-bootstrap/Button';

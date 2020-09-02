@@ -7,7 +7,7 @@ import TopBar from "./components/TopBar/TopBar";
 import DraggableResizable from "./components/Modal/DraggableResizable";
 // import MobileWindow from "./components/Modal/MobileWindow.jsx";
 import { modalsStateDefault } from "./ModalsStateDefault";
-import Mobile from "./components/Mobile/Mobile";
+
 import MobileB from "./components/Mobile/MobileB";
 
 function App() {
