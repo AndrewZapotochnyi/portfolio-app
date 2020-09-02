@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import appleLogo from "../../styles/images/Apple_Logo.png";
 import { modalsStateDefault } from "../../ModalsStateDefault";
 import MobileButton from "./MobileButton";
 import HelloMobile from "./Content/HelloMobile";
 import MobileWindowButton from "./MobileWindowButton";
+import TopBarMobile from "./TopBarMobile";
 
 const MobileBDiv = styled.div`
   color: black;
@@ -38,7 +39,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  background: white;
+  background: ${(props) => (props.isAnyActive ? "white" : "transparent")};
   flex-grow: 10;
   border-radius: 20px;
   margin: 5px;
@@ -100,14 +101,24 @@ const ButtonBg = styled.button`
 `;
 
 const MobileB = ({ openModal, modals, closeModal, setModals, openMobile }) => {
+  const [isAnyActive, setIsAnyActive] = useState(false);
+
+  useEffect(() => {
+    Object.entries(modals).map(([key, { isActive }]) => {
+      if (isActive) {
+        setIsAnyActive(true);
+      }
+    });
+  }, [modals]);
+
   return (
     <MobileBDiv className="mobileVersionB">
       <Header>
-        <AppleLogo src={appleLogo}></AppleLogo>
+        <TopBarMobile closeModal={closeModal} openMobile={openMobile} />
         Andrew Zapotochnyi
       </Header>
 
-      <Body>
+      <Body isAnyActive={isAnyActive}>
         {Object.entries(modals).map(
           ([key, { isActive, Content, ContentMobile, openMobile }]) =>
             isActive &&

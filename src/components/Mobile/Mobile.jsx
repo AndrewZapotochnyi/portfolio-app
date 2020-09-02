@@ -61,7 +61,7 @@ const slides = [
 ];
 
 const Background = styled.div`
-  max-height: 60vh;
+  max-height: 55vh;
   color: #191919;
 
   display: flex;
@@ -89,7 +89,7 @@ const HeroImage = styled.img`
 
 const SlideHeader = styled.h1`
   font-family: "SF-Pro-Display-Semibold";
-  font-size: 4vh;
+  font-size: 3vh;
   // margin-top: 5%;
   line-height: 1.1;
   color: #191919;
@@ -99,7 +99,7 @@ const SlideHeader = styled.h1`
 const StyledP = styled.p`
   margin: 0 60px;
   text-align: center;
-  font-size: 3vh;
+  font-size: 2.2vh;
   line-height: 1.1;
 `;
 

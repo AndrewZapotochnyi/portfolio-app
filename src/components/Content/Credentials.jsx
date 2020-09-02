@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const CredentialsWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   height: 100%;
   background: white;
-  padding: 0 20px;
+  margin: 5px 20px;
   text-align: left;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
