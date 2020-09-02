@@ -3,17 +3,6 @@ import logo from "../../styles/images/Apple_Logo.png";
 import styled from "styled-components";
 import DropDownMobile from "./DropDownMobile";
 
-const MenuItems = styled.div`
-  margin-bottom: 5px;
-  cursor: pointer;
-`;
-
-const RightHolder = styled.div`
-  position: absolute;
-  right: 20px;
-  top: 5px;
-`;
-
 const Logo = styled.div`
   position: relative;
 `;
@@ -43,31 +32,6 @@ const DropdownList = styled.ul`
   margin: 0;
   padding: 5px;
   text-align: left;
-`;
-
-const TopBarStyle = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(1px);
-  font-size: 15px;
-  // padding-left: 20px;
-
-  width: 100%;
-  height: 24px;
-`;
-
-const LeftHolder = styled.div`
-  display: flex;
-  margin-left: 10px;
-`;
-
-const A = styled.a`
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
 `;
 
 const Image = styled.img`

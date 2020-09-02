@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import appleLogo from "../../styles/images/Apple_Logo.png";
-import { modalsStateDefault } from "../../ModalsStateDefault";
 import MobileButton from "./MobileButton";
-import HelloMobile from "./Content/HelloMobile";
 import MobileWindowButton from "./MobileWindowButton";
 import TopBarMobile from "./TopBarMobile";
 
@@ -72,12 +69,6 @@ const Footer = styled.div`
   font-size: 12px;
 `;
 
-const AppleLogo = styled.img`
-  height: 30px;
-  width: 30px;
-  margin: 8px;
-`;
-
 const ButtonsDiv = styled.div`
   top: 3px;
   left: 10px;
@@ -104,12 +95,18 @@ const MobileB = ({ openModal, modals, closeModal, setModals, openMobile }) => {
   const [isAnyActive, setIsAnyActive] = useState(false);
 
   useEffect(() => {
-    Object.entries(modals).map(([key, { isActive }]) => {
-      if (isActive) {
+    for (const [key, value] of Object.entries(modals)) {
+      console.log(`${key}: ${value.isActive}`);
+      if (value.isActive) {
         setIsAnyActive(true);
       }
-    });
+    }
   }, [modals]);
+
+  const handleCloseMobile = (name) => {
+    closeModal(name);
+    setIsAnyActive(false);
+  };
 
   return (
     <MobileBDiv className="mobileVersionB">
@@ -125,7 +122,7 @@ const MobileB = ({ openModal, modals, closeModal, setModals, openMobile }) => {
             ContentMobile && (
               <div>
                 <ButtonsDiv>
-                  <ButtonBg onClick={() => closeModal(key)}>
+                  <ButtonBg onClick={() => handleCloseMobile(key)}>
                     <MobileWindowButton name="close" />
                   </ButtonBg>
                   <MobileWindowButton name="minimize" />
