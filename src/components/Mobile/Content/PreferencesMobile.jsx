@@ -5,12 +5,10 @@ import JsIcon from "../../Content/PreferencesButtons/Js";
 import RubyIcon from "../../Content/PreferencesButtons/Ruby";
 import PythonIcon from "../../Content/PreferencesButtons/Python";
 import HtmlIcon from "../../Content/PreferencesButtons/Html";
-import CssIcon from "../../Content/PreferencesButtons/Css";
 import NodeJsIcon from "../../Content/PreferencesButtons/NodeJs";
 import ReactIcon from "../../Content/PreferencesButtons/React";
 import RailsIcon from "../../Content/PreferencesButtons/Rails";
 import jQueryIcon from "../../Content/PreferencesButtons/jQuery";
-import ExpressIcon from "../../Content/PreferencesButtons/Express";
 import FacebookApiIcon from "../../Content/PreferencesButtons/FacebookApi";
 import GitHubIcon from "../../Content/PreferencesButtons/GitHub";
 import SQLiteIcon from "../../Content/PreferencesButtons/SQLite";
@@ -27,7 +25,6 @@ const LanguagesIcons = [
   { Icon: RubyIcon, title: "Ruby" },
   { Icon: PythonIcon, title: "Python" },
   { Icon: HtmlIcon, title: "HTML" },
-  { Icon: CssIcon, title: "CSS" },
 ];
 
 const Frameworks = [
@@ -35,11 +32,10 @@ const Frameworks = [
   { Icon: ReactIcon, title: "React" },
   { Icon: RailsIcon, title: "Rails" },
   { Icon: jQueryIcon, title: "jQuery" },
-  { Icon: ExpressIcon, title: "Express JS" },
 ];
 
 const systemsDatabases = [
-  { Icon: FacebookApiIcon, title: "FB API" },
+  { Icon: FacebookApiIcon, title: "FacebookApi" },
   { Icon: GitHubIcon, title: "Git/GitHub" },
   { Icon: SQLiteIcon, title: "SQLite" },
   { Icon: PostgreSQLIcon, title: "PostgreSQL" },
@@ -85,7 +81,7 @@ const PreferenceDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   // background: #f6f6f6;
   // // border-bottom: 1px solid #ccc;
   // // border-top: 1px solid #ccc;
