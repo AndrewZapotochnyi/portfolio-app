@@ -14,6 +14,10 @@ const MobileBDiv = styled.div`
   min-height: 100vh;
   height: 100vh;
   font-family: "SF-Pro-Display-Light.otf";
+
+  max-height: -webkit-fill-available;
+  max-height: -moz-available;
+  max-height: stretch;
 `;
 
 const Header = styled.div`
