@@ -13,11 +13,8 @@ const MobileBDiv = styled.div`
   width: 100vw;
   min-height: 100vh;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   font-family: "SF-Pro-Display-Light.otf";
-
-  max-height: -webkit-fill-available;
-  max-height: -moz-available;
-  max-height: stretch;
 `;
 
 const Header = styled.div`
@@ -97,6 +94,10 @@ const ButtonBg = styled.button`
 
 const MobileB = ({ openModal, modals, closeModal, setModals, openMobile }) => {
   const [isAnyActive, setIsAnyActive] = useState(false);
+
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 
   useEffect(() => {
     for (const [key, value] of Object.entries(modals)) {
